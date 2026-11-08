@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerEnvironment>PATH=$(QtDllPath);%PATH%
+$(LocalDebuggerEnvironment)
+</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>--jobFile1=./Tests/Jobs/00_Multi_Jobs.txt</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArgumentsHistory>--jobFile=e:\Dev\Qt\DocScanGui\Tests\Jobs\01_System.txt|--jobFile=.\Tests\Jobs\01_System.txt|--jobFile1=.\Tests\Jobs\01_System.txt|--jobFile=./Tests/Jobs/00_Multi_Jobs.txt|--jobFile1=./Tests/Jobs/00_Multi_Jobs.txt|</LocalDebuggerCommandArgumentsHistory>
+  </PropertyGroup>
+</Project>

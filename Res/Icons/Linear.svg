@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="200"
+  height="200"
+  viewBox="0 0 200 200"
+  id="Linear"
+  x="0"
+  y="0">
+
+  <defs
+     id="defs-1">
+
+    <line
+      id="line-h"
+      x1="5"
+      y1="5"
+      x2="190"
+      y2="5"
+      stroke-width="5"
+      stroke="Lightgray"
+    />
+
+    <line
+      id="line-v"
+      x1="5"
+      y1="5"
+      x2="5"
+      y2="190"
+      stroke-width="5"
+      stroke="Lightgray"
+    />
+
+  </defs>
+
+  <g
+    id="layer1">
+
+    <use href="#line-h" transform="translate ( 0,   0 )" />
+    <use href="#line-h" transform="translate ( 0,  30 )" />
+    <use href="#line-h" transform="translate ( 0,  60 )" />
+    <use href="#line-h" transform="translate ( 0,  90 )" />
+    <use href="#line-h" transform="translate ( 0, 120 )" />
+    <use href="#line-h" transform="translate ( 0, 150 )" />
+    <use href="#line-h" transform="translate ( 0, 180 )" />
+
+    <use href="#line-v" transform="translate (   0, 0 )" />
+    <use href="#line-v" transform="translate (  30, 0 )" />
+    <use href="#line-v" transform="translate (  60, 0 )" />
+    <use href="#line-v" transform="translate (  90, 0 )" />
+    <use href="#line-v" transform="translate ( 120, 0 )" />
+    <use href="#line-v" transform="translate ( 150, 0 )" />
+    <use href="#line-v" transform="translate ( 180, 0 )" />
+
+    <path
+      fill="none"
+      fill-opacity="0"
+      stroke="Blue"
+      stroke-width="20"
+      stroke-linecap="round"
+      stroke-linejoin="bevel"
+      stroke-miterlimit="4"
+      d="M 10 185
+         h 25
+         l 130 -175
+         h 20
+      "
+      id="path-1"
+    />
+  </g>
+</svg>

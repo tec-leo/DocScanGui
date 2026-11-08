@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="DocScanGui"
+  x="0"
+  y="0"
+  width="200"
+  height="200"
+  viewBox="0 0 200 200">
+
+  <defs
+     id="defs-1">
+
+    <line
+      id="line-h"
+      x1="55"
+      y1="70"
+      x2="145"
+      y2="70"
+      stroke-width="15"
+      stroke="Black"
+      stroke-opacity="1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+  </defs>
+
+  <g>
+
+    <rect
+      x="30"
+      y="40"
+      width="140"
+      height="150"
+      fill="LightGray"
+      fill-opacity="0.2"
+      stroke="none" />
+
+    <rect
+      x="30"
+      y="10"
+      width="110"
+      height="30"
+      fill-opacity="0.2"
+      fill="LightGray"
+      stroke="none" />
+
+
+    <use href="#line-h" transform="translate ( 0,  0 )" />
+    <use href="#line-h" transform="translate ( 0, 30 )" />
+    <use href="#line-h" transform="translate ( 0, 60 )" />
+    <use href="#line-h" transform="translate ( 0, 90 )" />
+
+    <!-- page shape -->
+    <path
+      id="page"
+      fill="black"
+      d="M 139.0 0.0
+         H 38.3
+         C 31.6 0.0 26.1 5.5 26.1 12.3
+         v 175.5
+         c 0.0 6.8 5.5 12.3 12.3 12.3
+         H 161.6
+         c 6.8 0.0 12.3 -5.5 12.3 -12.3
+         V 37.9
+         L 139.0 0.0
+         z
+         M 141.9 18.4
+         l 15.3 16.6
+         h -15.3
+         V 18.4
+         z
+         M 163.6 187.7
+         c 0.0 1.1 -0.9 2.0 -2.0 2.0
+         H 38.3
+         c -1.1 0.0 -2.0 -0.9 -2.0 -2.0
+         V 12.3
+         c 0.0 -1.1 0.9 -2.0 2.0 -2.0
+         h 93.3
+         v 29.8
+         c 0.0 2.8 2.3 5.1 5.2 5.1
+         h 26.9
+         V 187.7
+         z"
+    />
+  </g>
+</svg>

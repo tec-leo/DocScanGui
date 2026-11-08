@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="256" height="256">
+  <defs>
+    <filter id="filter1">
+      <feGaussianBlur stdDeviation="1.75" />
+    </filter>
+    <filter id="filter2">
+      <feGaussianBlur stdDeviation="0.35" />
+    </filter>
+    <linearGradient x1="162" y1="228" x2="101" y2="41" id="linearGradient1" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.95" offset="0" />
+      <stop stop-color="white" stop-opacity="0.75" offset="1" />
+    </linearGradient>
+    <linearGradient x1="169" y1="227" x2="94.5" y2="42" id="linearGradient2" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A4FE4" stop-opacity="1" offset="0" />
+      <stop stop-color="#447BFA" stop-opacity="1" offset="0.5" />
+      <stop stop-color="#69A3FF" stop-opacity="1" offset="0.625" />
+      <stop stop-color="#89BEFF" stop-opacity="1" offset="0.75" />
+      <stop stop-color="#80BEFF" stop-opacity="1" offset="1" />
+    </linearGradient>
+    <linearGradient x1="123.5" y1="34.5" x2="132" y2="116" id="linearGradient3" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="1" offset="0" />
+      <stop stop-color="white" stop-opacity="0.5" offset="1" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="128" cy="128" r="116" fill-opacity="0.17" filter="url(#filter1)" />
+  <circle cx="128" cy="128" r="107" fill="#3A73EF" />
+  <circle cx="128" cy="128" r="103" fill="url(#linearGradient1)" />
+  <circle cx="128" cy="128" r="94" fill="url(#linearGradient2)" />
+
+  <path d="M 128,31.59375 C 86.871341,31.59375 51.74836,57.401715 37.90625,93.6875 C 56.732365,110.35912 96.245675,118.37197 128.03125,118.625 C 128.07285,118.62467 128.02111,118.62533 128.0625,118.625 C 160.09769,118.36974 199.12268,109.67594 217.71875,92.6875 C 203.61988,56.922098 168.75455,31.593751 128,31.59375 z " opacity="0.45" fill="url(#linearGradient3)" filter="url(#filter2)" />
+
+  <text
+    x="85"
+    y="190"
+    fill="white"
+    stroke="white"
+    stroke-width="10"
+    font-size="180"
+    font-family="serif"
+    font-weight="80"
+    >
+    ?
+  </text>
+</svg>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="200"
+  height="200"
+  id="deskew"
+  viewBox="0 0 200 200"
+  x="0"
+  y="0">
+
+  <defs
+    id="defs-1">
+
+    <!-- line for arrow -->
+    <line
+      transform="scale ( 0.75, 0.75 )"
+      id="line-1"
+      x1="15" y1="100" x2="105" y2="100"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="20"
+      stroke="blue" />
+
+    <!-- polygon for arrow -->
+    <polygon
+      id="poly-1"
+      transform="scale ( 0.75, 0.75 )"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-miterlimit="1"
+
+      points="10,100 40,85 40,115"
+      stroke-width="18"
+      stroke="blue" />
+
+  </defs>
+
+  <g
+     id="group-1">
+    <rect
+      id="rect-1"
+      x="30"
+      y="25"
+      height="150"
+      width="140"
+      fill="white"
+      fill-rule="evenodd"
+      stroke="Black"
+      stroke-width="12"
+      stroke-opacity="0.8"
+      stroke-linecap="square"
+      stroke-linejoin="round"
+      stroke-miterlimit="0"
+    />
+    <rect
+      id="rect-2"
+      x="50"
+      y="45"
+      width="100"
+      height="110"
+      fill="LightGray"
+      fill-rule="evenodd"
+      stroke="white"
+      stroke-width="10"
+      stroke-opacity="0.2"
+      stroke-linecap="square"
+      stroke-linejoin="round"
+      stroke-miterlimit="0"
+    />
+  </g>
+
+    <use href="#line-1" transform="translate ( 0, 25 )" />
+    <use href="#poly-1" transform="translate ( 0, 25 )" />
+
+    <use href="#line-1" transform="translate ( 200, 25 ) scale ( -1, 1 )" />
+    <use href="#poly-1" transform="translate ( 200, 25 ) scale ( -1, 1 )" />
+
+    <!-- rotate about center ( 100, 100 ) not origin ( 0, 0 ) -->
+
+    <use
+      href="#line-1"
+      transform="rotate ( 90, 100, 100 ) translate ( 0, 25 )" />
+    <use
+      href="#poly-1"
+      transform="rotate ( 90, 100, 100 ) translate ( 0, 25 )" />
+
+    <use
+      href="#line-1"
+      transform="rotate ( -90, 100, 100 ) translate ( 0, 25 )" />
+    <use
+      href="#poly-1"
+      transform="rotate ( -90, 100, 100 ) translate ( 0, 25 )" />
+
+</svg>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="Cursor-Picker-White"
+  width="20"
+  height="20"
+  viewBox="0 0 20 20"
+  x="0"
+  y="0">
+
+  <defs
+    id="defs1">
+    <rect
+      id="rect-1"
+      x="120"
+      y="93"
+      height="14"
+      width="80"
+      fill="lightgray"
+      fill-rule="evenodd"
+      stroke="black"
+      stroke-width="4"
+    />
+  </defs>
+
+  <!--  rect -->
+
+  <g
+    id="color-rect"
+    transform="scale (0.1, 0.1)">
+    <rect
+      id="rect-2"
+      fill="White"
+      stroke="MediumBlue"
+      stroke-width="10"
+      stroke-opacity="1"
+      x="135"
+      y="135"
+      width="60"
+      height="60"
+      />
+
+    <use href="#rect-1" transform="rotate (0)" />
+    <use href="#rect-1" transform="rotate (90, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (180, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (270, 100, 100 )" />
+
+  </g>
+
+</svg>

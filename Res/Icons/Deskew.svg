@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="200"
+  height="200"
+  id="deskew"
+  viewBox="0 0 200 200"
+  x="0"
+  y="0">
+  <defs
+     id="defs-1">
+    <rect
+      id="rect-1"
+      x="25"
+      y="35"
+      height="160"
+      width="140"
+      fill="white"
+      fill-rule="evenodd"
+      stroke="DarkGray"
+      stroke-width="12"
+      stroke-opacity="0.8"
+      stroke-linecap="square"
+      stroke-linejoin="round"
+      stroke-miterlimit="0"
+    />
+    <rect
+      id="rect-2"
+      x="45"
+      y="55"
+      width="100"
+      height="120"
+      fill="LightGray"
+      fill-rule="evenodd"
+      stroke="white"
+      stroke-width="10"
+      stroke-opacity="0.2"
+      stroke-linecap="square"
+      stroke-linejoin="round"
+      stroke-miterlimit="0"
+    />
+
+    <circle
+      id="circle-1"
+      fill="Red"
+      fill-opacity="1"
+      stroke="Black"
+      stroke-width="10"
+      stroke-opacity="1"
+      cx="15"
+      cy="10"
+      r="14" />
+
+  </defs>
+
+    <use href="#rect-1" />
+    <use href="#rect-2" />
+
+    <path
+      id="lines"
+      fill="none"
+      stroke="Blue"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-opacity="1"
+      d="M 25 30
+         l 155 -10
+         l -15 145
+         l -125 15
+         Z"
+    />
+
+    <use href="#circle-1" transform="translate (  10,  20 )" />
+    <use href="#circle-1" transform="translate ( 165,  10 )" />
+    <use href="#circle-1" transform="translate (  25, 170 )" />
+    <use href="#circle-1" transform="translate ( 150, 155 )" />
+
+</svg>

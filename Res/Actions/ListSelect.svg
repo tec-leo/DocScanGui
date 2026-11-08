@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="ListSelect"
+  x="0"
+  y="0"
+  width="200"
+  height="200"
+  viewBox="0 0 200 200">
+
+  <defs
+     id="defs-1">
+
+    <line
+      id="line-h"
+      x1="55"
+      y1="35"
+      x2="145"
+      y2="35"
+      stroke-width="15"
+      stroke="DarkGray"
+      stroke-opacity="0.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+  </defs>
+
+  <g>
+    <!-- page shape -->
+    <rect
+      id="rect-1"
+      x="25"
+      y="5"
+      height="180"
+      width="140"
+      fill="white"
+      fill-rule="evenodd"
+      stroke="Black"
+      stroke-width="12"
+      stroke-opacity="0.8"
+      stroke-linecap="square"
+      stroke-linejoin="round"
+      stroke-miterlimit="15"
+    />
+
+    <use href="#line-h" transform="translate ( 0,   0 )" />
+    <use href="#line-h" transform="translate ( 0,  40 )" />
+    <use href="#line-h" transform="translate ( 0,  80 )" />
+    <use href="#line-h" transform="translate ( 0, 120 )" />
+
+    <circle
+      id="circle-1"
+      fill="LightBlue"
+      fill-opacity="1"
+      stroke="Blue"
+      stroke-width="8"
+      stroke-opacity="1"
+      cx="60"
+      cy="75"
+      r="17" />
+  </g>
+
+</svg>

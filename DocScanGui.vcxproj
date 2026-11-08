@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{46394517-F21B-4B2F-9D5C-D8FB6126F1F6}</ProjectGuid>
+    <RootNamespace>DocScanGui_d</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.20348.0</WindowsTargetPlatformMinVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project=".\OpenCV.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v145</PlatformToolset>
+    <OutputDirectory>x64\Debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>x64\Debug\</IntermediateDirectory>
+    <PrimaryOutput>DocScanGui_d</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v145</PlatformToolset>
+    <OutputDirectory>x64\Debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>x64\Debug\</IntermediateDirectory>
+    <PrimaryOutput>DocScanGui_d</PrimaryOutput>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>$(DefaultQtVersion)</QtInstall>
+    <QtModules>core;gui;widgets;charts</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>$(DefaultQtVersion)</QtInstall>
+    <QtModules>core;gui;widgets;charts</QtModules>
+    <QtHeaderSearchPath>
+    </QtHeaderSearchPath>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)_d</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;Main;$(OCV_Inc);release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>x64\Debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForcedIncludeFiles>AppInc.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>x64\Debug\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AppInc.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)\DocScanGui_d.pch</PrecompiledHeaderOutputFile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdi32.lib;gdiplus.lib;user32.lib;ComDlg32.lib;Kernel32.lib;WindowsApp.lib;WS2_32.lib;$(OCV_Lib)\opencv_world500.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OCV_Lib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)$(TargetName).exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <ForceInclude>AppInc.h;%(FullPath)</ForceInclude>
+      <QtMocDir>.\GeneratedFiles\$(ConfigurationName)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <NoZstd>true</NoZstd>
+      <Compression>default</Compression>
+      <InitFuncName>DocScanGui</InitFuncName>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <QtRccDir>.\GeneratedFiles</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(Qt_INCLUDEPATH_);GeneratedFiles\$(ConfigurationName);GeneratedFiles;.\Main;$(OCV_Inc)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>x64\Debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForcedIncludeFiles>AppInc.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ObjectFileName>x64\Debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AppInc.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)\DocScanGui_d.pch</PrecompiledHeaderOutputFile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdi32.lib;gdiplus.lib;user32.lib;ComDlg32.lib;Kernel32.lib;WindowsApp.lib;WS2_32.lib;$(OCV_Lib)\opencv_world500d.lib;$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OCV_Lib);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)$(TargetName).exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <ForceInclude>
+      </ForceInclude>
+      <QtMocDir>.\GeneratedFiles\$(ConfigurationName)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtRcc>
+      <InitFuncName>DocScanGui</InitFuncName>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <NoZstd>true</NoZstd>
+      <Compression>default</Compression>
+      <QtRccDir>.\GeneratedFiles</QtRccDir>
+      <QtRccFileName>qrc_%(Filename).cpp</QtRccFileName>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Config\FileConfig.cpp" />
+    <ClCompile Include="Gui\Controls\DropCombo.cpp" />
+    <ClCompile Include="Gui\Controls\FileSelect.cpp" />
+    <ClCompile Include="Gui\Controls\IconButton.cpp" />
+    <ClCompile Include="Gui\Controls\LayersList.cpp" />
+    <ClCompile Include="Gui\Controls\PathSelect.cpp" />
+    <ClCompile Include="Gui\Dialogs\HelpAboutDlg.cpp" />
+    <ClCompile Include="Gui\Dialogs\ImageFileDlg.cpp" />
+    <ClCompile Include="Gui\Dialogs\ListSelectDlg.cpp" />
+    <ClCompile Include="Gui\ImageEdit.cpp" />
+    <ClCompile Include="Gui\ImageScene.cpp" />
+    <ClCompile Include="Gui\ImageView.cpp" />
+    <ClCompile Include="Gui\ImageWidget.cpp" />
+    <ClCompile Include="Gui\Dialogs\CurvesDialog.cpp" />
+    <ClCompile Include="Gui\Dialogs\JobFilesDlg.cpp" />
+    <ClCompile Include="Gui\ToolsWidget.cpp" />
+    <ClCompile Include="Gui\Widgets\ButtonsWidget.cpp" />
+    <ClCompile Include="Gui\Widgets\CurvesWidget.cpp" />
+    <ClCompile Include="Gui\Widgets\HistogramWidget.cpp" />
+    <ClCompile Include="Gui\Widgets\ParListGrid.cpp" />
+    <ClCompile Include="Gui\Widgets\ParListTable.cpp" />
+    <ClCompile Include="Gui\Widgets\ScrollWidget.cpp" />
+    <ClCompile Include="Main\AppInc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AppInc.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AppInc.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Main\ImageBar.cpp" />
+    <ClCompile Include="Main\JobInfo.cpp" />
+    <ClCompile Include="Main\JobManager.cpp" />
+    <ClCompile Include="Main\MainApp.cpp" />
+    <ClCompile Include="Main\MainBar.cpp" />
+    <ClCompile Include="Main\MainWnd.cpp" />
+    <ClCompile Include="Config\AppCurves.cpp" />
+    <ClCompile Include="Config\AppConfig.cpp" />
+    <ClCompile Include="Config\ParBase.cpp" />
+    <ClCompile Include="Config\ParItem.cpp" />
+    <ClCompile Include="Config\ParList.cpp" />
+    <ClCompile Include="Config\ParManager.cpp" />
+    <ClCompile Include="Main\MsgInfo.cpp" />
+    <ClCompile Include="Main\MsgLogger.cpp" />
+    <ClCompile Include="Tools\Filters.cpp" />
+    <ClCompile Include="Tools\Histogram.cpp" />
+    <ClCompile Include="Tools\ImageMat.cpp" />
+    <ClCompile Include="Tools\ImageTools.cpp" />
+    <ClCompile Include="Tools\ColorChannel.cpp" />
+    <ClCompile Include="Tools\ColorCurves.cpp" />
+    <ClCompile Include="Tools\Spline.cpp" />
+    <ClCompile Include="Utils\Color.cpp" />
+    <ClCompile Include="Utils\FileUtils.cpp" />
+    <ClCompile Include="Utils\GraphicUtils.cpp" />
+    <ClCompile Include="Utils\HistoryList.cpp" />
+    <ClCompile Include="Utils\ParFile.cpp" />
+    <ClCompile Include="Utils\RegExp.cpp" />
+    <ClCompile Include="Utils\RegFile.cpp" />
+    <ClCompile Include="Utils\StringUtils.cpp" />
+    <ClCompile Include="Utils\VarUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Gui\Controls\DropCombo.h" />
+    <QtMoc Include="Gui\Controls\FileSelect.h" />
+    <QtMoc Include="Gui\Controls\IconButton.h" />
+    <QtMoc Include="Gui\Controls\LayersList.h" />
+    <QtMoc Include="Gui\Dialogs\CurvesDialog.h" />
+    <QtMoc Include="Gui\Dialogs\JobFilesDlg.h" />
+    <QtMoc Include="Gui\ImageScene.h" />
+    <QtMoc Include="Gui\ImageView.h" />
+    <QtMoc Include="Gui\Controls\PathSelect.h" />
+    <QtMoc Include="Gui\ImageWidget.h" />
+    <QtMoc Include="Gui\ToolsWidget.h" />
+    <QtMoc Include="Gui\Widgets\ButtonsWidget.h" />
+    <QtMoc Include="Gui\Widgets\CurvesWidget.h" />
+    <QtMoc Include="Gui\Widgets\HistogramWidget.h" />
+    <QtMoc Include="Gui\Widgets\ParListGrid.h" />
+    <QtMoc Include="Gui\Widgets\ParListTable.h" />
+    <QtMoc Include="Gui\Widgets\ScrollWidget.h" />
+    <ClInclude Include="Config\FileConfig.h" />
+    <QtMoc Include="Gui\Dialogs\ImageFileDlg.h" />
+    <QtMoc Include="Gui\ImageEdit.h" />
+    <QtMoc Include="Gui\Dialogs\HelpAboutDlg.h" />
+    <QtMoc Include="Gui\Dialogs\ListSelectDlg.h" />
+    <ClInclude Include="Main\AppInc.h" />
+    <QtMoc Include="Main\MainBar.h" />
+    <QtMoc Include="Main\ImageBar.h" />
+    <ClInclude Include="Main\JobInfo.h" />
+    <QtMoc Include="Main\JobManager.h" />
+    <ClInclude Include="Config\AppCurves.h" />
+    <ClInclude Include="Config\AppConfig.h" />
+    <ClInclude Include="Config\ParBase.h" />
+    <ClInclude Include="Config\ParItem.h" />
+    <ClInclude Include="Config\ParList.h" />
+    <QtMoc Include="Config\ParManager.h" />
+    <ClInclude Include="Main\MsgInfo.h" />
+    <ClInclude Include="Main\MsgLogger.h" />
+    <ClInclude Include="Tools\Filters.h" />
+    <ClInclude Include="Tools\Histogram.h" />
+    <ClInclude Include="Tools\ImageMat.h" />
+    <ClInclude Include="Tools\ImageTools.h" />
+    <ClInclude Include="Tools\ColorChannel.h" />
+    <ClInclude Include="Tools\ColorCurves.h" />
+    <ClInclude Include="Tools\Spline.h" />
+    <ClInclude Include="Utils\Color.h" />
+    <ClInclude Include="Main\DataTypes.h" />
+    <ClInclude Include="Utils\FileUtils.h" />
+    <QtMoc Include="Utils\HistoryList.h" />
+    <ClInclude Include="Main\MainApp.h" />
+    <QtMoc Include="Main\MainWnd.h" />
+    <ClInclude Include="Utils\GraphicUtils.h" />
+    <ClInclude Include="Utils\ParFile.h" />
+    <ClInclude Include="Utils\RegExp.h" />
+    <ClInclude Include="Utils\RegFile.h" />
+    <ClInclude Include="Utils\StringUtils.h" />
+    <ClInclude Include="Utils\VarUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Res\MainApp.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Res\MainApp.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties QtVersion_x0022_Win64="$(DefaultQtVersion)" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

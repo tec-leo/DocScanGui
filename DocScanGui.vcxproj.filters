@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4831d3c5-f869-44fb-a690-3411ad738c1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui">
+      <UniqueIdentifier>{7156fad9-9f2b-40e5-9851-26f40d7fd307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\Controls">
+      <UniqueIdentifier>{9579d5c9-e2ef-4daa-a05a-1692e1b07633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{27473397-5015-48db-bb12-726fd675d4e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{d865a161-fbd9-4bd6-bc23-8b09e8e9e6bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Res">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Gui\Widgets">
+      <UniqueIdentifier>{0b65ba2e-6bf7-4cdf-8d3b-3684a4bacc30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{a3a65272-4c3b-4cbd-ab53-a0e279740d32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\Dialogs">
+      <UniqueIdentifier>{60d384be-914f-4281-ad87-eb758015fd75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main\AppInc.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainApp.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Color.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\FileUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\HistoryList.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\ParFile.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\RegExp.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\RegFile.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\StringUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\VarUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Controls\DropCombo.cpp">
+      <Filter>Gui\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Controls\FileSelect.cpp">
+      <Filter>Gui\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Controls\IconButton.cpp">
+      <Filter>Gui\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Controls\LayersList.cpp">
+      <Filter>Gui\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\ImageScene.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\ImageView.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ImageMat.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ColorCurves.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainWnd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Spline.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Controls\PathSelect.cpp">
+      <Filter>Gui\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Dialogs\CurvesDialog.cpp">
+      <Filter>Gui\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Dialogs\JobFilesDlg.cpp">
+      <Filter>Gui\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ColorChannel.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Histogram.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\ImageWidget.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\ImageTools.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainBar.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\ToolsWidget.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Widgets\ButtonsWidget.cpp">
+      <Filter>Gui\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Widgets\CurvesWidget.cpp">
+      <Filter>Gui\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Widgets\HistogramWidget.cpp">
+      <Filter>Gui\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Widgets\ParListGrid.cpp">
+      <Filter>Gui\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Widgets\ParListTable.cpp">
+      <Filter>Gui\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\AppCurves.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\AppConfig.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\ParBase.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\ParItem.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\ParList.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\ParManager.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Filters.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\GraphicUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\JobInfo.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\JobManager.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Widgets\ScrollWidget.cpp">
+      <Filter>Gui\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Config\FileConfig.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Dialogs\ImageFileDlg.cpp">
+      <Filter>Gui\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\ImageEdit.cpp">
+      <Filter>Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\ImageBar.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MsgInfo.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MsgLogger.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Dialogs\HelpAboutDlg.cpp">
+      <Filter>Gui\Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\Dialogs\ListSelectDlg.cpp">
+      <Filter>Gui\Dialogs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils\Color.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\FileUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\ParFile.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\RegExp.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\RegFile.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\StringUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\VarUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\AppInc.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ImageMat.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ColorCurves.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Spline.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ColorChannel.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Histogram.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\ImageTools.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\AppCurves.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\AppConfig.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\ParBase.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\ParItem.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\ParList.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Filters.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\GraphicUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\JobInfo.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Config\FileConfig.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MsgInfo.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MsgLogger.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Main\MainWnd.h">
+      <Filter>Main</Filter>
+    </QtMoc>
+    <QtMoc Include="Utils\HistoryList.h">
+      <Filter>Utils</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Controls\DropCombo.h">
+      <Filter>Gui\Controls</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Controls\FileSelect.h">
+      <Filter>Gui\Controls</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Controls\IconButton.h">
+      <Filter>Gui\Controls</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Controls\LayersList.h">
+      <Filter>Gui\Controls</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\ImageScene.h">
+      <Filter>Gui</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\ImageView.h">
+      <Filter>Gui</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Controls\PathSelect.h">
+      <Filter>Gui\Controls</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Dialogs\CurvesDialog.h">
+      <Filter>Gui\Dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Dialogs\JobFilesDlg.h">
+      <Filter>Gui\Dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\ImageWidget.h">
+      <Filter>Gui</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\MainBar.h">
+      <Filter>Main</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\ToolsWidget.h">
+      <Filter>Gui</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Widgets\ButtonsWidget.h">
+      <Filter>Gui\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Widgets\CurvesWidget.h">
+      <Filter>Gui\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Widgets\HistogramWidget.h">
+      <Filter>Gui\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Widgets\ParListGrid.h">
+      <Filter>Gui\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Widgets\ParListTable.h">
+      <Filter>Gui\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="Config\ParManager.h">
+      <Filter>Config</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\JobManager.h">
+      <Filter>Main</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Widgets\ScrollWidget.h">
+      <Filter>Gui\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Dialogs\ImageFileDlg.h">
+      <Filter>Gui\Dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\ImageEdit.h">
+      <Filter>Gui</Filter>
+    </QtMoc>
+    <QtMoc Include="Main\ImageBar.h">
+      <Filter>Main</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Dialogs\HelpAboutDlg.h">
+      <Filter>Gui\Dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="Gui\Dialogs\ListSelectDlg.h">
+      <Filter>Gui\Dialogs</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main\MainApp.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\DataTypes.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Res\MainApp.qrc">
+      <Filter>Res</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Res\MainApp.rc">
+      <Filter>Res</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

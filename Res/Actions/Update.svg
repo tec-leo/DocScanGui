@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  id="update"
+  x="0"
+  y="0"
+  width="200"
+  height="200"
+  version="1.1">
+
+  <circle
+    id="circle-1"
+    cx="100"
+    cy="100"
+    r="93"
+    fill="RoyalBlue"
+    stroke="none"
+    />
+
+  <circle
+    id="circle-2"
+    cx="100"
+    cy="100"
+    r="95"
+    fill="none"
+    stroke="LightSkyBlue"
+    stroke-width="12"
+    />
+
+  <path
+    id="path-2"
+    d="m 100 32.6
+       v 17.3
+       a 51.8 52.0 0 1 0 51.8 52.0
+       h -17.3
+       a 34.5 34.7 0 1 1 -34.5 -34.7
+       v 17.3
+       l 43.2 -26.0
+       z"
+    color="#bebebe"
+    fill="#fff"
+    overflow="visible"
+    stroke-width="3.6"
+  />
+</svg>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="200"
+  height="200"
+  id="Picker-Black"
+  version="1.0"
+  viewBox="0 0 200 200"
+  x="0"
+  y="0">
+  <defs
+    id="defs3">
+    <linearGradient
+      id="linear-1"
+      gradientUnits="userSpaceOnUse"
+      spreadMethod="pad"
+      x1="60"
+      y1="20"
+      x2="180"
+      y2="90">
+      <stop
+        id="stop-1"
+        offset="0"
+        stop-color="white"
+        stop-opacity="1"
+      />
+      <stop
+        id="stop-2"
+        offset="10"
+        stop-color="white"
+        stop-opacity="0"
+      />
+    </linearGradient>
+  </defs>
+
+  <!--  tube -->
+  <g
+    id="pipette"
+    transform="rotate (45) translate (50,-100)"
+   >
+
+    <g
+      id="tube">
+
+      <path
+        id="tube-frame"
+        fill="LightGray"
+        fill-opacity="1"
+        stroke="DarkGray"
+        stroke-width="8"
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-opacity="1"
+        d="M 48 80
+           v 95
+           l 15 15
+           l 15 -15
+           v -95
+           Z"
+      />
+
+      <path
+        id="tube-inside-white"
+        fill="White"
+        fill-opacity="1"
+        stroke="White"
+        stroke-width="8"
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-opacity="1"
+        d="M 55 80
+           v 90
+           l 5 5
+           v -95
+           Z"
+      />
+
+      <path
+        id="tube-fill-black"
+        fill="Black"
+        fill-opacity="1"
+        stroke="Black"
+        stroke-width="4"
+        stroke-linecap="butt"
+        stroke-linejoin="miter"
+        stroke-opacity="1"
+        d="M 53 125
+           v 48
+           l 10 10
+           l 10 -10
+           v -68
+           Z"
+      />
+
+    </g>
+
+    <!--  pump -->
+
+    <g
+      id="pump">
+
+      <path
+        id="pump-outside"
+        opacity="1"
+        fill="Navy"
+        fill-opacity="1"
+        stroke="Black"
+        stroke-width="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="4"
+        d="M 50 60
+           l -12 18
+           h 50
+           l -12 -18
+           A 25,25 0 1,0 50,60
+           Z"
+      />
+      <path
+        id="pump-inside"
+        opacity="0.6"
+        fill="none"
+        fill-opacity="1"
+        stroke="url(#linear-1)"
+        stroke-width="8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-miterlimit="4"
+        stroke-opacity="1"
+        d="M 57 60
+           l -7 12
+           h 26
+           l -7 -12
+           A 21,21 0 1,0 57,60
+           Z"
+      />
+
+    </g>
+  </g>
+
+  <!--  rect -->
+  <rect
+    id="rect-2"
+    fill="black"
+    stroke="MediumBlue"
+    stroke-width="10"
+    stroke-opacity="1"
+    x="105"
+    y="115"
+    width="75"
+    height="75"
+  />
+
+</svg>

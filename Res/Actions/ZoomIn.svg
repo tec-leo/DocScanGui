@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+
+  <!-- a circle with a minus sign - can be used as zoom out -->
+
+  <circle cx="30" cy="30" r="25" fill="none" stroke="darkgrey"
+          stroke-miterlimit="5" stroke-width="3"/>
+
+  <line x1="15" x2="45" y1="30" y2="30" stroke="blue"
+        stroke-width="8" stroke-linecap="round" opacity="1.0" />
+
+  <line x1="30" x2="30" y1="15" y2="45" stroke="blue"
+        stroke-width="8" stroke-linecap="round" opacity="1.0" />
+
+</svg>

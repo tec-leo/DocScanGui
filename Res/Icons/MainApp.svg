@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  id="MainApp"
+  viewBox="0 0 200 200"
+  width="200"
+  height="200"
+  x="0"
+  y="0">
+  <defs
+    id="defs-1">
+    <linearGradient
+      id="grey_gradient">
+      <stop
+        id="stop-1"
+        style="stop-color:#dbdbdb"
+        offset="0"
+      />
+      <stop
+        id="stop-2"
+        style="stop-color:#757575"
+        offset="1.5625"
+      />
+    </linearGradient>
+  </defs>
+  <rect
+    id="rect-1"
+    style="opacity:0;color:#000000;stroke-width:.96360"
+    rx="0"
+    ry="0"
+    height="200"
+    width="200"
+    y="0"
+    x="0"
+  />
+  <path
+    id="path-1"
+    style="color:#000000;fill:url(#grey_gradient)"
+    d="m 45.5 17.6
+       c -5.0 0.0 -8.9 4.0 -8.9 9.0
+       v 146.9
+       c 0.0 5.0 4.0 9.0 8.9 9.0
+       h 109.1
+       c 5.0 0.0 8.9 -4.0 8.9 -9.0
+       v -110.4
+       h -32.9
+       c -6.7 0.0 -12.6 -4.9 -12.6 -11.4
+       v -34.1
+       z
+       m 78.8 0.0
+       v 34.1
+       c 0.0 2.7 2.5 5.2 6.3 5.2
+       h 32.9
+       z"
+  />
+  <rect
+    id="rect-2"
+    style="color:#000000;fill:#4d4d4d"
+    rx="2.8"
+    ry="2.8"
+    height="9.7"
+    width="59.4"
+    y="56.9"
+    x="53.4"
+  />
+  <rect
+    id="rect-3"
+    style="color:#000000;fill:#4d4d4d"
+    rx="2.8"
+    ry="2.8"
+    height="9.7"
+    width="93.3"
+    y="101.9"
+    x="53.4"
+  />
+  <rect
+    id="rect-4"
+    style="color:#000000;fill:#4d4d4d"
+    rx="2.8"
+    ry="2.8"
+    height="9.7"
+    width="59.4"
+    y="79.4"
+    x="53.4"
+  />
+  <rect
+    id="rect-5"
+    style="color:#000000;fill:#4d4d4d"
+    rx="2.8"
+    ry="2.8"
+    height="9.7"
+    width="93.3"
+    y="124.4"
+    x="53.4"
+  />
+  <rect
+    id="rect-6"
+    style="color:#000000;fill:#4d4d4d"
+    rx="2.8"
+    ry="2.8"
+    height="9.7"
+    width="93.3"
+    y="147.0"
+    x="53.4"
+  />
+</svg>

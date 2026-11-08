@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- license: http://creativecommons.org/licenses/publicdomain -->
+
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 200 200"
+   id="Configure"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+
+  <defs
+    id="defs1">
+    <rect
+      id="rect-1"
+      x="135"
+      y="92"
+      height="16"
+      width="35"
+      fill="white"
+      fill-rule="evenodd"
+      stroke="none"
+    />
+  </defs>
+
+  <g
+    id="layer-1">
+
+    <circle
+      id="circle-1"
+      cx="100"
+      cy="100"
+      r="95"
+      fill="#ff5555"
+      stroke="none"
+      />
+
+    <circle
+      id="circle-2"
+      cx="100"
+      cy="100"
+      r="55"
+      fill="Crimson"
+      stroke="none"
+      />
+
+    <circle
+      id="circle-3"
+      cx="100"
+      cy="100"
+      r="30"
+      fill="none"
+      stroke-width="25"
+      stroke="White"
+      />
+
+    <use href="#rect-1" transform="rotate (0)" />
+    <use href="#rect-1" transform="rotate (45, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (90, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (135, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (180, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (225, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (270, 100, 100 )" />
+    <use href="#rect-1" transform="rotate (315, 100, 100 )" />
+
+  </g>
+</svg>

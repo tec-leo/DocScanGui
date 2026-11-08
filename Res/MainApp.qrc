@@ -1,0 +1,62 @@
+<RCC>
+
+  <qresource prefix="/Doc">
+    <file alias="DocScanGui.pdf">../Doc/DocScanGui.pdf</file>
+  </qresource>
+
+  <qresource prefix="/Icons">
+    <file alias="HelpAbout">Main/HelpAbout.svg</file>
+    <file alias="HelpBook">Main/HelpBook.svg</file>
+    <file alias="MainApp">Main/MainApp.svg</file>
+    <file alias="NoteText">Main/NoteText.svg</file>
+    <file alias="RunTools">Main/RunTools.svg</file>
+    <file alias="RunJobs">Main/RunJobs.svg</file>
+  </qresource>
+
+  <qresource prefix="/Icons">
+    <file alias="Configure">Actions/Configure.svg</file>
+    <file alias="Exit">Actions/Exit.svg</file>
+    <file alias="Export">Actions/Export.svg</file>
+    <file alias="Import">Actions/Import.svg</file>
+    <file alias="ListSelect">Actions/ListSelect.svg</file>
+    <file alias="Open">Actions/Open.svg</file>
+    <file alias="Save">Actions/Save.svg</file>
+    <file alias="SaveAs">Actions/SaveAs.svg</file>
+    <file alias="Update">Actions/Update.svg</file>
+    <file alias="ZoomIn">Actions/ZoomIn.svg</file>
+    <file alias="ZoomOut">Actions/ZoomOut.svg</file>
+  </qresource>
+
+  <qresource prefix="/Icons">
+    <file alias="PickerBlack">Icons/PickerBlack.svg</file>
+    <file alias="PickerWhite">Icons/PickerWhite.svg</file>
+    <file alias="CursorBlack">Icons/CursorBlack.svg</file>
+    <file alias="CursorWhite">Icons/CursorWhite.svg</file>
+
+    <file alias="Morphing">Icons/Morphing.svg</file>
+    <file alias="Sharpen">Icons/Sharpen.svg</file>
+    <file alias="Blur">Icons/Blur.svg</file>
+    <file alias="Crop">Icons/Crop.svg</file>
+    <file alias="CropSave">Icons/CropSave.svg</file>
+    <file alias="CurveLevels">Icons/CurveLevels.svg</file>
+    <file alias="Margin">Icons/Margin.svg</file>
+    <file alias="MergeImg">Icons/MergeImg.svg</file>
+    <file alias="Rotate">Icons/Rotate.svg</file>
+    <file alias="Linear">Icons/Linear.svg</file>
+    <file alias="Sigmoid">Icons/Sigmoid.svg</file>
+    <file alias="Spline">Icons/Spline.svg</file>
+    <file alias="Deskew">Icons/Deskew.svg</file>
+    <file alias="OcrPdf">Icons/OcrPdf.svg</file>
+
+    <file alias="Cancel">Icons/Cancel.svg</file>
+    <file alias="OkClean">Icons/OkClean.svg</file>
+    <file alias="Reset">Icons/Reset.svg</file>
+
+  </qresource>
+
+  <qresource prefix="/Icons">
+    <file alias="RedOn">Status/RedOn.png</file>
+    <file alias="WhiteOn">Status/WhiteOn.png</file>
+  </qresource>
+
+</RCC>

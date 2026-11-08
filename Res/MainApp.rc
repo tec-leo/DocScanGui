@@ -1,0 +1,19 @@
+/*-------------------------------------------------------------------------
+ |
+ |  Resource-File :  MainApp.rc
+ |
+ |  Description   :
+ |
+ |   This resource file contains only the application icon, nothing else
+ |   is needed for Qt.
+ |
+ |  Developer : Oskar Leirich                Creation date : 04.Apr.2026
+ |  Modified  : Oskar Leirich                Last changes  : 06.Apr.2026
+ |
+ +-------------------------------------------------------------------------*/
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+
+IDR_APP_ICON    ICON  DISCARDABLE  "DocScanGui.ico"
+IDR_APP_ICON_D  ICON  DISCARDABLE  "DocScanGui.ico"
