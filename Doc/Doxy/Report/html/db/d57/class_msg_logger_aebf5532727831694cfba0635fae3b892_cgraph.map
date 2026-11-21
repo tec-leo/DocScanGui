@@ -1,0 +1,9 @@
+<map id="MsgLogger::putWarning" name="MsgLogger::putWarning">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,165,57"/>
+<area shape="rect" id="Node000002" href="$df/daa/class_msg_info.html#abb295e3f7629522b1aca1771be76e4b6" title=" " alt="" coords="213,31,325,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,41,197,41,197,47,165,47"/>
+<area shape="rect" id="Node000003" href="$d8/d1c/class_var_utils.html#a13f721776fa51e9271e595f8ce9a4a1b" title=" " alt="" coords="374,5,494,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,33,358,28,359,33,326,38"/>
+<area shape="rect" id="Node000004" href="$d8/d1c/class_var_utils.html#a4728f5f1ffd38c05fd7580fb42569a31" title=" " alt="" coords="373,56,494,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="326,50,358,55,357,60,325,55"/>
+</map>

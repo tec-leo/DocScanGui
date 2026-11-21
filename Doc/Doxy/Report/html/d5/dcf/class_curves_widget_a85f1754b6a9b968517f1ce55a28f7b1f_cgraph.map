@@ -1,0 +1,9 @@
+<map id="CurvesWidget::createSigmoid" name="CurvesWidget::createSigmoid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,64,198,91"/>
+<area shape="rect" id="Node000002" href="$d5/dcf/class_curves_widget.html#a3bf1b777487ef75fa335d758b1a952d0" title=" " alt="" coords="246,5,449,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,61,273,33,274,39,161,66"/>
+<area shape="rect" id="Node000003" href="$d5/dcf/class_curves_widget.html#af562cbaaf110ee684aedb6d85a3c4779" title=" " alt="" coords="259,56,436,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,75,243,75,243,80,198,80"/>
+<area shape="rect" id="Node000004" href="$d5/dcf/class_curves_widget.html#a7daeec7cf868b384750b4954e227df93" title=" " alt="" coords="259,123,436,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,89,274,116,273,121,160,94"/>
+</map>

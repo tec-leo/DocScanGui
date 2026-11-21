@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['gainsboro_0',['gainsboro',['../d9/ddd/class_color.html#a30890361ccf29dc4b236cf6fe7eaf74a',1,'Color']]],
+  ['gammaadd_1',['gammaAdd',['../d0/da3/class_app_config.html#a3c0063a24df019e576959524068cdb47',1,'AppConfig']]],
+  ['gausskernel_2',['gaussKernel',['../d0/da3/class_app_config.html#a61736778f6cf656d23bb1c6f53948ab6',1,'AppConfig']]],
+  ['gausssigma_3',['gaussSigma',['../d0/da3/class_app_config.html#a8f8ccf661b56fb65529bc5cfd5e5662a',1,'AppConfig']]],
+  ['ghostwhite_4',['ghostwhite',['../d9/ddd/class_color.html#aa5a2116f4e8671a48347531d3bd14ee3',1,'Color']]],
+  ['gold_5',['gold',['../d9/ddd/class_color.html#a6d18931849c0387a042500d73ea11d84',1,'Color']]],
+  ['goldenrod_6',['goldenrod',['../d9/ddd/class_color.html#abf8c99efd62ebaa4f185feeb1f775ea6',1,'Color']]],
+  ['graphitem_7',['graphItem',['../db/dfa/class_image_scene.html#af06f6fc67a974b30c5f97c87c38fa95e',1,'ImageScene::graphItem'],['../df/de8/class_image_view.html#a262f39a21d280d02044699e70abb5a37',1,'ImageView::graphItem']]],
+  ['graphitems_8',['graphItems',['../db/dfa/class_image_scene.html#aeeb125f52e0f4db60fd24580f7178665',1,'ImageScene::graphItems'],['../df/de8/class_image_view.html#a369b221289720fbf0cdd808cdcd8f1d2',1,'ImageView::graphItems']]],
+  ['graphscene_9',['graphScene',['../df/de8/class_image_view.html#a1edc82e4832a094463eb21e410582b32',1,'ImageView']]],
+  ['graphutils_10',['graphUtils',['../db/dfa/class_image_scene.html#a83df8fc0d47d6415dafa337cabdda4ad',1,'ImageScene::graphUtils'],['../d5/d71/class_tools_widget.html#a06ffa735853a34f2b9ac62048cf4e587',1,'ToolsWidget::graphUtils'],['../de/d65/class_image_tools.html#ade5186ea1bdb336c4a00e10b0fc90ca7',1,'ImageTools::graphUtils']]],
+  ['gray_11',['gray',['../d9/ddd/class_color.html#a1099d076df3a7e23bc57c5c3ee77a9be',1,'Color']]],
+  ['green_12',['green',['../d9/ddd/class_color.html#ae0e792d53093bb8488a7c0ca60e6da4d',1,'Color']]],
+  ['greenyellow_13',['greenyellow',['../d9/ddd/class_color.html#a9468f3ca3da6c8d09d3a3d76d94fda7d',1,'Color']]],
+  ['grid_14',['grid',['../d6/df0/class_par_list_grid.html#a0ace702ecd404056c41c436ac58542c3',1,'ParListGrid']]],
+  ['grid_5f1_15',['grid_1',['../d8/d2e/class_image_file_dlg.html#a6d2923e23e0d3bc1082a255f90d336d4',1,'ImageFileDlg']]],
+  ['grid_5f2_16',['grid_2',['../d8/d2e/class_image_file_dlg.html#a632796896e37dee47145be945a133ef0',1,'ImageFileDlg']]],
+  ['group_17',['group',['../d6/df0/class_par_list_grid.html#a55285e778235db603ec4e80384fa684b',1,'ParListGrid']]],
+  ['guiapp_18',['guiApp',['../db/d57/class_msg_logger.html#a1a23ea70915738b083dddc5b1199a694',1,'MsgLogger']]]
+];

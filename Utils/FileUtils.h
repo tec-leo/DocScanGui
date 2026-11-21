@@ -19,9 +19,7 @@
  |  Description :
  |
  |   This class 'FileUtils' contains helper and utility functions to load
- |   text  files  and store  all  lines  in  a  string array  in  several
- |   orientations. It  contains also  functions to  check the  file type,
- |   compare files and a lot of more.
+ |   text files, split file and path names and more.
  |
  +-------------------------------------------------------------------------*/
 
@@ -94,10 +92,8 @@ class  FileUtils : public QFile
     L_String selFiles;
     QDir     fileDir;
     QFile    inFile;
-    QString  chunkRest;
     QString  msg;
     QString  fileName;
-    qint64   fileSize;
 
 };
 

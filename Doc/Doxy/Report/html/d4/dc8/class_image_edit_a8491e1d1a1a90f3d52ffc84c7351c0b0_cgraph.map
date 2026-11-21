@@ -1,0 +1,11 @@
+<map id="ImageEdit::ImageEdit" name="ImageEdit::ImageEdit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,151,57"/>
+<area shape="rect" id="Node000002" href="$d4/dc8/class_image_edit.html#aabf43540677ffdbd0f0ac3d3d4b039c7" title=" " alt="" coords="199,31,303,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,41,183,41,183,47,151,47"/>
+<area shape="rect" id="Node000003" href="$d4/dc8/class_image_edit.html#a3f463a8c63cf7a701c4e2d75aa25d2d7" title=" " alt="" coords="351,31,514,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="304,41,336,41,336,47,304,47"/>
+<area shape="rect" id="Node000004" href="$db/dfa/class_image_scene.html#ac512910dbc6bcfced1be767465b0eaea" title=" " alt="" coords="562,5,740,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="515,32,546,28,547,33,515,37"/>
+<area shape="rect" id="Node000005" href="$d4/dc8/class_image_edit.html#a5553d98c6646b70b9b995d47c380f011" title=" " alt="" coords="562,56,740,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="515,51,547,55,546,60,515,56"/>
+</map>

@@ -9,7 +9,7 @@
  |   graphical view by moving points of a curve.
  |
  |  Developer : Oskar Leirich                Creation date : 07.Jan.2025
- |  Modified  : Oskar Leirich                Last changes  : 16.Aug.2026
+ |  Modified  : Oskar Leirich                Last changes  : 14.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -29,7 +29,6 @@
  |
  +-------------------------------------------------------------------------*/
 
-#include "AppInc.h"
 #include "CurvesDialog.h"
 #include "ListSelectDlg.h"
 #include "../ToolsWidget.h"
@@ -55,7 +54,7 @@ const int cPickerWhite = 2;
  |   title.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |
  +-------------------------------------------------------------------------*/
 
@@ -93,7 +92,7 @@ CurvesDialog::CurvesDialog ( QWidget * parent ) : QDialog (parent)
  |
  |  Description :
  |
- |   The  destructor  deletes  all   dynamically  created  like  buttons,
+ |   The destructor deletes all dynamically created objects like buttons,
  |   controls, cursors etc.
  |
  +-------------------------------------------------------------------------*/
@@ -284,7 +283,7 @@ void CurvesDialog::createObjects ()
  |
  |  Description :
  |
- |   This function creates the layoutfor  the curves dialog by adding the
+ |   This function creates the layout for the curves dialog by adding the
  |   controls to the box layouts.
  |
  +-------------------------------------------------------------------------*/
@@ -453,8 +452,8 @@ void CurvesDialog::initCurves ()
  |  Description :
  |
  |   This function  is called  from the  constructor and  initializes the
- |   curves, objects and some variables.  Then it creates and updates the
- |   layout and makes the signal - slot connections.
+ |   curves,  objects and  some member  variables.  Then  it creates  and
+ |   updates the layout and makes the signal - slot connections.
  |
  +-------------------------------------------------------------------------*/
 
@@ -492,7 +491,7 @@ void CurvesDialog::initDialog ()
  |
  |  Description :
  |
- |   This  function reads  the values  of some  widget from  the gui  and
+ |   This function  reads the  values of  some widgets  from the  gui and
  |   updates the member variables with this values.
  |
  +-------------------------------------------------------------------------*/
@@ -522,8 +521,8 @@ void CurvesDialog::fromGui ()
  |
  |  Description :
  |
- |   This function  updates some  the curves combobox  and the  point and
- |   sigmoid controls.
+ |   This function updates some widgets  like the curves combobox and the
+ |   point and sigmoid controls.
  |
  +-------------------------------------------------------------------------*/
 
@@ -635,14 +634,12 @@ void CurvesDialog::leaveEvent ( QEvent * event )
  |   event parameter.
  |
  |  Input parameters :
- |   event           : mouse event
+ |   event           : focus event
  |
  +-------------------------------------------------------------------------*/
 
 void CurvesDialog::focusInEvent ( QFocusEvent * event )
 {
-
-  //  mainWnd->updateStatusBar ( "Status", "Focus - in widget" );
 
   if ( colPicker > cNoColorPick )
   {
@@ -663,7 +660,7 @@ void CurvesDialog::focusInEvent ( QFocusEvent * event )
  |  Description :
  |
  |   This function  is the  event handler to  receive keyboard  and mouse
- |   focus events for the widget. It is called then the widget looses the
+ |   focus events for the widget. It is called when the widget looses the
  |   focus, the event is passed in the event parameter.
  |
  |  Input parameters :
@@ -688,7 +685,9 @@ void CurvesDialog::focusOutEvent ( QFocusEvent * event )
  |  Description :
  |
  |   This  function  evaluates the  optimal  values  for the  lowest  and
- |   highest input value for the given channel every channel.
+ |   highest input value for the given channel. It uses a percentage of a
+ |   hysteresis when history  values have a 'peak'. This  method is taken
+ |   from Gimp.
  |
  +-------------------------------------------------------------------------*/
 
@@ -772,8 +771,8 @@ void CurvesDialog::evalAutoLevel ( ColorChannel * level )
  |
  |   This function  is called from  the main  window after a  mouse press
  |   event  happened in  image  scene.   The mouse  position  is used  to
- |   evaluate the  color of the  image at  this position. The  color then
- |   defined the current black or white point value.
+ |   evaluate the  color value of the  image at this position.  The color
+ |   then defined the current black or white point value.
  |
  +-------------------------------------------------------------------------*/
 
@@ -915,7 +914,8 @@ cv::Vec3b CurvesDialog::getColorAtPoint ( cv::Point point )
  |  Description :
  |
  |   This function  is called  when the 'Cancel'  button is  pressed.  It
- |   resets the points in the level curve before it closes the dialog.
+ |   resets the points in the level curve and resets the cursor before it
+ |   closes the dialog.
  |
  +-------------------------------------------------------------------------*/
 
@@ -938,7 +938,8 @@ void CurvesDialog::onCancel ()
  |  Description :
  |
  |   This function  is called when the  'Ok' button is pressed.   It does
- |   not reset the points in the level curve before it closes the dialog.
+ |   not reset the points in the level curve and resets the cursor before
+ |   it closes the dialog.
  |
  +-------------------------------------------------------------------------*/
 
@@ -1024,6 +1025,8 @@ void CurvesDialog::onAutoLevel ()
 
   curves->setApplyColors (false);
 
+  setCurveType (cTypeLinear);
+
 }               /*-----  onAutoLevel  -----*/
 
 
@@ -1105,9 +1108,10 @@ void CurvesDialog::onReset ()
  |
  |  Description :
  |
- |   This function  is called  when the 'Auto Level'  button is  pressed. It
- |   then sets not  reset the points in the level  curve before it closes
- |   the dialog.
+ |   This function  is called  when the 'Sigmoid'  button is  pressed. It
+ |   then  reads the  widget values  like  sigma and  offset values  from
+ |   gui. Then  is reset the  points in the  level curve, sets  the curve
+ |   type to sigmoid and calls updateChart from the curve dialog.
  |
  +-------------------------------------------------------------------------*/
 
@@ -1220,7 +1224,9 @@ void CurvesDialog::onWhitePnt ()
  |
  |  Description :
  |
- |   This function saves the current curve settings with a new name.
+ |   This function  is called when the  combo box for defined  curves has
+ |   changed the selection. Then it loads the current curve settings from
+ |   the current 'ColorCurves'.
  |
  +-------------------------------------------------------------------------*/
 
@@ -1252,7 +1258,9 @@ void CurvesDialog::onLoadCurve ()
  |
  |  Description :
  |
- |   This function saves the current curve settings with a new name.
+ |   This  function  opens an  dialog  which  shows all  available  curve
+ |   settings from the current 'ColorCurves'.  It allows to provide a new
+ |   name for the current curve and saves the it with the new name.
  |
  +-------------------------------------------------------------------------*/
 

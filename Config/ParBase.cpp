@@ -9,7 +9,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 14.Jul.2023
- |  Modified  : Oskar Leirich                Last changes  : 23.Sep.2026
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -53,7 +53,7 @@ ParBase::ParBase ()
  |
  |  Description :
  |
- |   The destructor is empty.
+ |   The destructor is empty and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 

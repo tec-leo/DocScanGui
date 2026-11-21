@@ -5,7 +5,7 @@
  |  Description :
  |
  |  This include file contains all class definitions  for  the  module
- |  JobMan.
+ |  JobManager.
  |
  +-------------------------------------------------------------------------*/
 
@@ -33,10 +33,10 @@ extern JobManager * jobMan;
  |   This  class implements  the  command line  parsing  and handling  of
  |   configuration files and 'job' files. The  commands can be given as a
  |   list of  key=entry entries  in a configuration  file or  directly as
- |   command line  arguments.  It has control  over the gui, can  hide it
- |   and run all  jobs in the background.  There is  also the possibility
- |   to give a 'jobfile' as parameter which contains a list of job in the
- |   form of a win-ini file.
+ |   command line arguments.
+ |
+ |   It has control  over the gui, can  hide the main window  and run all
+ |   jobs from the job file or from the main window.
  |
  +-------------------------------------------------------------------------*/
 
@@ -85,7 +85,6 @@ class JobManager : public QObject
 
   protected:
     QProcess    * process;
-    QTimer      * procTimer;
     ToolsWidget * runTools;
     MsgLogger   * msgLog;
     M_StrStr      argsMap;

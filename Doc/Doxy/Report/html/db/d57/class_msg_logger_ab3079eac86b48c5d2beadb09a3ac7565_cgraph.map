@@ -1,0 +1,8 @@
+<map id="MsgLogger::getCriticals" name="MsgLogger::getCriticals">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,164,56"/>
+<area shape="rect" id="Node000002" href="$db/d57/class_msg_logger.html#a925c9b733807ca908238ad6d6842f5b1" title=" " alt="" coords="212,29,365,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,40,196,40,196,45,164,45"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="258,30,253,21,256,11,269,5,288,3,309,5,321,12,318,16,308,10,288,8,270,10,260,15,258,20,263,28"/>
+<area shape="rect" id="Node000003" href="$df/daa/class_msg_info.html#a61c0989eb24ffd03294d98ac4f583dd2" title=" " alt="" coords="413,29,515,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="366,40,397,40,397,45,366,45"/>
+</map>

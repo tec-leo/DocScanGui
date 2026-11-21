@@ -1,0 +1,33 @@
+<map id="CurvesWidget::mousePressEvent" name="CurvesWidget::mousePressEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,188,91"/>
+<area shape="rect" id="Node000002" href="$d5/dcf/class_curves_widget.html#af54f13edb61825ed3e04243ab1114793" title=" " alt="" coords="244,31,407,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,57,228,52,228,57,188,62"/>
+<area shape="rect" id="Node000003" href="$d5/dcf/class_curves_widget.html#a53a793dce87ff94579099ddfa5ca52a7" title=" " alt="" coords="236,81,415,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,77,220,80,220,86,188,82"/>
+<area shape="rect" id="Node000004" href="$d5/dcf/class_curves_widget.html#ac49a0892cd642ec7cd2e268b7743ea37" title=" " alt="" coords="465,56,644,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="415,82,449,78,449,84,416,87"/>
+<area shape="rect" id="Node000005" href="$d5/dcf/class_curves_widget.html#a0e978c9b0d05d3450b1673b274e48970" title=" " alt="" coords="463,107,645,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="416,102,448,106,447,111,415,107"/>
+<area shape="rect" id="Node000006" href="$d5/dcf/class_curves_widget.html#a3240d3397c638a1e30ebe3236907aaa8" title=" " alt="" coords="701,56,878,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="619,103,709,84,710,89,620,109"/>
+<area shape="rect" id="Node000010" href="$d5/dcf/class_curves_widget.html#a85f1754b6a9b968517f1ce55a28f7b1f" title=" " alt="" coords="693,161,886,188"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="615,131,715,155,714,160,614,137"/>
+<area shape="rect" id="Node000013" href="$d5/dcf/class_curves_widget.html#a33b5be84159428fcb567621531fcccf0" title=" " alt="" coords="695,107,884,133"/>
+<area shape="poly" id="edge13_Node000005_Node000013" title=" " alt="" coords="645,117,680,117,680,123,645,123"/>
+<area shape="rect" id="Node000007" href="$d5/dcf/class_curves_widget.html#acdfc5bb42c7fa290623826c43f525d16" title=" " alt="" coords="940,56,1131,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="878,67,924,67,924,72,878,72"/>
+<area shape="rect" id="Node000008" href="$d5/dcf/class_curves_widget.html#a8b6d2510cbe110b727813942b543e3a9" title=" " alt="" coords="934,5,1137,32"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="857,53,952,33,953,38,858,58"/>
+<area shape="rect" id="Node000009" href="$d5/dcf/class_curves_widget.html#a7daeec7cf868b384750b4954e227df93" title=" " alt="" coords="947,107,1124,133"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="858,81,953,100,952,106,857,86"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="852,158,957,135,958,140,853,163"/>
+<area shape="rect" id="Node000011" href="$d5/dcf/class_curves_widget.html#a3bf1b777487ef75fa335d758b1a952d0" title=" " alt="" coords="934,224,1137,251"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="844,186,934,209,964,217,963,222,933,215,843,191"/>
+<area shape="rect" id="Node000012" href="$d5/dcf/class_curves_widget.html#af562cbaaf110ee684aedb6d85a3c4779" title=" " alt="" coords="947,157,1124,200"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="886,174,931,174,931,180,886,179"/>
+<area shape="poly" id="edge14_Node000013_Node000007" title=" " alt="" coords="857,103,952,84,953,89,858,109"/>
+<area shape="poly" id="edge16_Node000013_Node000008" title=" " alt="" coords="860,104,884,92,899,80,907,68,917,54,932,42,943,36,946,41,935,46,921,58,912,71,903,84,887,97,862,108"/>
+<area shape="poly" id="edge18_Node000013_Node000009" title=" " alt="" coords="884,117,931,117,931,123,884,123"/>
+<area shape="poly" id="edge15_Node000013_Node000011" title=" " alt="" coords="856,132,887,147,903,163,912,180,920,195,935,210,944,215,941,219,932,214,916,198,907,182,899,166,884,151,854,136"/>
+<area shape="poly" id="edge17_Node000013_Node000012" title=" " alt="" coords="849,131,932,151,931,157,848,136"/>
+</map>

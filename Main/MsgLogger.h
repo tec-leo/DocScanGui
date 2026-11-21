@@ -34,7 +34,9 @@ typedef  QList < MsgInfo > L_MsgInfos;
  |  Description :
  |
  |   This class implements a  logging mechanism which stores information,
- |   warning and error messages.
+ |   warning  and error  messages. When  the logger  is used  from a  gui
+ |   program then the  show* function show the message  in a QMessageBox,
+ |   if not they are stored in a log list.
  |
  +-------------------------------------------------------------------------*/
 

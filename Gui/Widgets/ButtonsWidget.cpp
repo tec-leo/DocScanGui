@@ -11,7 +11,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 16.Jul.2023
- |  Modified  : Oskar Leirich                Last changes  : 29.Apr.2026
+ |  Modified  : Oskar Leirich                Last changes  : 14.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -64,7 +64,7 @@ ButtonsWidget::ButtonsWidget ( QWidget * parent ) : QWidget (parent)
  |
  |  Description :
  |
- |   The destructor does the clean-up.
+ |   The destructor deletes all buttons.
  |
  +-------------------------------------------------------------------------*/
 
@@ -86,7 +86,8 @@ ButtonsWidget::~ButtonsWidget ()
  |
  |  Description :
  |
- |   This function deletes all buttons.
+ |   This function deletes  all buttons and sets the curIndex  to -1 (not
+ |   valid).
  |
  +-------------------------------------------------------------------------*/
 
@@ -104,12 +105,92 @@ void ButtonsWidget::clear ()
 
 /*-------------------------------------------------------------------------
  |
+ |  Member function :  createLayout  of  ButtonsWidget
+ |
+ |  Description :
+ |
+ |   This function creates the layout with a scroll area and a widget for
+ |   all buttons.
+ |
+ +-------------------------------------------------------------------------*/
+
+void ButtonsWidget::createLayout ()
+{
+  QHBoxLayout * hBox;
+
+  hBox = new QHBoxLayout  ();
+
+  widgetVBox->setContentsMargins ( 0, 0, 0, 0 );
+  widgetVBox->setSpacing (0);
+  widgetVBox->addStretch ();
+
+  btnEnabled.addFile  ( ":/Icons/RedOn" );
+  btnDisabled.addFile ( ":/Icons/WhiteOn" );
+
+  scrollArea = new QScrollArea (this);
+
+  scrollArea->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+  scrollArea->setVerticalScrollBarPolicy   ( Qt::ScrollBarAsNeeded );
+  scrollArea->setWidgetResizable (true);
+
+  scrollWidget->setLayout (widgetVBox);
+  scrollArea->setWidget (scrollWidget);
+
+  hBox->addWidget (scrollArea);
+
+  setLayout (hBox);
+
+  contextMenu = new QMenu ();
+  contextMenu->clear ();
+
+}               /*-----  createLayout  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  contextMenuEvent  of  ButtonsWidget
+ |
+ |  Description :
+ |
+ |   This function is the context menu  handler and displays a popup menu
+ |   if the mouse was right-clicked inside this widget.
+ |
+ |  Input parameters :
+ |   event           :  context menu event
+ |
+ +-------------------------------------------------------------------------*/
+
+void ButtonsWidget::contextMenuEvent ( QContextMenuEvent * event )
+{
+  QPoint pos;
+
+  event->setAccepted (true);
+
+  pos = event->globalPos ();
+
+  // test to see if we can find out the buttons
+  for ( int i = 0; i < buttons.count (); i++ )
+  {
+//    if ( containsPoint ( buttons.at (i), pos ) )
+//      break;
+
+  }
+
+  contextMenu->exec (pos);
+
+}               /*-----  contextMenuEvent  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
  |  Member function :  addButton  of  ButtonsWidget
  |
  |  Description :
  |
  |   This function creates an icon button with the given name and adds it
- |   at the current index or at the end if there are no buttons.
+ |   at the current  index or at the  end if there are no  buttons. It is
+ |   also  added to  the widget  box, then  the index  of the  buttons is
+ |   updated.
  |
  |  Input parameters :
  |   name            : Text for the button
@@ -234,91 +315,15 @@ void ButtonsWidget::swapButtons ( int index1, int index2 )
 
 /*-------------------------------------------------------------------------
  |
- |  Member function :  createLayout  of  ButtonsWidget
- |
- |  Description :
- |
- |   This function creates the layout with a scroll area and a widget for
- |   all buttons.
- |
- +-------------------------------------------------------------------------*/
-
-void ButtonsWidget::createLayout ()
-{
-  QHBoxLayout * hBox;
-
-  hBox = new QHBoxLayout  ();
-
-  widgetVBox->setContentsMargins ( 0, 0, 0, 0 );
-  widgetVBox->setSpacing (0);
-  widgetVBox->addStretch ();
-
-  btnEnabled.addFile  ( ":/Icons/RedOn" );
-  btnDisabled.addFile ( ":/Icons/WhiteOn" );
-
-  scrollArea = new QScrollArea (this);
-
-  scrollArea->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
-  scrollArea->setVerticalScrollBarPolicy   ( Qt::ScrollBarAsNeeded );
-  scrollArea->setWidgetResizable (true);
-
-  scrollWidget->setLayout (widgetVBox);
-  scrollArea->setWidget (scrollWidget);
-
-  hBox->addWidget (scrollArea);
-
-  setLayout (hBox);
-
-  contextMenu = new QMenu ();
-  contextMenu->clear ();
-
-}               /*-----  createLayout  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  contextMenuEvent  of  ButtonsWidget
- |
- |  Description :
- |
- |   This function is the context menu  handler and displays a popup menu
- |   if the mouse was right-clicked inside this widget.
- |
- |  Input parameters :
- |   event           :  context menu event
- |
- +-------------------------------------------------------------------------*/
-
-void ButtonsWidget::contextMenuEvent ( QContextMenuEvent * event )
-{
-  QPoint pos;
-
-  event->setAccepted (true);
-
-  pos = event->globalPos ();
-
-  // test to see if we can find out the buttons
-  for ( int i = 0; i < buttons.count (); i++ )
-  {
-//    if ( containsPoint ( buttons.at (i), pos ) )
-//      break;
-
-  }
-
-  contextMenu->exec (pos);
-
-}               /*-----  contextMenuEvent  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
  |  Member function :  onBtnClicked  of  ButtonsWidget
  |
  |  Description :
  |
  |   This function is called when a  button in the widget is pressed.  It
  |   is checked if  the sender is a  QPushButton and if so  a signal sent
- |   out which informs about label and pressed state of this button.
+ |   out  which informs  about  the  index and  'checked'  state of  this
+ |   button.
+ |
  |   It  is  not necessary  to  block  signals when  calling  setChecked,
  |   because it does not signal 'clicked', but 'toggled'.
  |
@@ -366,9 +371,9 @@ void ButtonsWidget::onBtnClicked ( bool checked )
  |
  |  Description :
  |
- |   This function is called when a button in the widget is  pressed.  It
- |   is checked if the sender is a QPushButton and if so  a  signal  sent
- |   out which informs about label and pressed state of this button.
+ |   This function is called when a  button in the widget is pressed.  It
+ |   is checked if  the sender is a  QPushButton and if so  a signal sent
+ |   out which informs about the index and 'Active' state of this button.
  |
  |  Input parameters :
  |   index           : Checked state of the selected button
@@ -403,9 +408,9 @@ void ButtonsWidget::onIconToggled ( int index )
  |
  |  Description :
  |
- |   This  function returns  a list  with booleans  which indicat  if the
+ |   This function  returns a  list with booleans  which indicate  if the
  |   button is  'active' or not. Active  is indicated with a  red icon, a
- |   grey icon for the not active state.
+ |   gray icon for the not active state.
  |
  |  Output parameter :
  |   L_Bool          : The 'active' state of all buttons
@@ -436,8 +441,8 @@ L_Bool ButtonsWidget::getActiveList ()
  |
  |  Description :
  |
- |   This function returns  if the button with the given  index is active
- |   or not.
+ |   This  function returns  the 'active'  state of  the button  with the
+ |   given index.
  |
  |  Input parameters :
  |   index           : Index of the button

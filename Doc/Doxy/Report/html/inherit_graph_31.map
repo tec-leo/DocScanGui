@@ -1,0 +1,21 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,208,78,235"/>
+<area shape="rect" id="Node000001" href="$d9/d4b/class_buttons_widget.html" title=" " alt="" coords="126,5,233,32"/>
+<area shape="poly" id="edge27_Node000000_Node000001" title=" " alt="" coords="47,192,73,119,95,78,124,42,139,30,143,35,128,46,100,81,78,121,52,194"/>
+<area shape="rect" id="Node000002" href="$de/dbc/class_file_select.html" title=" " alt="" coords="140,56,219,83"/>
+<area shape="poly" id="edge28_Node000000_Node000002" title=" " alt="" coords="53,192,82,143,101,116,124,93,141,81,144,85,127,97,105,120,86,146,58,195"/>
+<area shape="rect" id="Node000003" href="$d4/dc8/class_image_edit.html" title=" " alt="" coords="140,107,219,133"/>
+<area shape="poly" id="edge29_Node000000_Node000003" title=" " alt="" coords="64,195,92,169,124,143,144,132,147,136,127,148,95,173,67,199"/>
+<area shape="rect" id="Node000004" href="$d7/d76/class_image_widget.html" title=" " alt="" coords="131,157,228,184"/>
+<area shape="poly" id="edge30_Node000000_Node000004" title=" " alt="" coords="91,200,140,182,142,187,93,205"/>
+<area shape="rect" id="Node000005" href="$de/d2e/class_layers_list.html" title=" " alt="" coords="139,208,220,235"/>
+<area shape="poly" id="edge31_Node000000_Node000005" title=" " alt="" coords="93,219,138,219,138,224,93,224"/>
+<area shape="rect" id="Node000006" href="$d6/df0/class_par_list_grid.html" title=" " alt="" coords="136,259,223,285"/>
+<area shape="poly" id="edge32_Node000000_Node000006" title=" " alt="" coords="93,237,142,256,140,261,91,242"/>
+<area shape="rect" id="Node000007" href="$d2/d51/class_path_select.html" title=" " alt="" coords="137,309,222,336"/>
+<area shape="poly" id="edge33_Node000000_Node000007" title=" " alt="" coords="67,244,95,270,127,295,147,307,144,311,124,300,92,274,64,248"/>
+<area shape="rect" id="Node000008" href="$dd/db7/class_scroll_widget.html" title=" " alt="" coords="132,360,227,387"/>
+<area shape="poly" id="edge34_Node000000_Node000008" title=" " alt="" coords="58,248,86,297,105,323,127,346,144,357,141,362,124,350,101,326,82,300,53,250"/>
+<area shape="rect" id="Node000009" href="$d5/d71/class_tools_widget.html" title=" " alt="" coords="133,411,226,437"/>
+<area shape="poly" id="edge35_Node000000_Node000009" title=" " alt="" coords="52,249,78,322,100,361,128,397,143,408,139,412,124,401,95,364,73,324,47,251"/>
+</map>

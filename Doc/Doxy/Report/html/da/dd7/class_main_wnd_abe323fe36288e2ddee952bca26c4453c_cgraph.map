@@ -1,0 +1,25 @@
+<map id="MainWnd::MainWnd" name="MainWnd::MainWnd">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,183,145,209"/>
+<area shape="rect" id="Node000002" href="$da/dd7/class_main_wnd.html#aa84cdfe7ef649567931accbfefe954a2" title=" " alt="" coords="193,183,294,209"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,193,177,193,177,199,145,199"/>
+<area shape="rect" id="Node000003" href="$da/dd7/class_main_wnd.html#a7853ffa6fd6530508f0ea9355f0943ed" title=" " alt="" coords="353,5,513,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,181,279,115,306,75,340,42,348,37,351,41,344,46,310,79,284,117,252,183"/>
+<area shape="rect" id="Node000004" href="$da/dd7/class_main_wnd.html#a1f874fb006731d13906bd023e7910762" title=" " alt="" coords="353,56,512,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="252,181,287,137,312,113,341,92,352,87,354,91,343,97,316,117,291,141,256,184"/>
+<area shape="rect" id="Node000005" href="$da/dd7/class_main_wnd.html#a3c0c985921c4891f1a071bac3aa5ff9a" title=" " alt="" coords="350,107,515,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="267,180,341,143,360,136,362,141,343,148,269,185"/>
+<area shape="rect" id="Node000006" href="$da/dd7/class_main_wnd.html#a75d71a757a50322d7c5c92a1b8eff5bb" title=" " alt="" coords="349,157,517,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="294,187,333,181,333,187,295,192"/>
+<area shape="rect" id="Node000009" href="$da/dd7/class_main_wnd.html#af43a8258ca9cefcbbe50c80730ee0b19" title=" " alt="" coords="344,208,522,235"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="295,200,328,205,328,210,294,205"/>
+<area shape="rect" id="Node000010" href="$da/dd7/class_main_wnd.html#ac491ba64341bf58c69fa5739b9b56087" title=" " alt="" coords="351,259,515,285"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="269,207,343,244,362,251,360,256,341,249,267,212"/>
+<area shape="rect" id="Node000011" href="$da/dd7/class_main_wnd.html#a30f72209ebf9c154ace52efd73c07ca1" title=" " alt="" coords="352,309,514,336"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="256,208,291,251,316,275,343,295,354,301,352,305,341,300,312,279,287,255,252,211"/>
+<area shape="rect" id="Node000012" href="$da/dd7/class_main_wnd.html#ae2146ef6554793044da32cdcbee8a3fb" title=" " alt="" coords="342,360,523,387"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="252,209,284,275,310,313,344,346,351,351,348,355,340,350,306,317,279,277,247,211"/>
+<area shape="rect" id="Node000007" href="$d8/d82/class_reg_file.html#a8c0aecf91176a3b5c6dbd87355f77e00" title=" " alt="" coords="571,157,711,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="517,168,556,168,556,173,517,173"/>
+<area shape="rect" id="Node000008" href="$d8/d82/class_reg_file.html#af76ae882a6c949d59a353727142bc9c0" title=" " alt="" coords="759,157,876,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="711,168,743,168,743,173,711,173"/>
+</map>

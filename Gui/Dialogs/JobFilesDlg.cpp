@@ -9,7 +9,7 @@
  |   selected.
  |
  |  Developer : Oskar Leirich                Creation date : 31.Oct.2025
- |  Modified  : Oskar Leirich                Last changes  : 13.May.2026
+ |  Modified  : Oskar Leirich                Last changes  : 20.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -22,7 +22,6 @@
  |
  +-------------------------------------------------------------------------*/
 
-#include "AppInc.h"
 #include "JobFilesDlg.h"
 #include "../Controls/FileSelect.h"
 #include "../../Config/ParManager.h"
@@ -39,7 +38,7 @@
  |   icon and size.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |
  +-------------------------------------------------------------------------*/
 
@@ -88,8 +87,7 @@ JobFilesDlg::~JobFilesDlg ()
  |
  |  Description :
  |
- |   This function  creates the context  menu and connects the  slots for
- |   buttons and actions.
+ |   This function connects the slots for buttons and file watcher.
  |
  +-------------------------------------------------------------------------*/
 
@@ -123,7 +121,7 @@ void JobFilesDlg::connectSlots ()
  |
  |  Description :
  |
- |   This function creates the layout for the configuration dialog.
+ |   This function creates the layout for the dialog.
  |
  +-------------------------------------------------------------------------*/
 
@@ -213,7 +211,9 @@ void JobFilesDlg::createLayout ()
  |
  |  Description :
  |
- |   This  member function is called from the constructor.
+ |   This function  is called  from the  constructor and  initializes the
+ |   file system watcher  and the controls.  Then it  creates and updates
+ |   the layout and makes the signal - slot connections.
  |
  +-------------------------------------------------------------------------*/
 

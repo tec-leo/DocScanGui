@@ -30,7 +30,7 @@
  |   This class  is derived  from QChartView and  is a  standalone widget
  |   that can display charts, it does not require a QGraphicsScene object
  |   to work.   It contains a bar  chart to display the  histogram of the
- |   given
+ |   given image.
  |
  +-------------------------------------------------------------------------*/
 

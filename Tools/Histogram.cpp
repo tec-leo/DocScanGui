@@ -5,9 +5,9 @@
  |  Description :
  |
  |   This  module  contains  the  class 'Histogram'  which  calculates  a
- |   histogram  from  a given  OpenCV  image  with  a defined  number  of
- |   bins. It the given image is  not grayscale then it will be converted
- |   to gray first.
+ |   histogram from a given OpenCV image with a defined number of bins. A
+ |   color image  will be converted  to grayscale before  calculating the
+ |   histogram.
  |
  |  Developer : Oskar Leirich                Creation date : 17.Apr.2025
  |  Modified  : Oskar Leirich                Last changes  : 06.Jun.2026
@@ -33,9 +33,6 @@
  |
  |   The constructor initializes some variables.
  |
- |  Input parameters :
- |   parent          :  Pointer to the parent window
- |
  +-------------------------------------------------------------------------*/
 
 Histogram::Histogram ()
@@ -54,8 +51,7 @@ Histogram::Histogram ()
  |
  |  Description :
  |
- |   The destructor deletes all  dynamically created objects if there are
- |   any.
+ |   The destructor is emtpy and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -97,7 +93,9 @@ void Histogram::create ( cv::Mat image )
  |
  |  Description :
  |
- |   This function calculates a histogram of a the given channel.
+ |   This function  calculates a  histogram of a  the given  channel with
+ |   'calcHist' from OpenCV. The histogram is  in the range from 0 to 256
+ |   and uniform .
  |
  +-------------------------------------------------------------------------*/
 

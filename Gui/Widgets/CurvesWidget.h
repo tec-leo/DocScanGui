@@ -26,11 +26,10 @@
  |
  |  Description :
  |
- |   This class  is derived  from QChartView and  is a  standalone widget
- |   that can display charts, it does not require a QGraphicsScene object
- |   to work.  It contains a chart  to display the curves from the levels
- |   dialog.  The  curves can be  line segments or spline  curves between
- |   points.
+ |   This class  is a  standalone widget derived  from QChartView  and is
+ |   used to charts, it does not require a QGraphicsScene object to work.
+ |   It contains  a chart to display  the curves from the  levels dialog.
+ |   The curves can be line segments or spline curves between points.
  |
  +-------------------------------------------------------------------------*/
 

@@ -1,0 +1,11 @@
+<map id="FileSelect::onSelectFile" name="FileSelect::onSelectFile">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,165,57"/>
+<area shape="rect" id="Node000002" href="$de/dbc/class_file_select.html#ac4b43c0bc67d0d63521d312358119334" title=" " alt="" coords="221,5,382,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,32,205,27,206,33,166,37"/>
+<area shape="rect" id="Node000003" href="$de/dbc/class_file_select.html#a031b905a115b798ed498bdf3d537f064" title=" " alt="" coords="213,56,390,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="166,51,197,54,197,60,165,56"/>
+<area shape="rect" id="Node000004" href="$de/dbc/class_file_select.html#a5e60a39dd6d91a059086616367073e98" title=" " alt="" coords="438,56,592,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="390,67,422,67,422,72,390,72"/>
+<area shape="rect" id="Node000005" href="$de/dbc/class_file_select.html#ac4c406c4520daa62a44456cc8b78caa4" title=" " alt="" coords="640,56,801,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="593,67,625,67,625,72,593,72"/>
+</map>

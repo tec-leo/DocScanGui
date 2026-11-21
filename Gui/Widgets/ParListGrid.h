@@ -21,8 +21,9 @@
  |  Description :
  |
  |   This class  is a  generic widget  with a grid  layout. It  shows all
- |   items of  a 'ParList' as controls  in a grid layout.  This avoids to
- |   defined the layout individually for all parameter items.
+ |   items of a  'ParList' as controls in a grid  layout.  This avoids to
+ |   create the  widgets for  the layout  individually for  all parameter
+ |   items.
  |
  +-------------------------------------------------------------------------*/
 

@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['a_0',['a',['../d3/d76/class_spline.html#a09a2cfa5d1087ff73e4d82f701d022a5',1,'Spline']]],
+  ['about_1',['about',['../de/dd7/class_main_bar.html#a7ab8b7df6b27dafdd93802f125d43162',1,'MainBar']]],
+  ['activemode_2',['activeMode',['../d4/dc8/class_image_edit.html#aa1238fc18fe20724e08fb5aaa4745c2a',1,'ImageEdit']]],
+  ['activepoint_3',['activePoint',['../d5/dcf/class_curves_widget.html#a3702ebf02185778d45ed942949689ff0',1,'CurvesWidget']]],
+  ['addmargins_4',['addMargins',['../d0/da3/class_app_config.html#a82a47e6ef142128b51541bb3c2a463fd',1,'AppConfig']]],
+  ['addoptions_5',['addOptions',['../dc/dd4/class_list_select_dlg.html#af078d70430830ca05ec93492cb02ed43',1,'ListSelectDlg']]],
+  ['aliceblue_6',['aliceblue',['../d9/ddd/class_color.html#ae5db9a29cabb4fc78991f0fc071e9438',1,'Color']]],
+  ['alphaweight_7',['alphaWeight',['../d0/da3/class_app_config.html#ae8d188899e6b8df21873c7266c5d1fdf',1,'AppConfig']]],
+  ['angleperchigh_8',['anglePercHigh',['../d0/da3/class_app_config.html#aaac884f6ae49741b4a27e1a07ca8b602',1,'AppConfig']]],
+  ['angleperclow_9',['anglePercLow',['../d0/da3/class_app_config.html#a78307f056f0f0b7c9beda8bcd64e603d',1,'AppConfig']]],
+  ['antiquewhite_10',['antiquewhite',['../d9/ddd/class_color.html#ac3329ac40cae44ace77fc3599323ff7e',1,'Color']]],
+  ['appconfig_11',['appConfig',['../d9/dee/class_par_manager.html#ad71f8a5e310515d2bfd61707f2f4f8b4',1,'ParManager::appConfig'],['../d7/d40/class_curves_dialog.html#ab642c7b75f4d308ea4ee53ec8450547f',1,'CurvesDialog::appConfig'],['../d4/dc8/class_image_edit.html#a8f4308c8c3c9d0777d09c0b7fc994af5',1,'ImageEdit::appConfig'],['../d7/d76/class_image_widget.html#af50afd1683127236cddf59b7e4b84682',1,'ImageWidget::appConfig'],['../d5/d71/class_tools_widget.html#ab2ab9cc27a6a024e19e2492ae9963e94',1,'ToolsWidget::appConfig'],['../da/dd7/class_main_wnd.html#abeb0af87dc70b16c388ccb462883bee9',1,'MainWnd::appConfig']]],
+  ['appcurves_12',['appCurves',['../d9/dee/class_par_manager.html#ae1d8cb469ae930d85650c1fbb2396482',1,'ParManager::appCurves'],['../d7/d40/class_curves_dialog.html#a76298534b2e51e5ec8edc245b64baf2a',1,'CurvesDialog::appCurves'],['../d5/d71/class_tools_widget.html#a6f8e7bda3fb8a44d4357947c06e281b0',1,'ToolsWidget::appCurves']]],
+  ['appendlist_13',['appendList',['../da/d2e/class_history_list.html#a3e1b8b9fdde8ae166d6a2e1da0fac02a',1,'HistoryList']]],
+  ['apply_14',['apply',['../d7/da8/class_image_bar.html#a754e8519068c82af57f624595b355120',1,'ImageBar']]],
+  ['applycolors_15',['applyColors',['../d7/db0/class_color_curves.html#acf5e9553cfb1b43ed76aa94e8ab12639',1,'ColorCurves']]],
+  ['aqua_16',['aqua',['../d9/ddd/class_color.html#a73b929996654e2b8308a4a4386f65d3f',1,'Color']]],
+  ['aquamarine_17',['aquamarine',['../d9/ddd/class_color.html#a19437ff930197c0f5065dd7c147fa160',1,'Color']]],
+  ['argsmap_18',['argsMap',['../dd/d59/class_job_manager.html#ab391554fc4919ca49d809b0a37445db1',1,'JobManager']]],
+  ['autodetect_19',['autoDetect',['../d0/da3/class_app_config.html#acf02442ac179a1e0193158f1ea803068',1,'AppConfig']]],
+  ['axisx_20',['axisX',['../d5/dcf/class_curves_widget.html#a26cb67a877a838679033730ff6c57c5d',1,'CurvesWidget']]],
+  ['axisy_21',['axisY',['../d5/dcf/class_curves_widget.html#aad763f3b1fdee06839fcee08c80f188d',1,'CurvesWidget']]],
+  ['azure_22',['azure',['../d9/ddd/class_color.html#a9c197ff2a4c032b92ca21d8127a897ff',1,'Color']]]
+];

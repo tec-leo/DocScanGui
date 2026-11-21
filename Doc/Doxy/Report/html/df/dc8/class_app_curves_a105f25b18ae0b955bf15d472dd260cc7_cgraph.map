@@ -1,0 +1,22 @@
+<map id="AppCurves::save" name="AppCurves::save">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,123,96"/>
+<area shape="rect" id="Node000002" href="$d7/db0/class_color_curves.html#ac3cbbde3824d1eeda5676384451f04c2" title=" " alt="" coords="376,5,558,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,66,170,55,360,27,361,32,171,60,119,71"/>
+<area shape="rect" id="Node000003" href="$de/d1a/class_par_base.html#ad3e0d7f5dde766f676c911f293c59071" title=" " alt="" coords="193,69,298,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,80,177,80,177,85,123,85"/>
+<area shape="rect" id="Node000004" href="$df/dc8/class_app_curves.html#a79c2c4c78182c3a4f2c60cc8786d44ef" title=" " alt="" coords="171,132,320,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,94,191,124,189,129,104,99"/>
+<area shape="poly" id="edge8_Node000004_Node000002" title=" " alt="" coords="280,129,318,106,333,90,341,74,350,57,366,42,375,37,378,41,370,46,354,61,345,76,337,93,322,110,283,134"/>
+<area shape="rect" id="Node000005" href="$d7/db0/class_color_curves.html#a9bc139d3972e2af6862bc5aa3fd7d812" title=" " alt="" coords="373,56,562,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="276,129,367,92,391,85,393,90,369,97,278,134"/>
+<area shape="rect" id="Node000006" href="$d7/db0/class_color_curves.html#a4184de08dc27e77d5b2151342fb930b1" title=" " alt="" coords="372,107,563,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="320,134,356,130,356,135,321,139"/>
+<area shape="rect" id="Node000007" href="$d7/db0/class_color_curves.html#a5db425fc806693a7822beb0612fa669b" title=" " alt="" coords="368,157,566,184"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="321,151,353,155,352,160,320,156"/>
+<area shape="rect" id="Node000008" href="$d7/db0/class_color_curves.html#ad88c41edb432b1988aa25aafd75d2564" title=" " alt="" coords="374,208,560,235"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="278,157,369,193,393,201,391,206,367,199,276,162"/>
+<area shape="rect" id="Node000009" href="$d7/db0/class_color_curves.html#ac905c35bb56423c5aefd310985ecf743" title=" " alt="" coords="390,259,544,285"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="261,157,306,200,336,224,369,244,383,251,381,256,367,249,333,228,303,204,257,161"/>
+<area shape="rect" id="Node000010" href="$df/dc8/class_app_curves.html#a1979346c7777515b0be94097deeefe62" title=" " alt="" coords="385,309,549,336"/>
+<area shape="poly" id="edge10_Node000004_Node000010" title=" " alt="" coords="256,158,298,224,330,263,370,295,379,300,376,305,366,300,327,266,294,227,251,161"/>
+</map>

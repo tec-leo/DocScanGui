@@ -21,7 +21,7 @@
  |
  |   This  class contains  a collection  of  static QColors  and a  color
  |   picker helper. It can generate  random colors, has defined colors by
- |   name and holds a color ring buffer.
+ |   name and holds a standard color ring buffer.
  |
  +-------------------------------------------------------------------------*/
 

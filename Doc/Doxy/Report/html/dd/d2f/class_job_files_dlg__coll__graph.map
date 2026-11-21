@@ -1,0 +1,22 @@
+<map id="JobFilesDlg" name="JobFilesDlg">
+<area shape="rect" id="Node000001" title=" " alt="" coords="50,1543,174,2039"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,1089,64,1159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,1173,86,1543,81,1543,38,1174"/>
+<area shape="rect" id="Node000003" href="$de/dbc/class_file_select.html" title=" " alt="" coords="189,769,317,1479"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,1426,171,1527,165,1526,187,1425"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="481,380,545,449"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="513,464,501,576,489,642,472,706,439,792,400,877,320,1023,315,1021,396,875,434,790,467,705,484,641,496,575,508,464"/>
+<area shape="rect" id="Node000005" href="$d4/d4b/class_file_utils.html" title=" " alt="" coords="52,199,169,631"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="114,631,114,1526,109,1526,108,631"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="157,630,189,789,183,790,151,631"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="89,5,133,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="113,89,113,199,108,199,108,89"/>
+<area shape="rect" id="Node000007" href="$da/d2e/class_history_list.html" title=" " alt="" coords="194,124,313,705"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="256,705,256,752,251,752,251,705"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="223,5,284,75"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="256,90,256,124,251,124,251,90"/>
+<area shape="rect" id="Node000009" href="$df/d87/class_drop_combo.html" title=" " alt="" coords="337,337,457,492"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="384,492,323,792,318,791,379,491"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="354,5,441,75"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="400,90,400,338,395,338,395,90"/>
+</map>

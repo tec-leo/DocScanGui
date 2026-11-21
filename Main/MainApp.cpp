@@ -4,12 +4,12 @@
  |
  |  Description :
  |
- |   This module  provides a  class which  is derived  from QApplication.
- |   The main window of the application is a MainWindow.
+ |   This module provides a class  which is derived from QApplication and
+ |   creates the main window of the application.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 29.Nov.2024
- |  Modified  : Oskar Leirich                Last changes  : 19.May.2026
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -35,7 +35,8 @@ MainApp  * mainApp   = nullptr;
  |
  |  Description :
  |
- |   The constructor is empty.
+ |   The constructor stores the  application pointer and initializes this
+ |   program instance with mainWnd, core settings and more.
  |
  +-------------------------------------------------------------------------*/
 
@@ -55,7 +56,8 @@ MainApp::MainApp ( int & argc, char ** argv ) : QApplication ( argc, argv )
  |
  |  Description :
  |
- |   The destructor of the main application.
+ |   The destructor  of the main  application is called by  the framework
+ |   when the main application closes.
  |
  +-------------------------------------------------------------------------*/
 
@@ -75,8 +77,8 @@ MainApp::~MainApp ()
  |
  |  Description :
  |
- |   This function is called by the framework when the main application
- |   return from the exit function.
+ |   This function  is called  from the destructor;  it deletes  the main
+ |   window.
  |
  +-------------------------------------------------------------------------*/
 
@@ -108,7 +110,7 @@ void  MainApp::initInstance ()
 
   QCoreApplication::setOrganizationName   (cCompanyName);
   QCoreApplication::setOrganizationDomain (cCompanyDomain);
-  QCoreApplication::setApplicationName    (cProgramConfig);
+  QCoreApplication::setApplicationName    (cProgramName);
 
   decimalPoint = locale.decimalPoint ();
 

@@ -1,0 +1,27 @@
+var class_job_files_dlg =
+[
+    [ "JobFilesDlg", "db/d62/class_job_files_dlg.html#ada4c1a9159a1801f492055da1de79f9e", null ],
+    [ "~JobFilesDlg", "db/d62/class_job_files_dlg.html#ad40607ca61f57d7d78585377946a53bb", null ],
+    [ "onJobsChanged", "db/d62/class_job_files_dlg.html#af5f9e11cb4f073c5ec4be00a4004a628", null ],
+    [ "onCancel", "db/d62/class_job_files_dlg.html#af066cefa312efce42afdae87b2a55148", null ],
+    [ "onOk", "db/d62/class_job_files_dlg.html#a404c4a62b05a1ca4a5b8302e41e1843b", null ],
+    [ "onEditFile", "db/d62/class_job_files_dlg.html#a39985d70334eebc958f078db1422aa37", null ],
+    [ "onSaveFile", "db/d62/class_job_files_dlg.html#a14af76a5147ad08be9efc0c849b20537", null ],
+    [ "onFileChanged", "db/d62/class_job_files_dlg.html#ad8bab56b50595d9c45557de6b4a788f9", null ],
+    [ "buildControls", "db/d62/class_job_files_dlg.html#aa88e8a6922e3f39e0e437545d0529457", null ],
+    [ "connectSlots", "db/d62/class_job_files_dlg.html#a2377f4dff816636d4ac1351f8a52b6a3", null ],
+    [ "createControls", "db/d62/class_job_files_dlg.html#abe5d3ac62be647def3076dc644da5002", null ],
+    [ "createLayout", "db/d62/class_job_files_dlg.html#afad7018587dba240af98d54d951775c3", null ],
+    [ "initDialog", "db/d62/class_job_files_dlg.html#a2bfa6b40a0ff7b08978cd6faf002dd46", null ],
+    [ "fromGui", "db/d62/class_job_files_dlg.html#a2579405022512380c4feba89e0391b8c", null ],
+    [ "toGui", "db/d62/class_job_files_dlg.html#abac17036f092a41b42cb4b856603aab5", null ],
+    [ "fileWatch", "db/d62/class_job_files_dlg.html#aca1459d2e0bca23636efafe567a0997a", null ],
+    [ "btnCancel", "db/d62/class_job_files_dlg.html#a764231d6d0d04546061652946433f57c", null ],
+    [ "btnOk", "db/d62/class_job_files_dlg.html#a59f6ae53e78d5ec0a505a640666314f2", null ],
+    [ "btnEdit", "db/d62/class_job_files_dlg.html#aa2e7f165211d7750c11151e81453f8b0", null ],
+    [ "btnSave", "db/d62/class_job_files_dlg.html#a56588a65b598d1ff5b159792ee8379aa", null ],
+    [ "jobView", "db/d62/class_job_files_dlg.html#a3af5c6c3f09de6d9864023085d3b83f8", null ],
+    [ "jobFile", "db/d62/class_job_files_dlg.html#aa19762d301e9b7228e06ac1f5fa6dc10", null ],
+    [ "jobFiles", "db/d62/class_job_files_dlg.html#a132d97690098d9cf0c28a78aa8f3ea10", null ],
+    [ "fileUtils", "db/d62/class_job_files_dlg.html#a72c40d01d63308d9926e97189b406aef", null ]
+];

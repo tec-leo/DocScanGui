@@ -5,11 +5,11 @@
  |  Description :
  |
  |   This module contains the class 'ImageBar' which implements a toolbar
- |   for the image editing functionlity.
+ |   for the image editing functionality.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 28.Apr.2026
- |  Modified  : Oskar Leirich                Last changes  : 05.Aug.2026
+ |  Modified  : Oskar Leirich                Last changes  : 17.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -35,8 +35,8 @@
  |
  |  Description :
  |
- |   The constructor  creates the actions  for the toolbar and  makes the
- |   signal / slot connections.
+ |   The constructor sets  the toolbar title and creates  the actions for
+ |   the toolbar and makes the signal / slot connections.
  |
  |  Input parameters :
  |   mainWnd         : Parent window, typically the main window
@@ -65,7 +65,7 @@ ImageBar::ImageBar ( MainWnd * mainWnd ) : QToolBar (mainWnd)
  |
  |  Description :
  |
- |   The destructor deletes some actions.
+ |   The destructor deletes the actions.
  |
  +-------------------------------------------------------------------------*/
 
@@ -155,7 +155,7 @@ void ImageBar::createActions ()
  |
  |  Description :
  |
- |   This function builds the ToolBar by adding all actions.
+ |   This function builds the toolbar by adding all actions.
  |
  +-------------------------------------------------------------------------*/
 
@@ -183,8 +183,8 @@ void ImageBar::buildToolBar ()
  |
  |  Description :
  |
- |   This function makes the connections for the edit action to the image
- |   widget.
+ |   This  function makes  the connections  for the  edit actions  to the
+ |   image widget.
  |
  +-------------------------------------------------------------------------*/
 

@@ -17,9 +17,6 @@ QMAKE_CXXFLAGS_WARN_OFF -= -Wsign-compare
 
 CONFIG += precompile_header
 
-# remove release for testing
-#CONFIG -= release
-
 PRECOMPILED_HEADER = Main/AppInc.h
 
 QT += core gui widgets charts
@@ -33,16 +30,22 @@ include($$PWD/DocScanGui.pri)
 # On windows, a shared object is a .dll
 win32 {
   LibExt=lib
+
   OPENCV_BASE = "E:/Dev/Libs/OpenCV"
   OPENCV_LIBS = $${OPENCV_BASE}/lib
-  release:INCLUDEPATH += $${OPENCV_BASE}/include
-  release:LIBS         = $${OPENCV_BASE}/lib/opencv_world500.$${LibExt}
+  OPENCV_INC  = $${OPENCV_BASE}/include
 
-  debug:INCLUDEPATH  += $${OPENCV_BASE}/include
-  debug:LIBS          = $${OPENCV_BASE}/lib/opencv_world500d.$${LibExt}
+  INCLUDEPATH  += $${OPENCV_INC}
 
-  release:TARGET = DocScanGui
-  debug:TARGET   = DocScanGui_d
+  CONFIG(debug, debug|release) {
+    TARGET = DocScanGui_d
+    LIBS  += $${OPENCV_BASE}/lib/opencv_world500d.lib
+  }
+
+  CONFIG(release, debug|release) {
+    TARGET = DocScanGui
+    LIBS  += $${OPENCV_BASE}/lib/opencv_world500.lib
+  }
 
   LIBS += -lgdi32
   LIBS += -lgdiplus
@@ -56,17 +59,13 @@ win32 {
 linux-g++ {
 
   # add linker path
-  debug:OPENCV_LIBS_D = "../../OpenCV/debug/lib"
-  release:OPENCV_LIBS = "../../OpenCV/release/lib"
+  debug:OPENCV_LIBS_D = "../../opencv/debug/lib"
+  release:OPENCV_LIBS = "../../opencv/release/lib"
 
-#  release:QMAKE_RPATHDIR = $${OPENCV_LIBS}
-#  debug:QMAKE_RPATHDIR   = $${OPENCV_LIBS_D}
-
-# OpenCV 5.0
   debug:LibExt=so    # shared library
   release:LibExt=so  # shared library
 
-  OPENCV_INC    = "../../OpenCV/include/opencv5"
+  OPENCV_INC    = "../../opencv/include/opencv5"
   INCLUDEPATH  += $${OPENCV_INC}
 
   CONFIG(debug, debug|release) {
@@ -87,6 +86,7 @@ linux-g++ {
   LIBS += -lopencv_imgcodecs
   LIBS += -lopencv_highgui
   LIBS += -lopencv_imgproc
+  LIBS += -lopencv_flann
   LIBS += -lopencv_geometry
 }
 

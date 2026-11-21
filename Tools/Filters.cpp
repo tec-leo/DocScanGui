@@ -8,7 +8,7 @@
  |   functions for filtering, sharpen and  morphological image processing.
  |
  |  Developer : Oskar Leirich                Creation date : 20.Nov.2024
- |  Modified  : Oskar Leirich                Last changes  : 13.Jul.2025
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -28,7 +28,7 @@
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor is emtpy and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -44,7 +44,7 @@ Filters::Filters ()
  |
  |  Description :
  |
- |   The destructor is emtpy.
+ |   The destructor is emtpy and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -143,7 +143,7 @@ Mat Filters::sharpGaussian ( Mat input, double alpha,
  |
  |  Description :
  |
- |   This function sharpens  the given image by  calculating the Laplacian
+ |   This function sharpens the given  image by calculating the Laplacian
  |   of the  source image  by adding  up the second  x and  y derivatives
  |   calculated using the Sobel operator.
  |
@@ -203,7 +203,7 @@ Mat Filters::sharpLaplace ( Mat input, int kSize, double sigma,
  |
  |   This  function sharpens  the given  image by  applying an  'unsharp'
  |   mask.
- |   The typical blending formula for unsharp masking is
+ |   The typical blending formula for unsharp masking is :
  |   sharpened = original + (original - blurred) x amount
  |
  |   Default values:

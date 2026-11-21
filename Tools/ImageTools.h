@@ -96,5 +96,4 @@ class ImageTools
 
 };
 
-
 #endif

@@ -1,0 +1,15 @@
+<map id="ImageScene::mousePressEvent" name="ImageScene::mousePressEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,212,83"/>
+<area shape="rect" id="Node000002" href="$db/dfa/class_image_scene.html#ad292faf83d0f5fc740593dad747d5500" title=" " alt="" coords="280,56,437,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,67,264,67,264,72,212,72"/>
+<area shape="rect" id="Node000005" href="$db/dfa/class_image_scene.html#acbdf1b96cc63ec1a51a42c3889338005" title=" " alt="" coords="278,5,439,32"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="177,53,274,33,275,38,179,58"/>
+<area shape="rect" id="Node000006" href="$db/dfa/class_image_scene.html#ab72551313e20cdb8e174e74f424e9b42" title=" " alt="" coords="260,107,457,133"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="179,81,275,100,274,106,177,86"/>
+<area shape="rect" id="Node000003" href="$db/dfa/class_image_scene.html#a8be0d4f73f14524e8dfdf19632113a8b" title=" " alt="" coords="505,5,671,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,53,509,33,510,39,423,58"/>
+<area shape="rect" id="Node000004" href="$db/dfa/class_image_scene.html#a63697bd3d88a37c5993332a95978351e" title=" " alt="" coords="510,56,666,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="437,67,495,67,495,72,437,72"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="439,16,489,16,489,21,439,21"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="423,30,510,49,509,55,422,35"/>
+</map>

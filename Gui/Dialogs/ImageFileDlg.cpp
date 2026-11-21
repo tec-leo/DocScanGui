@@ -38,7 +38,7 @@
  |   icon and size.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |
  +-------------------------------------------------------------------------*/
 
@@ -85,8 +85,7 @@ ImageFileDlg::~ImageFileDlg ()
  |
  |  Description :
  |
- |   This function  creates the context  menu and connects the  slots for
- |   buttons and actions.
+ |   This function connects the slots for the buttons.
  |
  +-------------------------------------------------------------------------*/
 
@@ -241,7 +240,9 @@ void ImageFileDlg::createLayout ()
  |
  |  Description :
  |
- |   This  member function is called from the constructor.
+ |   This function  is called  from the  constructor and  initializes the
+ |   grid  widgets and  the controls.   Then it  creates and  updates the
+ |   layout and makes the signal - slot connections.
  |
  +-------------------------------------------------------------------------*/
 
@@ -338,7 +339,7 @@ void ImageFileDlg::onCancel ()
  |  Description :
  |
  |   This function is  called when the 'Ok' button is  pressed. It stores
- |   the current job file name in the parameter file.
+ |   the current settings in the parameter file.
  |
  +-------------------------------------------------------------------------*/
 

@@ -4,22 +4,25 @@
  |
  |  Description :
  |
- |   This module contains the class 'ImageMat' which implements functions
- |   to convert  between a QImage  and a  Mat from OpenCV.  All functions
- |   assume the that the color order is RGB.
+ |   This  module contains  the  class 'ImageMat'  which implements  some
+ |   helper  functions   evaluating  an  image  and   several  conversion
+ |   functions like get a QImage from a 'Mat' from OpenCV.
+ |
+ |   All functions assume the that the color order is RGB.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 14.Jun.2023
- |  Modified  : Oskar Leirich                Last changes  : 16.Apr.2026
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
  |   of ImageMat :
  |    ImageMat                  binarize                  blackOnWhite
- |    convMatImage              convToGray                copyTo
- |    evalMatInfo               getBlackRatio             getImageFormat
- |    getMatInfo                getMatInfoStr             getMatType
- |    getWhitePoints            invert
+ |    convMatImage              convTo8bit                convToGray
+ |    copyTo                    evalMatInfo               getBlackRatio
+ |    getImageFormat            getMatInfo                getMatType
+ |    getWhitePoints            getWhiteRatio             invert
+ |    removeAlpha
  |
  +-------------------------------------------------------------------------*/
 
@@ -75,10 +78,9 @@ ImageMat::ImageMat ()
  |  Description :
  |
  |   This  function converts  the  image  first to  gray  scale and  then
- |   applies 'threshold' to  the simple threshold function  of OpenCV. It
- |   the  given threshold  is  below 0  the it  uses  the otsu  algorithm
- |   (automatic threshold  finding) to make it  binary. At the end  it is
- |   inverted if it contains more white than black pixel.
+ |   applies 'threshold' to  the simple threshold function  of OpenCV. If
+ |   the given  threshold is  below 0  the it  uses the  'otsu' algorithm
+ |   (automatic threshold finding) to make it binary.
  |
  |  Input parameters :
  |   input           : Matrix to binarize
@@ -111,8 +113,8 @@ Mat ImageMat::binarize ( Mat input, int threshold )
  |  Description :
  |
  |   This  function copies  from  the source  matrix  to the  destination
- |   matrix at  the position of rect.  It uses a roi  matrix which shares
- |   the data with the source matrix.
+ |   matrix at  the position of rect  in the destination.  It  uses a roi
+ |   matrix which shares the data with the source matrix.
  |
  |  Input parameters :
  |   src             : Source matrix
@@ -165,8 +167,9 @@ void ImageMat::copyTo ( Mat src, Mat dst, cv::Rect rect )
  |
  |  Description :
  |
- |   This  function takes a binary image inverts it if it contains more white
- |   pixels than black ones.
+ |   This function  takes a binary image  and counts the black  and white
+ |   points. When it contains more white  pixels than black ones then the
+ |   image is inverted.
  |
  |  Input parameters :
  |   input           : Input matrix
@@ -201,7 +204,7 @@ Mat ImageMat::blackOnWhite ( Mat input )
  |  Description :
  |
  |   This function converts the image to 8 bit. Some tools like rotate or
- |   applying curves would crash on 16 bit values.
+ |   applying curves would crash with 16 bit values.
  |
  |  Input parameters :
  |   input           : image to convert to gray
@@ -234,8 +237,8 @@ Mat ImageMat::convTo8bit ( Mat input )
  |
  |  Description :
  |
- |   This function converts  the image first to gray  scale, currently it
- |   handles only 8 bit conversion.
+ |   This function converts the image first  to gray scale if it contains
+ |   more then one channel, currently it handles only 8 bit conversion.
  |
  |  Input parameters :
  |   input           : image to convert to gray
@@ -280,7 +283,7 @@ Mat ImageMat::convToGray ( Mat input )
  |   format          : Image format for QImage
  |
  |  Output parameter :
- |   (QImage)        :
+ |   (QImage)        : Pointer to the QImage
  |
  +-------------------------------------------------------------------------*/
 
@@ -340,7 +343,7 @@ QImage * ImageMat::convMatImage ( Mat & mat, QImage::Format format )
  |
  |  Description :
  |
- |   This function extracts some information from the given Mat like
+ |   This  function extracts  some information  from the  given Mat  like
  |   pixel type, number of channels etc.
  |
  |  Input parameters :
@@ -383,15 +386,16 @@ void ImageMat::evalMatInfo ( Mat & mat )
  |   This  function counts  the  pixel which  are closer  to  black by  a
  |   defined threshold value. It assumes that  the given matrix is a gray
  |   image (one  channel) with unsigned 8  bit values and white  on black
- |   text. It  calculates the ratio of  black to white pixel  and returns
- |   it. The black ratio is the ratio of black text to white pixel to all
- |   pixels.
+ |   text.
+ |
+ |   It  calculates  the   ratio  of  black  text  to  all   pixel  on  a
+ |   document. Black text means a value of 0 for the black pixels.
  |
  |  Input parameters :
  |   mat             : Input matrix
  |
  |  Output parameter :
- |   double          : ratio of white text to black space in a text doc
+ |   double          : ratio of black text to all pixels in a text doc
  |
  +-------------------------------------------------------------------------*/
 
@@ -433,14 +437,16 @@ double ImageMat::getBlackRatio ( Mat & mat )
  |   This  function counts  the  pixel which  are closer  to  white by  a
  |   defined threshold value. It assumes that  the given matrix is a gray
  |   image (one  channel) with unsigned 8  bit values and white  on black
- |   text. It calculates  the ratio of the white pixel  to all pixels and
- |   returns it.
+ |   text.
+ |
+ |   It  calculates  the   ratio  of  white  text  to  all   pixel  on  a
+ |   document. White text means a value of 255 for the white pixels.
  |
  |  Input parameters :
  |   mat             : Input matrix
  |
  |  Output parameter :
- |   double          : ratio of black text to white space in a text doc
+ |   double          : ratio of white text to all pixels in a text doc
  |
  +-------------------------------------------------------------------------*/
 

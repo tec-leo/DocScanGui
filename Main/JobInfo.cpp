@@ -9,7 +9,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 23.Sep.2025
- |  Modified  : Oskar Leirich                Last changes  : 25.Oct.2025
+ |  Modified  : Oskar Leirich                Last changes  : 18.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -48,7 +48,7 @@ JobInfo::JobInfo ()
  |
  |  Description :
  |
- |   The destructor deletes all created objects.
+ |   The destructor is empty and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -89,7 +89,8 @@ void JobInfo::init ()
  |
  |  Description :
  |
- |   This function parses the given string and splits it into the infos.
+ |   This  function  parses the  given  string  and  splits it  into  the
+ |   infos. Currently not implemented.
  |
  +-------------------------------------------------------------------------*/
 
@@ -107,7 +108,7 @@ void JobInfo::parse ( QString text )
  |
  |  Description :
  |
- |   This  function joins  all parts  of a  task info  returns them  as a
+ |   This  function joins  all parts  of  a jog  info returns  them as  a
  |   string.
  |
  +-------------------------------------------------------------------------*/

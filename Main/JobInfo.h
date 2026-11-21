@@ -5,7 +5,7 @@
  |  Description :
  |
  |  This include file contains all class definitions  for  the  module
- |  TcpMessage.
+ |  JobInfo.
  |
  +-------------------------------------------------------------------------*/
 
@@ -19,8 +19,8 @@
  |
  |  Description :
  |
- |   This  class defines  a  small  'job info'  class  with  only a  few
- |   properties like topic, command ...
+ |   This class defines  a small 'job info' class with  only a few member
+ |   variables like topic, command ...
  |
  +-------------------------------------------------------------------------*/
 

@@ -1,0 +1,21 @@
+<map id="JobFilesDlg::connectSlots" name="JobFilesDlg::connectSlots">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,178,184"/>
+<area shape="rect" id="Node000002" href="$db/d62/class_job_files_dlg.html#af066cefa312efce42afdae87b2a55148" title=" " alt="" coords="242,5,392,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,155,150,100,185,69,224,42,236,36,238,41,227,46,189,73,154,104,105,159"/>
+<area shape="rect" id="Node000003" href="$db/d62/class_job_files_dlg.html#a39985d70334eebc958f078db1422aa37" title=" " alt="" coords="240,56,394,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,155,162,124,225,92,243,85,245,90,227,97,165,128,115,159"/>
+<area shape="rect" id="Node000004" href="$db/d62/class_job_files_dlg.html#ad8bab56b50595d9c45557de6b4a788f9" title=" " alt="" coords="226,107,408,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,154,239,135,240,140,155,159"/>
+<area shape="rect" id="Node000005" href="$db/d62/class_job_files_dlg.html#af5f9e11cb4f073c5ec4be00a4004a628" title=" " alt="" coords="456,132,644,159"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="178,163,440,149,440,154,178,169"/>
+<area shape="rect" id="Node000006" href="$db/d62/class_job_files_dlg.html#a404c4a62b05a1ca4a5b8302e41e1843b" title=" " alt="" coords="253,208,381,235"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="155,182,240,201,239,207,154,187"/>
+<area shape="rect" id="Node000008" href="$db/d62/class_job_files_dlg.html#a14af76a5147ad08be9efc0c849b20537" title=" " alt="" coords="471,259,630,285"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="112,182,162,215,194,231,226,244,284,258,344,267,455,273,455,278,343,272,283,263,225,249,191,236,159,220,110,187"/>
+<area shape="rect" id="Node000009" href="$de/dbc/class_file_select.html#ac4c406c4520daa62a44456cc8b78caa4" title=" " alt="" coords="237,309,397,336"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="107,183,156,233,190,263,227,288,253,301,250,306,224,293,187,267,152,237,103,186"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="408,127,441,131,440,136,408,133"/>
+<area shape="rect" id="Node000007" href="$db/d62/class_job_files_dlg.html#a2579405022512380c4feba89e0391b8c" title=" " alt="" coords="480,208,621,235"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="381,219,464,219,464,224,381,224"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="381,232,471,252,470,257,380,238"/>
+</map>

@@ -12,7 +12,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 06.Apr.2022
- |  Modified  : Oskar Leirich                Last changes  : 24.Sep.2026
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -47,6 +47,7 @@ ParList::ParList ()
 {
 
   parFile    = nullptr;
+  parItem    = nullptr;
   dlgParList = nullptr;
   srcParList = nullptr;
 

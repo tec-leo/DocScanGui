@@ -5,13 +5,13 @@
  |  Description :
  |
  |   This  module  contains  the  class  'ColorCurves'  which  implements
- |   functions to apply black and  white point convertion and color space
+ |   functions to apply black and  white point conversion and color space
  |   stretching.  It can apply a color  or grayscale channel to modify an
  |   image from OpenCV.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 17.Feb.2025
- |  Modified  : Oskar Leirich                Last changes  : 10.Jun.2026
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -31,8 +31,8 @@
  |
  |  Description :
  |
- |   The constructor  initializes some variables  like the lists  for the
- |   image formats.
+ |   The constructor initializes some  memeber variables and collects the
+ |   pointers to the color channels to a list with defined order.
  |
  +-------------------------------------------------------------------------*/
 
@@ -56,8 +56,10 @@ ColorCurves::ColorCurves ()
  |
  |  Description :
  |
- |   This function merges the color channels, calculates the gray channel
- |   from them and returns them as cv::Mat.
+ |   This function calculates a lookup table  for a linear curve type for
+ |   every color with  a a low and  high input. Then it  merges the color
+ |   channels, calculates the gray channel  from them and returns them as
+ |   cv::Mat.
  |
  +-------------------------------------------------------------------------*/
 
@@ -104,6 +106,11 @@ cv::Mat ColorCurves::applyCurves ( cv::Mat & matIn )
  |   black or  white points  has changed  in the  curves dialog.   Then a
  |   lookup table is  calulated from the curves and applied  to the given
  |   image mat and stored in the output image mat.
+ |
+ |   When a applyColors is set  then the colors channels are individually
+ |   calculated and  merged, this is only  the case when 'Auto  level' is
+ |   executed.
+ |
  |
  |  Input parameters :
  |   matIn           : Reference to matrix of OpenCV
@@ -158,11 +165,11 @@ void ColorCurves::applyCurve ( cv::Mat & matIn, cv::Mat & matOut )
  |
  |  Description :
  |
- |   This function calculates  the luminosity value from  the given color
- |   and returns  it.  The  color is  in uchar  format, therefore  it its
- |   converted to floating point value in  the range between 0 and 1. For
- |   the calculation  of the luminosity  the OpenCV formula is  used. The
- |   given color is in RGB format.
+ |   This  function calculates  the  luminosity value  from  the given  3
+ |   channel  color  and returns  it.   The  color  is in  uchar  format,
+ |   therefore  it its  converted to  floating point  value in  the range
+ |   between 0  and 1. For the  calculation of the luminosity  the OpenCV
+ |   formula is used. The given color is in RGB format.
  |
  |   There are 2 different formula for the conversion from color to gray:
  |
@@ -306,9 +313,9 @@ void ColorCurves::setImage ( cv::Mat & image )
  |
  |  Description :
  |
- |   This  function sets  the  given  color as  'black  point' for  every
- |   channel color.  The luminosity is  calculated from the color and set
- |   as 'black point' for the gray channel.
+ |   This function  sets the given  color as  'black point' for  the gray
+ |   channel.  The  luminosity is  calculated from the  color and  set as
+ |   'black point' for the gray channel.
  |
  +-------------------------------------------------------------------------*/
 
@@ -332,9 +339,9 @@ void ColorCurves::setBlackPnt ( Vec3b color )
  |
  |  Description :
  |
- |   This  function sets  the  given  color as  'white  point' for  every
- |   channel color.  The luminosity is  calculated from the color and set
- |   as 'white point' for the gray channel.
+ |   This function  sets the given  color as  'white point' for  the gray
+ |   channel.  The  luminosity is  calculated from the  color and  set as
+ |   'white point' for the gray channel.
  |
  +-------------------------------------------------------------------------*/
 

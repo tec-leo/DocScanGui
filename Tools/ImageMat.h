@@ -19,8 +19,9 @@
  |
  |  Description :
  |
- |   This class implements  functions to converts between a  QImage and a
- |   Mat from OpenCV.
+ |   This class implements some helper  functions evaluating an image and
+ |   several conversion  functions like  get a QImage  from a  'Mat' from
+ |   OpenCV.
  |
  +-------------------------------------------------------------------------*/
 

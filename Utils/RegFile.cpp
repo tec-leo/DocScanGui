@@ -10,14 +10,14 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 28.Mar.2023
- |  Modified  : Oskar Leirich                Last changes  : 12.Dec.2024
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
  |   of RegFile :
- |    RegFile                   getPath                   readValue
- |    setPath                   setValue                  value
- |    writeValue
+ |    RegFile                   getFilePath               getGroup
+ |    readValue                 setGroup                  setValue
+ |    value                     writeValue
  |
  +-------------------------------------------------------------------------*/
 
@@ -32,8 +32,8 @@
  |
  |   The constructor initializes the  QSetting with the default behavior,
  |   which   means   using   ini   file  format   in   the   user   scope
- |   (user\AppData\Roaming) and sets the company name Automotive) and the
- |   program name.
+ |   (user\AppData\Roaming) and  sets the  company name) and  the program
+ |   name.
  |
  |  Input parameters :
  |   path            : Name for the start of a group
@@ -71,6 +71,88 @@ RegFile::RegFile ( const QString & fileName, QObject * parent ) :
 
 /*-------------------------------------------------------------------------
  |
+ |  Member function :  getFilePath  of  RegFile
+ |
+ |  Description :
+ |
+ |   This function returns the path of the default registry file. This is
+ |   the config-ini file defined by the default settings of the RegFile.
+ |
+ |  Output parameter :
+ |   (QString)       : Current group
+ |
+ +-------------------------------------------------------------------------*/
+
+QString RegFile::getFilePath ()
+{
+  RegFile * regFile;
+  QFileInfo fileInfo;
+  QString   fileName;
+  QString   path;
+
+  regFile  = new RegFile ();  // values are set in MainApp
+  fileName = regFile->fileName ();
+
+  fileInfo.setFile (fileName);
+  path = fileInfo.canonicalPath ();
+
+  delete regFile;   // delete and create new with diffent name
+
+  return path;
+
+}               /*-----  getFilePath  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  getGroup  of  RegFile
+ |
+ |  Description :
+ |
+ |   This function returns the current group.
+ |
+ |  Output parameter :
+ |   (QString)       : Current group
+ |
+ +-------------------------------------------------------------------------*/
+
+QString RegFile::getGroup ()
+{
+
+  return group ();
+
+}               /*-----  getGroup  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  setGroup  of  RegFile
+ |
+ |  Description :
+ |
+ |   This function sets current path.
+ |
+ |  Input parameters :
+ |   path            :  set new group
+ |
+ +-------------------------------------------------------------------------*/
+
+void RegFile::setGroup ( QString path )
+{
+
+  // close all groups
+  while ( not group ().isEmpty () )
+  {
+    endGroup ();
+  }
+
+  beginGroup (path);
+
+}               /*-----  setGroup  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
  |  Member function :  setValue  of  RegFile
  |
  |  Description :
@@ -98,8 +180,8 @@ void RegFile::setValue ( QString key, QVariant value )
  |
  |  Description :
  |
- |   This function is  an overloaded function, it reads a value
- |   from the registry file.
+ |   This function is  an overloaded function, it reads a  value from the
+ |   registry file.
  |
  |  Input parameters :
  |   key             : Key of value to find
@@ -119,54 +201,6 @@ QVariant RegFile::value ( QString key, QVariant defaultValue )
   return entry;
 
 }               /*-----  value  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  getPath  of  RegFile
- |
- |  Description :
- |
- |   This function returns the current path
- |
- |  Output parameter :
- |   (QString)       : Current path
- |
- +-------------------------------------------------------------------------*/
-
-QString RegFile::getPath ()
-{
-
-  return group ();
-
-}               /*-----  getPath  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  setPath  of  RegFile
- |
- |  Description :
- |
- |   This function sets current path.
- |
- |  Input parameters :
- |   path            :
- |
- +-------------------------------------------------------------------------*/
-
-void RegFile::setPath ( QString path )
-{
-
-  // close all groups
-  while ( not group ().isEmpty () )
-  {
-    endGroup ();
-  }
-
-  beginGroup (path);
-
-}               /*-----  setPath  -----*/
 
 
 /*-------------------------------------------------------------------------

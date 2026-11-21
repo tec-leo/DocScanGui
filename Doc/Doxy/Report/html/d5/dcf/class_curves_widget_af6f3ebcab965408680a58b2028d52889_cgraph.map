@@ -1,0 +1,9 @@
+<map id="CurvesWidget::createSamples" name="CurvesWidget::createSamples">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,202,83"/>
+<area shape="rect" id="Node000002" href="$d5/dcf/class_curves_widget.html#acdfc5bb42c7fa290623826c43f525d16" title=" " alt="" coords="255,5,447,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,53,267,33,268,38,173,58"/>
+<area shape="rect" id="Node000003" href="$d5/dcf/class_curves_widget.html#a8b6d2510cbe110b727813942b543e3a9" title=" " alt="" coords="250,56,452,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,67,234,67,234,72,202,72"/>
+<area shape="rect" id="Node000004" href="$d5/dcf/class_curves_widget.html#a7daeec7cf868b384750b4954e227df93" title=" " alt="" coords="262,107,440,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="173,81,268,100,267,106,172,86"/>
+</map>

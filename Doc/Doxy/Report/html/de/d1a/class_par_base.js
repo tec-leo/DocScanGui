@@ -1,0 +1,27 @@
+var class_par_base =
+[
+    [ "ParBase", "de/d1a/class_par_base.html#afab78c774cbdf07cb4c971f078d78383", null ],
+    [ "~ParBase", "de/d1a/class_par_base.html#a0d7f98c9126512fc368f7b2c1b697d66", null ],
+    [ "load", "de/d1a/class_par_base.html#ad6c89bc36bc600dbea10f188b55539de", null ],
+    [ "save", "de/d1a/class_par_base.html#ad3e0d7f5dde766f676c911f293c59071", null ],
+    [ "fillParList", "de/d1a/class_par_base.html#aa16bb59007be92ebae9c39631b40e817", null ],
+    [ "setDefaults", "de/d1a/class_par_base.html#a31fc93be96a6795a082027232729d4a0", null ],
+    [ "updateList", "de/d1a/class_par_base.html#a8d780b1a4f387d381e25e2314a46b37a", null ],
+    [ "getParList", "de/d1a/class_par_base.html#a9df9d2b595d40a8ae9f6a00754b9a19b", null ],
+    [ "setSection", "de/d1a/class_par_base.html#ae6d39c9ca9c14a5a2244f22c5fceade2", null ],
+    [ "setParFile", "de/d1a/class_par_base.html#ad8945965aafced20d91449aeb07a6e6a", null ],
+    [ "setItemValue", "de/d1a/class_par_base.html#ae164c2b4f07712659c9f0437cca96515", null ],
+    [ "haveItem", "de/d1a/class_par_base.html#a273c9ca511e544b98340b52f6a8575b9", null ],
+    [ "isSaved", "de/d1a/class_par_base.html#ac78f9e9a8cb434d7ef5830f622479342", null ],
+    [ "setModified", "de/d1a/class_par_base.html#a0e93f2daeb020aff50ed12ddba7eea2f", null ],
+    [ "ParMan", "de/d1a/class_par_base.html#a6cce60d219b10038ab4183ee2446e7ee", null ],
+    [ "strUtils", "de/d1a/class_par_base.html#ade6945addaf8c3fe257f93de6f507282", null ],
+    [ "parList", "de/d1a/class_par_base.html#a475cb71ffec5df37d391bd9e51eb781e", null ],
+    [ "parFile", "de/d1a/class_par_base.html#a148b974bc82bc03408af4d61b179420c", null ],
+    [ "dummyLabel", "de/d1a/class_par_base.html#a6036781dbc68b84d2cf5d99701df3015", null ],
+    [ "section", "de/d1a/class_par_base.html#a5eb3a6791d1a988e4d0e489006e525a7", null ],
+    [ "name", "de/d1a/class_par_base.html#ac79a05611fe99957d6e16be326061212", null ],
+    [ "text", "de/d1a/class_par_base.html#a50caec5387187d2fdfd6c9eeadca2cef", null ],
+    [ "maxTextWidth", "de/d1a/class_par_base.html#a9ca70ef95c9728e689be91976b7a9fac", null ],
+    [ "saved", "de/d1a/class_par_base.html#ac6ec9cf00d54e62b49882ba251ee5af0", null ]
+];

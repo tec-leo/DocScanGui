@@ -5,13 +5,13 @@
  |  Description :
  |
  |   This  file contains  the implementation  for the  Color class  which
- |   contains  a  collection  of  static   QColors  and  a  color  picker
- |   helper. It  can generate random  colors, has defined colors  by name
- |   and holds a color ring buffer.
+ |   contains a  collection of  static QColors.   It can  generate random
+ |   colors, has defined  colors by name and holds a  standard color ring
+ |   buffer.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 01.Feb.2023
- |  Modified  : Oskar Leirich                Last changes  : 23.Dec.2023
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This file contains the following functions:

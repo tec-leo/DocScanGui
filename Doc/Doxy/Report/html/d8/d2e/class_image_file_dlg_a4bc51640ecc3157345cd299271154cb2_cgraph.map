@@ -1,0 +1,17 @@
+<map id="ImageFileDlg::initDialog" name="ImageFileDlg::initDialog">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,163,133"/>
+<area shape="rect" id="Node000002" href="$d8/d2e/class_image_file_dlg.html#aaccd3ea1ac26c0fb55e097a899fd1af9" title=" " alt="" coords="215,31,395,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,104,210,67,233,59,235,65,212,72,118,109"/>
+<area shape="rect" id="Node000006" href="$d8/d2e/class_image_file_dlg.html#a294a8172eabdeb91baacef133427fa0f" title=" " alt="" coords="211,81,399,108"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="163,108,195,105,195,110,163,114"/>
+<area shape="rect" id="Node000007" href="$d8/d2e/class_image_file_dlg.html#a030b83272a2397ec69f6dca7d675fa8e" title=" " alt="" coords="215,132,395,159"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="163,126,200,131,199,136,163,132"/>
+<area shape="rect" id="Node000008" href="$d8/d2e/class_image_file_dlg.html#a503c440c5ef31399e24211d40717e8a3" title=" " alt="" coords="237,183,373,209"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="118,131,212,168,235,175,233,181,210,173,116,136"/>
+<area shape="rect" id="Node000003" href="$d8/d2e/class_image_file_dlg.html#ac6dc6c65a8aad63ebfdecf7ac1aef1bb" title=" " alt="" coords="447,5,605,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,31,431,27,432,32,395,36"/>
+<area shape="rect" id="Node000004" href="$d8/d2e/class_image_file_dlg.html#a8a2a63e093f89652d7a5da747d3dec06" title=" " alt="" coords="459,56,594,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="395,52,444,57,443,63,395,57"/>
+<area shape="rect" id="Node000005" href="$d8/d2e/class_image_file_dlg.html#acfbeb756ae078369d90de6cb2d761e07" title=" " alt="" coords="653,56,803,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="594,67,638,67,638,72,594,72"/>
+</map>

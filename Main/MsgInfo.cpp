@@ -5,19 +5,20 @@
  |  Description :
  |
  |   This module contains the class  'MsgInfo' which contains the content
- |   of  a  message coming  from  algorithm  or internally.   It  handles
- |   different levels of messages, like errors, warnings or just infos.
+ |   of a message  coming. It handles different levels  of messages, like
+ |   errors, warnings or just infos.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 24.Jun.2022
- |  Modified  : Oskar Leirich                Last changes  : 19.Aug.2024
+ |  Modified  : Oskar Leirich                Last changes  : 18.Nov.2026
  |
  |
  |  This file contains the following functions:
  |   of MsgInfo:
  |    MsgInfo                   ~MsgInfo                  clear
- |    getLevelName              levelToName               nameToLevel
- |    setInfo                   toText
+ |    getLevel                  getLevelName              setCritical
+ |    setError                  setInfo                   setWarning
+ |    toText
  |
  +-------------------------------------------------------------------------*/
 
@@ -30,7 +31,7 @@
  |
  |  Description :
  |
- |   The constructor initializes the variabels.
+ |   The constructor initializes the variables.
  |
  +-------------------------------------------------------------------------*/
 
@@ -66,8 +67,8 @@ MsgInfo::~MsgInfo ()
  |
  |  Description :
  |
- |   This  function  is  called  from   the  constructor  and  clear  the
- |   variables.
+ |   This function  is called  from the  constructor and  initializes the
+ |   member variables and maps.
  |
  +-------------------------------------------------------------------------*/
 
@@ -102,41 +103,17 @@ void MsgInfo::clear ()
  |
  |  Description :
  |
- |   This function returns the name of the level.
+ |   This function returns the 'criticality' of the given level as string
  |
  |  Input parameters :
  |   level           : the level
  |
  |  Output parameter :
- |   (QString)       : the name of the level
+ |   (QString)       : criticality of the level
  |
  +-------------------------------------------------------------------------*/
 
 QString MsgInfo::getLevelName ( int level )
-{
-
-  return levelToName (level);
-
-}               /*-----  getLevelName  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  levelToName  of  MsgInfo
- |
- |  Description :
- |
- |   This function returns the name of the level
- |
- |  Input parameters :
- |   level           : the level
- |
- |  Output parameter :
- |   (QString)       : the name of the level
- |
- +-------------------------------------------------------------------------*/
-
-QString MsgInfo::levelToName ( int level )
 {
   int  index;
 
@@ -149,18 +126,17 @@ QString MsgInfo::levelToName ( int level )
 
   return msgLevels.at (index);
 
-}               /*-----  levelToName  -----*/
+}               /*-----  getLevelName  -----*/
 
 
 /*-------------------------------------------------------------------------
  |
- |  Member function :  nameToLevel  of  MsgInfo
+ |  Member function :  getLevel  of  MsgInfo
  |
  |  Description :
  |
- |   This function returns the level  coresponding to a name. Because the
- |   name coresponds  to a group of  levels, the smallest level  from the
- |   group will be returned
+ |   This  function  returns the  'criticality'  of  the given  level  as
+ |   number.
  |
  |  Input parameters :
  |   name            : the name of the level
@@ -170,12 +146,12 @@ QString MsgInfo::levelToName ( int level )
  |
  +-------------------------------------------------------------------------*/
 
-int MsgInfo::nameToLevel ( QString name )
+int MsgInfo::getLevel ( QString name )
 {
 
   return levelMap [name];
 
-}               /*-----  nameToLevel  -----*/
+}               /*-----  getLevel  -----*/
 
 
 /*-------------------------------------------------------------------------
@@ -184,8 +160,8 @@ int MsgInfo::nameToLevel ( QString name )
  |
  |  Description :
  |
- |   This  function  is  called  from   the  constructor  and  clear  the
- |   variables.
+ |   This function  sets this message  info to  the given level  with the
+ |   given title, info text and additional info.
  |
  +-------------------------------------------------------------------------*/
 
@@ -208,8 +184,8 @@ void MsgInfo::setInfo ( int level, QString title, QString text, QString info )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This function  sets this message  info to 'critical' with  the given
+ |   title, info text and additional info.
  |
  +-------------------------------------------------------------------------*/
 
@@ -227,8 +203,8 @@ void MsgInfo::setCritical ( QString title, QString text, QString info )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This  function sets  this message  info to  'error' with  the given
+ |   title, info text and additional info.
  |
  +-------------------------------------------------------------------------*/
 
@@ -246,8 +222,8 @@ void MsgInfo::setError ( QString title, QString text, QString info )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This function  sets this message  info to 'warning' with  the given
+ |   title, info text and additional info.
  |
  +-------------------------------------------------------------------------*/
 
@@ -265,8 +241,8 @@ void MsgInfo::setWarning ( QString title, QString text, QString info )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This function  sets this message  info to 'information' with  the given
+ |   title, info text and additional info.
  |
  +-------------------------------------------------------------------------*/
 
@@ -290,8 +266,8 @@ void MsgInfo::setInfo ( QString title, QString text, QString info )
  |    level:Error
  |    time:Fr Jun 22 18:11:13 2018
  |    title:Error
- |    text:
- |    Failed Loading Filter collection: FilterModels_117_x64.dll
+ |    text: 
+ |    Failed Loading File: Stick_1.png
  |    extra info:
  |
  |  Output parameter :
@@ -304,7 +280,7 @@ L_String MsgInfo::toText ()
   L_String msgText;
   QString  help;
 
-  help = "level: " + levelToName (level);
+  help = "level: " + getLevelName (level);
   msgText.append (help);
 
   help = "time: " + date;

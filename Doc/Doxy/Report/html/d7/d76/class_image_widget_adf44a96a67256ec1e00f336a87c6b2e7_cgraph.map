@@ -1,0 +1,15 @@
+<map id="ImageWidget::onSaveImageAs" name="ImageWidget::onSaveImageAs">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,204,83"/>
+<area shape="rect" id="Node000002" href="$d7/d76/class_image_widget.html#accd60845b6dae07a52dd6d59bc8bafcc" title=" " alt="" coords="260,5,410,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,53,255,33,257,39,169,58"/>
+<area shape="rect" id="Node000003" href="$d7/d76/class_image_widget.html#afac5a992c282413c7cd2a340a943c61f" title=" " alt="" coords="253,56,417,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,67,237,67,237,72,204,72"/>
+<area shape="rect" id="Node000007" href="$d7/d76/class_image_widget.html#a4da2c93de8c36f18b88e5fd39e2f049e" title=" " alt="" coords="252,107,418,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="169,81,257,100,255,105,168,86"/>
+<area shape="rect" id="Node000004" href="$d7/d76/class_image_widget.html#a0a0ce614ad6def8e509c48a5e6259f98" title=" " alt="" coords="466,56,630,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="418,67,450,67,450,72,418,72"/>
+<area shape="rect" id="Node000005" href="$d7/d76/class_image_widget.html#ac1bb3dd4d86a84fb4411edf192c5fef1" title=" " alt="" coords="678,56,875,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="631,67,663,67,663,72,631,72"/>
+<area shape="rect" id="Node000006" href="$d3/d93/class_string_utils.html#a877c4e53da4ce2ee103d58467ff7ea93" title=" " alt="" coords="923,56,1063,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="875,67,907,67,907,72,875,72"/>
+</map>

@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['tan_0',['tan',['../d9/ddd/class_color.html#a883811edb641672c754b5e35ac6e2e1f',1,'Color']]],
+  ['teal_1',['teal',['../d9/ddd/class_color.html#ac4bd3213ea52831d3866fa7002f9f115',1,'Color']]],
+  ['text_2',['text',['../de/d1a/class_par_base.html#a50caec5387187d2fdfd6c9eeadca2cef',1,'ParBase::text'],['../d9/dee/class_par_manager.html#a8676bf98fe3a1ebdc5768a1162166ba6',1,'ParManager::text'],['../d7/d40/class_curves_dialog.html#ac15d77551647e0d36a16d2ad9216954d',1,'CurvesDialog::text'],['../d4/dc8/class_image_edit.html#a2b0e5b6ee87a90771fd42e41faf91764',1,'ImageEdit::text'],['../db/dfa/class_image_scene.html#af06ed67bb65a87094e34f8422e7e3daf',1,'ImageScene::text'],['../df/de8/class_image_view.html#aa676d3d6a5a3063992cf5791cd69ba23',1,'ImageView::text'],['../d7/d76/class_image_widget.html#a0e9b7d7fc1d7ded5ef67cfeef6e57d5b',1,'ImageWidget::text'],['../d5/d71/class_tools_widget.html#a820a3df94e89bc30021cbaf6b15c6ab0',1,'ToolsWidget::text'],['../d5/dcf/class_curves_widget.html#a3b46ea467766a38bfd080f893cee01aa',1,'CurvesWidget::text'],['../d6/df0/class_par_list_grid.html#ab748ec1776f9b9dfa6eb242568d156e1',1,'ParListGrid::text'],['../dd/d59/class_job_manager.html#a6d0b1cb598ff8ac40ec0bddac37d0c6d',1,'JobManager::text'],['../da/dd7/class_main_wnd.html#ae1ed2a7aacf5788860eb100213a4c32f',1,'MainWnd::text'],['../df/daa/class_msg_info.html#ac30ee32bc4dc630143748a39c448636b',1,'MsgInfo::text'],['../d6/d64/class_image_mat.html#a3fff3ce285fe3662cb55b9027065ea29',1,'ImageMat::text']]],
+  ['thistle_3',['thistle',['../d9/ddd/class_color.html#aaf41345e3668a066ba9ae27517118d7a',1,'Color']]],
+  ['timerid_4',['timerId',['../dd/d59/class_job_manager.html#a68a75c0d266cf383d59c5042ff1c6262',1,'JobManager::timerId'],['../da/dd7/class_main_wnd.html#abddff59fc3135b0c8b716e293fa93bf0',1,'MainWnd::timerId']]],
+  ['timerused_5',['timerUsed',['../dd/d59/class_job_manager.html#ae83ff82cfe4432e8d5b0d781ba7c8572',1,'JobManager']]],
+  ['title_6',['title',['../df/daa/class_msg_info.html#a2075ef3dbb1b90d1d1955011b4c2026b',1,'MsgInfo']]],
+  ['tmpimage_7',['tmpImage',['../df/de8/class_image_view.html#a2f08352f0714ac7200666c2e1e59bbea',1,'ImageView']]],
+  ['togglealways_8',['toggleAlways',['../db/d0a/class_icon_button.html#a4ac51b6175a34b0722ebdf8fa8b8eda7',1,'IconButton']]],
+  ['tomato_9',['tomato',['../d9/ddd/class_color.html#aa5c1d80050a331382a7bf304559d66de',1,'Color']]],
+  ['toolbuttons_10',['toolButtons',['../d5/d71/class_tools_widget.html#a21c4bafa11a8ced9bbfebe9f790237c1',1,'ToolsWidget']]],
+  ['tools_11',['tools',['../d4/dc8/class_image_edit.html#a1e0a91572f0c85bdef3e3a7afe3edb96',1,'ImageEdit']]],
+  ['toolswidget_12',['toolsWidget',['../d4/dc8/class_image_edit.html#a605e8d4735d22e56cf3d20c8439b2ed1',1,'ImageEdit::toolsWidget'],['../d7/d76/class_image_widget.html#a2a8edc8651be0802b88cd90f4c1a0798',1,'ImageWidget::toolsWidget'],['../da/dd7/class_main_wnd.html#a59671d397384a424ae9560054b6abeab',1,'MainWnd::toolsWidget']]],
+  ['topic_13',['topic',['../da/d57/class_job_info.html#a4fbc37de80b30fe75b89d6b72ce6451f',1,'JobInfo::topic'],['../dd/d59/class_job_manager.html#aa60d874961ecf2334ec3227a639611b4',1,'JobManager::topic']]],
+  ['topics_14',['topics',['../dd/d59/class_job_manager.html#aa93666cdb13ecf3dc40883c1f9cb4178',1,'JobManager']]],
+  ['turquoise_15',['turquoise',['../d9/ddd/class_color.html#af786c33eac9bb9b3f71a23e02d6663fe',1,'Color']]],
+  ['txtblackpnt_16',['txtBlackPnt',['../d7/d40/class_curves_dialog.html#a1324fe97190ae6a00f9f67960d177fd3',1,'CurvesDialog']]],
+  ['txtgammaval_17',['txtGammaVal',['../d7/d40/class_curves_dialog.html#af8ac9992799edbd340b491d1f0932588',1,'CurvesDialog']]],
+  ['txtinfomsg_18',['txtInfoMsg',['../da/dd7/class_main_wnd.html#ac589539c401abb3db5cc803f521621e3',1,'MainWnd']]],
+  ['txtocrpar_19',['txtOcrPar',['../d8/d2e/class_image_file_dlg.html#a72aa6a6b58b34ca7e8dd723a4f84d81b',1,'ImageFileDlg']]],
+  ['txtoffsetval_20',['txtOffsetVal',['../d7/d40/class_curves_dialog.html#a6feae9679fd66e3496cbd88c4d40ece0',1,'CurvesDialog']]],
+  ['txtradius_21',['txtRadius',['../d7/d40/class_curves_dialog.html#ac66821e0612f193f2adc06f9e9881080',1,'CurvesDialog']]],
+  ['txtsigmaval_22',['txtSigmaVal',['../d7/d40/class_curves_dialog.html#af0382c16acaf97eb11bc59eadf32944b',1,'CurvesDialog']]],
+  ['txtwhitepnt_23',['txtWhitePnt',['../d7/d40/class_curves_dialog.html#a412b03b28552f0289d8b22f375129122',1,'CurvesDialog']]],
+  ['type_24',['type',['../d6/df0/class_par_list_grid.html#a40959929139b2f591be956043a1bfaa7',1,'ParListGrid']]]
+];

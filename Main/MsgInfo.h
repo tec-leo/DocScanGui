@@ -30,9 +30,8 @@
  |
  |  Description :
  |
- |   This class contains  the content of a message  coming from algorithm
- |   or internally. It handles different levels of messages, like errors,
- |   warnings or just infos.
+ |   This class contains  the content of a message;  it handles different
+ |   levels of messages, like errors, warnings or just infos.
  |
  +-------------------------------------------------------------------------*/
 
@@ -44,8 +43,7 @@ class MsgInfo
 
     void     clear        ();
     QString  getLevelName ( int level );
-    QString  levelToName  ( int level );
-    int      nameToLevel  ( QString name );
+    int      getLevel     ( QString name );
     void     setInfo      ( int level, QString title,
                             QString text, QString info );
     void     setCritical  ( QString title, QString text, QString info = "" );

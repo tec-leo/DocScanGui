@@ -19,8 +19,8 @@
  |
  |  Description :
  |
- |   This class allows to load and save a list of recently used files and it
- |   provides also 'actions' for them.
+ |   This class allows  to load and save a list  of recently used entries
+ |   like files and it provides also 'actions' for them.
  |
  +-------------------------------------------------------------------------*/
 
@@ -35,7 +35,7 @@ class HistoryList : public QObject
 
     void     addActions     ( QMenu * menu );
     void     append         ( QString entry );
-    void     remove         ( QString entry );
+    void     deleteItem     ( QString entry );
     void     deleteItems    ();
     void     load           ( QString section, QString label, int size );
     void     save           ();
@@ -49,7 +49,7 @@ class HistoryList : public QObject
     void     itemSelected   ( QString file );
 
   protected slots:
-    void     fileSelected   ();
+    void     itemTriggered  ();
 
   protected:
     void     createActions  ();

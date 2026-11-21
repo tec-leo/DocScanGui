@@ -4,11 +4,12 @@
  |
  |  Description :
  |
- |   This module  implements a the  class 'ParListTable' which  shows all
- |   items of a 'ParList' in a table widget.
+ |   This module implements  a the class 'ParListTable'  which is derived
+ |   from QTableWidget  and shows  all items  of a  'ParList' in  a table
+ |   widget.
  |
  |  Developer : Oskar Leirich                Creation date : 18.Oct.2023
- |  Modified  : Oskar Leirich                Last changes  : 19.Aug.2024
+ |  Modified  : Oskar Leirich                Last changes  : 16.Nov.2026
  |
  |
  |  This unit contains following classes :
@@ -31,12 +32,12 @@
  |
  |  Description :
  |
- |   There  are two  constructors,  one is  the  default constructor,  to
- |   really  use  it  'setParList'  must be  called  before.  The  second
- |   receives a pointer to the ParList directly.
+ |   There are two  constructors, one is the default  constructor, to use
+ |   it  'setParList'  must be  called  before.   The second  receives  a
+ |   pointer to the ParList directly.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |   parList         :  Pointer to the list of parameter items.
  |
  +-------------------------------------------------------------------------*/
@@ -44,7 +45,9 @@
 ParListTable::ParListTable ( QWidget * parent ) : QTableWidget (parent)
 {
 
-  parList = nullptr;
+  cell        = nullptr;
+  parList     = nullptr;
+  withComment = true;
 
 }               /*----- ParListTable -----*/
 
@@ -54,6 +57,9 @@ ParListTable::ParListTable ( QWidget * parent, ParList * parList )
 {
 
   this->parList = parList;
+
+  cell        = nullptr;
+  withComment = true;
 
   init ();
 
@@ -76,6 +82,27 @@ ParListTable::~ParListTable ()
 
 
 }               /*-----  ~ParListTable  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function : init  of  ParListTable
+ |
+ |  Description :
+ |
+ |   This function is called from the constructor and stores a pointer to
+ |   the parameter items and fill the table widget.
+ |
+ +-------------------------------------------------------------------------*/
+
+void ParListTable::init ()
+{
+
+  parItems = parList->getParItems ();
+
+  fillTable  ();
+
+}               /*-----  init  -----*/
 
 
 /*-------------------------------------------------------------------------
@@ -116,8 +143,9 @@ void  ParListTable::adjustGrid ()
  |
  |  Description :
  |
- |   This  function   fills  the   row  of   the  table   with  'special'
- |   cell-formats.
+ |   This  function  fills the  row  of  the  table with  some  'special'
+ |   cell-formats like  foreground color  for a cell  and the  font size,
+ |   weight and family.
  |
  +-------------------------------------------------------------------------*/
 
@@ -195,7 +223,12 @@ void ParListTable::formatRow ( int row )
  |
  |  Description :
  |
- |   This function fills the table with content of the par List.
+ |   This function fills the table with  the content of the par List. The
+ |   first column contains the name of the parameter, the second contains
+ |   the  value and  the third  (optional) a  comment.  Then  it converts
+ |   every value  of the  parameter items with  'toString' which  calls a
+ |   utility function to  make the conversion depending  on the parameter
+ |   type.
  |
  +-------------------------------------------------------------------------*/
 
@@ -282,8 +315,11 @@ void ParListTable::fillTable ()
  |
  |  Description :
  |
- |   This function  is called when  the values  should be copied  back to
- |   ISA. It reads the table and stores it in the arrays.
+ |   This function is called when the values should be copied back to the
+ |   parameter item. It  reads the cell values of the  table which are in
+ |   column  2. Then  it  converts  them for  every  parameter item  with
+ |   'fromString' which calls  a utility function to  make the conversion
+ |   depending on the parameter type.
  |
  +-------------------------------------------------------------------------*/
 
@@ -295,7 +331,7 @@ void ParListTable::getTable ()
 
   rows = rowCount ();
 
-  // fill table with arrays
+  // convert values in column
   for ( int i = 0; i < rows; i++ )
   {
     parItem = parItems [i];
@@ -353,31 +389,12 @@ void ParListTable::toGui ()
 
 /*-------------------------------------------------------------------------
  |
- |  Member function : init  of  ParListTable
- |
- |  Description :
- |
- |   This function is called from the constructor.
- |
- +-------------------------------------------------------------------------*/
-
-void ParListTable::init ()
-{
-
-  parItems = parList->getParItems ();
-
-  fillTable  ();
-
-}               /*-----  init  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
  |  Member function : setParList  of  ParListTable
  |
  |  Description :
  |
- |   This function receives a pointer to the ParList and stores it.
+ |   This function receives a pointer to  the ParList and stores it; then
+ |   it calls init.
  |
  |  Input parameters :
  |   parList         :  Pointer to the list of parameter items.

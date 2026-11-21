@@ -1,0 +1,11 @@
+<map id="ImageWidget::onReloadImage" name="ImageWidget::onReloadImage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,200,32"/>
+<area shape="rect" id="Node000002" href="$d7/d76/class_image_widget.html#afac5a992c282413c7cd2a340a943c61f" title=" " alt="" coords="248,5,412,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,16,232,16,232,21,200,21"/>
+<area shape="rect" id="Node000003" href="$d7/d76/class_image_widget.html#a0a0ce614ad6def8e509c48a5e6259f98" title=" " alt="" coords="460,5,624,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="412,16,445,16,445,21,412,21"/>
+<area shape="rect" id="Node000004" href="$d7/d76/class_image_widget.html#ac1bb3dd4d86a84fb4411edf192c5fef1" title=" " alt="" coords="672,5,869,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="625,16,657,16,657,21,625,21"/>
+<area shape="rect" id="Node000005" href="$d3/d93/class_string_utils.html#a877c4e53da4ce2ee103d58467ff7ea93" title=" " alt="" coords="917,5,1057,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="869,16,901,16,901,21,869,21"/>
+</map>

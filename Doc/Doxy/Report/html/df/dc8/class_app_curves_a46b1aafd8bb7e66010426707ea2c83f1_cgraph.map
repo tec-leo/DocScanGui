@@ -1,0 +1,35 @@
+<map id="AppCurves::load" name="AppCurves::load">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,121,96"/>
+<area shape="rect" id="Node000002" href="$df/dc8/class_app_curves.html#a7f4bb18dc18c6d779242987ed284b851" title=" " alt="" coords="169,19,330,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,66,182,47,184,52,116,71"/>
+<area shape="rect" id="Node000003" href="$de/d1a/class_par_base.html#ad6c89bc36bc600dbea10f188b55539de" title=" " alt="" coords="198,69,301,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,80,183,80,183,85,121,85"/>
+<area shape="rect" id="Node000006" href="$df/dc8/class_app_curves.html#a62f8da935874e4c5d22ec29cb23becba" title=" " alt="" coords="176,183,323,209"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="88,94,215,172,212,177,85,99"/>
+<area shape="rect" id="Node000004" href="$de/d1a/class_par_base.html#a31fc93be96a6795a082027232729d4a0" title=" " alt="" coords="405,5,549,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="294,66,377,41,405,34,407,39,379,47,295,71"/>
+<area shape="rect" id="Node000005" href="$de/d1a/class_par_base.html#a0e93f2daeb020aff50ed12ddba7eea2f" title=" " alt="" coords="648,5,794,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="550,16,633,16,633,21,550,21"/>
+<area shape="rect" id="Node000007" href="$d7/db0/class_color_curves.html#a9bc139d3972e2af6862bc5aa3fd7d812" title=" " alt="" coords="383,56,572,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="262,180,310,137,342,113,377,92,392,86,394,91,379,97,345,117,313,141,266,184"/>
+<area shape="rect" id="Node000008" href="$d7/db0/class_color_curves.html#a4184de08dc27e77d5b2151342fb930b1" title=" " alt="" coords="382,107,573,133"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="281,180,377,143,402,135,403,141,379,148,283,185"/>
+<area shape="rect" id="Node000009" href="$d7/db0/class_color_curves.html#a5db425fc806693a7822beb0612fa669b" title=" " alt="" coords="378,157,576,184"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="323,185,362,181,363,186,323,190"/>
+<area shape="rect" id="Node000010" href="$d7/db0/class_color_curves.html#ad88c41edb432b1988aa25aafd75d2564" title=" " alt="" coords="384,208,570,235"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="323,202,369,207,369,212,323,207"/>
+<area shape="rect" id="Node000011" href="$df/dc8/class_app_curves.html#ad6b24fc4bdec781412ad1e8e9ff452bf" title=" " alt="" coords="396,259,558,285"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="283,207,379,244,403,251,402,257,377,249,281,212"/>
+<area shape="rect" id="Node000016" href="$d7/db0/class_color_curves.html#a9cdacdbf2c3c099b9ec38d9dfb8a5fbc" title=" " alt="" coords="386,309,568,336"/>
+<area shape="poly" id="edge15_Node000006_Node000016" title=" " alt="" coords="266,208,313,251,345,275,379,295,394,301,392,306,377,300,342,279,310,255,262,212"/>
+<area shape="rect" id="Node000017" href="$d7/db0/class_color_curves.html#a04a81be14f548d97bc3d5487d6b19b19" title=" " alt="" coords="400,360,554,387"/>
+<area shape="poly" id="edge16_Node000006_Node000017" title=" " alt="" coords="260,208,305,275,339,313,379,346,389,351,386,356,377,350,335,317,301,278,256,211"/>
+<area shape="rect" id="Node000012" href="$d6/d82/class_color_channel.html#a4f2b5a7b60d07834a6506c4649ea466c" title=" " alt="" coords="635,208,807,235"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="544,255,638,236,639,241,546,261"/>
+<area shape="rect" id="Node000013" href="$d6/d82/class_color_channel.html#ab5ff1e0140388a8ab724d8aa18c6668f" title=" " alt="" coords="639,259,803,285"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="559,269,624,269,624,275,559,275"/>
+<area shape="rect" id="Node000015" href="$d6/d82/class_color_channel.html#aeaf72628d9f96433b330129381b87104" title=" " alt="" coords="624,309,818,336"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="546,283,639,303,638,308,544,289"/>
+<area shape="rect" id="Node000014" href="$d6/d82/class_color_channel.html#a063a2a7ce9e512bc844460df3d4550e5" title=" " alt="" coords="866,259,1038,285"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="803,269,850,269,850,275,803,275"/>
+</map>

@@ -4,22 +4,22 @@
  |
  |  Description :
  |
- |   This  module contains  global utility  functions for  random number,
- |   environment  information, date,  time and  some other  common useful
- |   functions.
- |
+ |   This  module  contains the  class  'VarUtils'  which implement  some
+ |   utility   functions  for   rounding,  random   values  and   getting
+ |   environment information from the operation system like date, time or
+ |   any environment key.
  |
  |  Developer : Oskar Leirich                Creation date : 23.Nov.2022
- |  Modified  : Oskar Leirich                Last changes  : 21.Jun.2026
+ |  Modified  : Oskar Leirich                Last changes  : 20.Nov.2026
  |
  |
  |  This unit contains following member functions :
  |   of VarUtils :
- |    VarUtils                  containsPoint             getDate
- |    getEnv                    getRange                  getTime
- |    getUserName               randGen                   random
- |    randomNormal              round                     roundLong
- |    roundPercent              roundRes                  seedRandom
+ |    VarUtils                  getDate                   getEnv
+ |    getRange                  getTime                   randGen
+ |    random                    randomNormal              round
+ |    roundLong                 roundPercent              roundRes
+ |    seedRandom
  |
  +-------------------------------------------------------------------------*/
 
@@ -39,7 +39,7 @@ const quint32  cMaxRand  = UINT_MAX;
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor initializes the seed of the random generator.
  |
  +-------------------------------------------------------------------------*/
 
@@ -53,38 +53,6 @@ VarUtils::VarUtils ()
 
 /*-------------------------------------------------------------------------
  |
- |  Member function :  containsPoint  of  VarUtils
- |
- |  Description :
- |
- |   This function  checks if the  given widget contains the  given point
- |   (in global screen coordinates) and returns the result of the test.
- |
- |  Input parameters :
- |   widget          :  pointer to the widget
- |   point           :  point to test (in global screen coordinates)
- |
- +-------------------------------------------------------------------------*/
-
-bool VarUtils::containsPoint ( QWidget * widget, QPoint point )
-{
-  QPointF pos;
-  QPointF pnt;
-  QRectF  rect;
-
-  pos  = widget->mapToGlobal ( widget->pos () );
-  pnt  = widget->mapToGlobal (point);
-
-  rect = widget->rect ();
-  rect.translate (pnt);
-
-  return rect.contains (pnt);
-
-}               /*-----  containsPoint  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
  |  Member function :  getEnv  of  VarUtils
  |
  |  Description :
@@ -93,10 +61,10 @@ bool VarUtils::containsPoint ( QWidget * widget, QPoint point )
  |   environment.
  |
  |  Input parameters :
- |   key             :
+ |   key             : Key in the system environment.
  |
  |  Output parameter :
- |   (QString)       :
+ |   (QString)       : Result as string
  |
  +-------------------------------------------------------------------------*/
 
@@ -133,7 +101,7 @@ QString VarUtils::getEnv ( QString key )
  |   This function returns the current date as a string in ISO format.
  |
  |  Output parameter :
- |   (QString)       :
+ |   (QString)       : Date string in ISO format
  |
  +-------------------------------------------------------------------------*/
 
@@ -160,7 +128,7 @@ QString VarUtils::getDate ()
  |   This function returns the current time as a string in ISO format.
  |
  |  Output parameter :
- |   (QString)       :
+ |   (QString)       : Time string in ISO format
  |
  +-------------------------------------------------------------------------*/
 
@@ -186,6 +154,11 @@ QString VarUtils::getTime ()
  |
  |   This function creates a list of integer values in the range between first
  |   and last (not included) with the given increment (defaults to 1);
+ |
+ |  Input parameters :
+ |   first           : First integer value
+ |   last            : Last integer value (not included)
+ |   incr            : Integer increment
  |
  |  Output parameter :
  |   (L_Int)         : List of integers
@@ -213,82 +186,17 @@ L_Int VarUtils::getRange ( int first, int last, int incr )
 
 /*-------------------------------------------------------------------------
  |
- |  Member function :  getUserName  of  VarUtils
- |
- |  Description :
- |
- |   This function  returns the user name  (uid) and also the  real name.
- |   To evaluate the real name the net service is used with the following
- |   command: net /domain user 'userid'
- |   example: net /domain user uid02384
- |
- |   The answer is something like:
- |
- |   The request will be processed at a domain controller for domain cw01.contiwan.com.
- |   User name                    uid02384
- |   Full Name                    Leirich, Oskar
- |
- |  Input parameters :
- |   name            : Reference which stores the real username
- |
- |  Output parameter :
- |   (QString)       : Evaluated user id
- |
- +-------------------------------------------------------------------------*/
-
-QString VarUtils::getUserName ( QString & userName )
-{
-  QProcess * process;
-  L_String   args;
-  QString    text;
-  QString    userId;
-
-  userId = getEnv ( "USERNAME" );
-
-  args.clear ();
-
-  args.append ( "/domain" );
-  args.append ( "user" );
-  args.append ( userId );
-
-  process = new QProcess (nullptr);
-
-  process->start ( "net.exe", args );
-
-  if ( process->waitForFinished () )
-  {
-    text = QString ( process->readAll () );
-    args = text.split ( "\n" );
-
-    for ( int i = 0; i < args.count (); i++ )
-    {
-      text = args [i];
-
-      if ( text.startsWith ( "Full Name" ) )
-      {
-        text.replace ( "Full Name", "" );
-        userName = text.trimmed ();
-        break;
-      }
-    }
-  }
-
-  return userId;
-
-}               /*-----  getUserName  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
  |  Member function :  seedRandom  of  VarUtils
  |
  |  Description :
  |
- |   This function reseeds  the random generator. If the seed  is -1 then
- |   it is  intialized with  the global object  that was  securely seeded
- |   with  QRandomGenerator::system.  This  is the  recommended  way  for
- |   creating a  new QRandomGenerator object  that will be kept  for some
- |   time.
+ |   This function creates  a new 32 bit random generator  with the given
+ |   seed. If the seed is -1 then it is intialized with the global object
+ |   that was securely seeded with QRandomGenerator::system.  This is the
+ |   recommended way for creating a new QRandomGenerator object that will
+ |   be kept for some time.
+ |
+ |   Note : for compatibility with the stl use the QRandomGenerator64
  |
  |  Input parameters :
  |   seed            : new seed for the random generator
@@ -297,6 +205,9 @@ QString VarUtils::getUserName ( QString & userName )
 
 void VarUtils::seedRandom ( qint32 seed )
 {
+
+  if (randGen)
+    delete randGen;
 
   if ( seed == - 1 )
     randGen = QRandomGenerator::global ();
@@ -314,13 +225,15 @@ void VarUtils::seedRandom ( qint32 seed )
  |
  |  Description :
  |
- |   This function creates a random number in the given range.
+ |   This function creates a random number  in the given range. The means
+ |   the random  number in the range  0..1.0 will be multiplied  with the
+ |   given rande.
  |
  |  Input parameters :
  |   range           : input range
  |
  |  Output parameter :
- |   (double)        : random number
+ |   (double)        : random number in input range -  0 .. range
  |
  +-------------------------------------------------------------------------*/
 
@@ -341,7 +254,8 @@ double VarUtils::random ( int range )
  |
  |  Description :
  |
- |   This function creates a random number in the range between 0 and 1.
+ |   This function creates  a random double value in the  range between 0
+ |   and 1.
  |
  |  Output parameter :
  |   (int)           : random number
@@ -381,7 +295,7 @@ double VarUtils::random ()
 
 double VarUtils::random ( double lowest, double highest )
 {
-  double  d_random;
+  double d_random;
 
   d_random = lowest + ( highest - lowest ) * random ();
 
@@ -502,7 +416,8 @@ double VarUtils::roundRes ( double inValue, double resolution )
  |  Description :
  |
  |   This function rounds the given 'real' variables and returns it as an
- |   integer variable.
+ |   integer variable. It rounds to  the closest absolute integer number,
+ |   this means -0.7 will be rounded to -1 and not to 0.
  |
  |  Input parameters :
  |   inValue         : input variable
@@ -580,8 +495,8 @@ double VarUtils::roundPercent ( double inValue, double percent )
  |
  |  Description :
  |
- |   This function rounds the given 'real' variables and returns it as an
- |   integer variable.
+ |   This function rounds the given 'real'  variables and returns it as a
+ |   64 bit integer variable.
  |
  |  Input parameters :
  |   inValue         : input variable

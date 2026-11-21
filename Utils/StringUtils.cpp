@@ -5,12 +5,12 @@
  |  Description :
  |
  |   This module  contains the class 'StringUtils'  which implements some
- |   'QString'  and   'QStringList'  utility  functions  e.g.   for  easy
- |   formatting.
+ |   utility functions  for string and text  formatting, manipulation and
+ |   converting.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 28.Jan.2021
- |  Modified  : Oskar Leirich                Last changes  : 01.May.2026
+ |  Modified  : Oskar Leirich                Last changes  : 20.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -199,8 +199,8 @@ QString StringUtils::deleteRegion ( QString text, int begIdx, int endIdx )
  |
  |   This function extracts a substring in the given string starting from
  |   the given index forward until the delimiter is found. It returns the
- |   substring  and  the index  of  the  delimiter  in the  string.   The
- |   delimiter can be single character or a substring.
+ |   substring and the index (reference)  of the delimiter in the string.
+ |   The delimiter can be single character or a substring.
  |
  |  Input parameters :
  |    block          : text string
@@ -235,8 +235,8 @@ QString StringUtils::findNextWord ( QString block, QString delim,
  |
  |   This function extracts a substring in the given string starting from
  |   the given index  backward until the delimiter is  found.  It returns
- |   the substring  and the index  of the  delimiter in the  string.  The
- |   delimiter can be single character or a substring.
+ |   the  substring and  the index  (reference) of  the delimiter  in the
+ |   string.  The delimiter can be single character or a substring.
  |
  |  Note : endIdx is before begIdx
  |
@@ -360,54 +360,16 @@ QString StringUtils::formatF ( double value, int precision, char format )
 
 /*-------------------------------------------------------------------------
  |
- |  Member function :  indexOf  of  StringUtils
- |
- |  Description :
- |
- |   This function searches the given pattern (regular expression) in the
- |   string list  'lines'. It uses  indexOf of QStringList and  allows to
- |   use the regular expression either case sensitive or not.
- |
- |  Input parameters :
- |   lines           : string list to search
- |   pattern         : text pattern to search for
- |   ignoreCase      : case insensitive or not
- |
- |  Output parameter :
- |   (int)           : index in string list, -1 if not found
- |
- +-------------------------------------------------------------------------*/
-
-int StringUtils::indexOf ( L_String lines, QString pattern, bool ignoreCase )
-{
-  QRegularExpression regEx;
-  int     index;
-
-  if (ignoreCase)
-    regEx.setPatternOptions ( QRegularExpression::CaseInsensitiveOption );
-
-  regEx.setPattern (pattern);
-
-  index = lines.indexOf (regEx);
-
-  return index;
-
-}               /*-----  indexOf  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
  |  Member function :  getDoubleList  of  StringUtils
  |
  |  Description :
  |
  |   This function splits  the given string with the  given separator and
- |   tries  converts each  element  to an double and  returns  all in  a
- |   float list.
+ |   converts each element to a double and returns all in a double list.
  |
  |  Input parameters :
  |   text            : Text string separated with 'sep'
- |   sep             : Separator used for splitting
+ |   sep             : Separator used for splitting, default is ','
  |
  |  Output parameter :
  |   (L_Double)      : List of double floats
@@ -446,12 +408,11 @@ L_Double StringUtils::getDoubleList ( QString text, QString sep )
  |  Description :
  |
  |   This function splits  the given string with the  given separator and
- |   tries  converts each  element  to an float and  returns  all in  a
- |   float list.
+ |   converts each element to a float and returns all in a float list.
  |
  |  Input parameters :
  |   text            : Text string separated with 'sep'
- |   sep             : Separator used for splitting
+ |   sep             : Separator used for splitting, default is ','
  |
  |  Output parameter :
  |   (L_Float)       : List of floats
@@ -490,12 +451,12 @@ L_Float StringUtils::getFloatList ( QString text, QString sep )
  |  Description :
  |
  |   This function splits  the given string with the  given separator and
- |   tries  converts each  element  to an  integer and  return  all in  a
- |   integer list.
+ |   converts each  element to  an integer  and return  all in  a integer
+ |   list.
  |
  |  Input parameters :
  |   text            : Text string separated with 'sep'
- |   sep             : Separator used for splitting
+ |   sep             : Separator used for splitting, default is ','
  |
  |  Output parameter :
  |   (L_Int)         : List of integers
@@ -536,7 +497,7 @@ L_Int StringUtils::getIntList ( QString text, QString sep )
  |   text            : Input text string
  |
  |  Output parameter :
- |   (String)        : List of strings
+ |   (String)        : Quoted of string
  |
  +-------------------------------------------------------------------------*/
 
@@ -562,10 +523,10 @@ QString StringUtils::getQuoted ( QString text )
  |
  |  Input parameters :
  |   intList         : List of integers
- |   sep             : Separator used for joining
+ |   sep             : Separator used for splitting, default is ','
  |
  |  Output parameter :
- |   (QString)       : Joined list of strings (with separator)
+ |   (QString)       : Joined string with separator
  |
  +-------------------------------------------------------------------------*/
 
@@ -620,12 +581,49 @@ L_String StringUtils::getStringList ( L_Int intList )
 
 /*-------------------------------------------------------------------------
  |
+ |  Member function :  indexOf  of  StringUtils
+ |
+ |  Description :
+ |
+ |   This function searches the given pattern (regular expression) in the
+ |   string list  'lines'. It uses  indexOf of QStringList and  allows to
+ |   use the regular expression either case sensitive or not.
+ |
+ |  Input parameters :
+ |   lines           : string list to search
+ |   pattern         : text pattern to search for
+ |   ignoreCase      : case insensitive or not
+ |
+ |  Output parameter :
+ |   (int)           : index in string list, -1 if not found
+ |
+ +-------------------------------------------------------------------------*/
+
+int StringUtils::indexOf ( L_String lines, QString pattern, bool ignoreCase )
+{
+  QRegularExpression regEx;
+  int     index;
+
+  if (ignoreCase)
+    regEx.setPatternOptions ( QRegularExpression::CaseInsensitiveOption );
+
+  regEx.setPattern (pattern);
+
+  index = lines.indexOf (regEx);
+
+  return index;
+
+}               /*-----  indexOf  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
  |  Member function :  boolToString  of  StringUtils
  |
  |  Description :
  |
  |   This function 'converts' the given boolean variable to a string with
- |   the text representation.
+ |   the text representation 'true' or 'false'.
  |
  |  Input parameters :
  |   inVar           : bool variable
@@ -660,7 +658,7 @@ QString StringUtils::boolToString ( bool inVar )
  |   textStr         : Text string of the variable
  |
  |  Output parameter :
- |   (bool)          : value for bool
+ |   (bool)          : value for bool, defaults to false
  |
  +-------------------------------------------------------------------------*/
 
@@ -682,8 +680,14 @@ bool StringUtils::stringToBool ( QString textStr )
  |  Description :
  |
  |   This function splits  every entry of the given string  list with the
- |   given separator  and converts the  parts in to  key and a  value and
+ |   separator "="  and converts  the parts  into a key  and a  value and
  |   returns it in a string map.
+ |
+ |  Input parameters :
+ |   entries         : String list, entries should be key=value
+ |
+ |  Output parameter :
+ |   (M_StrStr)      : Converted string map
  |
  +-------------------------------------------------------------------------*/
 
@@ -716,9 +720,16 @@ M_StrStr StringUtils::listToMap ( L_String entries )
  |
  |  Description :
  |
- |   This function splits  every entry of the given string  list with the
- |   given separator  and converts the  parts in to  key and a  value and
+ |   This function splits every entry of the given string list  with  the
+ |   given separator and converts the parts in to key  and  a  value  and
  |   returns it in a string map.
+ |
+ |  Input parameters :
+ |   entry           : Text string separated with 'sep'
+ |   sep             : Separator used for splitting, default is ','
+ |
+ |  Output parameter :
+ |   (M_StrStr)      : Converted string map
  |
  +-------------------------------------------------------------------------*/
 
@@ -739,22 +750,22 @@ M_StrStr StringUtils::listToMap ( QString entry, QString sep )
  |
  |  Description :
  |
- |   This  function  'converts'  the  given  pointer  to  a  variable  of
- |   'varStr', a char pointer.
+ |   This function 'converts' the given  pointer to void number to string
+ |   representation 'varStr', depending on the a variable type 'varType'.
  |
  |  Input parameters :
- |   varStr          : result of the conversion
+ |   varStr          : Text result of the conversion
  |   number          : Void pointer to the variable
  |   varType         : Type of the variable
  |   decimals        : Decimals in case of a float variable
  |
  |  Output parameter :
- |   (bool)          : result of the conversion
+ |   (bool)          : success result of the conversion
  |
  +-------------------------------------------------------------------------*/
 
 bool StringUtils::toString ( QString & varStr, void * number,
-                          QString varType,  int decimals )
+                             QString varType,  int decimals )
 {
   bool bValue;
 
@@ -817,15 +828,15 @@ bool StringUtils::toString ( QString & varStr, void * number,
  |   number          : Void pointer to the variable
  |   varType         : Type of the variable
  |
- |  Output parameters :
- |   (bool)           :  true  -  conversion without errors
- |                       false -  error during conversion
+ |  Output parameter :
+ |   (bool)          :  true  -  conversion without errors
+ |                      false -  error during conversion
  |
  +-------------------------------------------------------------------------*/
 
 bool StringUtils::fromString ( QString varStr, void * number, QString varType )
 {
-  bool    ok;
+  bool ok;
 
   if ( varStr.isEmpty () )
     return false;        // empty String, no conversion possible

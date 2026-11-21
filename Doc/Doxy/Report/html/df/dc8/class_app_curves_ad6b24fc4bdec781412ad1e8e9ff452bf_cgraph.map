@@ -1,0 +1,11 @@
+<map id="AppCurves::loadChannel" name="AppCurves::loadChannel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,168,83"/>
+<area shape="rect" id="Node000002" href="$d6/d82/class_color_channel.html#a4f2b5a7b60d07834a6506c4649ea466c" title=" " alt="" coords="226,5,399,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,53,234,33,236,39,150,58"/>
+<area shape="rect" id="Node000003" href="$d6/d82/class_color_channel.html#ab5ff1e0140388a8ab724d8aa18c6668f" title=" " alt="" coords="231,56,394,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,67,215,67,215,72,168,72"/>
+<area shape="rect" id="Node000005" href="$d6/d82/class_color_channel.html#aeaf72628d9f96433b330129381b87104" title=" " alt="" coords="216,107,409,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="150,81,236,100,234,105,149,86"/>
+<area shape="rect" id="Node000004" href="$d6/d82/class_color_channel.html#a063a2a7ce9e512bc844460df3d4550e5" title=" " alt="" coords="457,56,629,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="394,67,442,67,442,72,394,72"/>
+</map>

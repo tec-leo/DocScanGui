@@ -4,25 +4,26 @@
  |
  |  Description :
  |
- |   This module contains the class  'CurvesWidget' which is derived from
- |   QChartView and  is a standalone  widget that can display  charts, it
- |   does not  require a  QGraphicsScene object to  work.  It  contains a
- |   chart to display the curves from  the curves dialog.  The curves can
- |   be line segments or spline curves between points.
+ |   This module contains the class  'CurvesWidget' which is a standalone
+ |   widget derived  from QChartView and is  used to charts, it  does not
+ |   require a  QGraphicsScene object  to work.  It  contains a  chart to
+ |   display the curves  from the curves dialog.  The curves  can be line
+ |   segments or spline curves between points.
  |
  |  Developer : Oskar Leirich                Creation date : 02.Mar.2025
- |  Modified  : Oskar Leirich                Last changes  : 16.Aug.2026
+ |  Modified  : Oskar Leirich                Last changes  : 16.Nov.2026
  |
  |
  |  This unit contains following member functions :
  |   of CurvesWidget:
  |    CurvesWidget              ~CurvesWidget             addLineSeries
  |    addSplineSeries           calcPoint                 createChart
- |    createLines               createMarker              createSeries
- |    createSigmoid             createSplines             init
- |    makeLineSeries            makeSplineSeries          mouseMoveEvent
- |    mousePressEvent           mouseReleaseEvent         scalePoints
- |    setChannel                  updateChart
+ |    createLines               createMarker              createSamples
+ |    createSeries              createSigmoid             createSplines
+ |    init                      makeLineSeries            makeSplineSeries
+ |    mouseDoubleClickEvent     mouseMoveEvent            mousePressEvent
+ |    mouseReleaseEvent         reset                     scalePoints
+ |    setChannel                updateChart
  |
  +-------------------------------------------------------------------------*/
 
@@ -48,10 +49,11 @@ const  int    cColorPoints = 7;
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor  calls 'init'  to initialize  some variables  and it
+ |   sets the render hint to Antialiasing.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |
  +-------------------------------------------------------------------------*/
 
@@ -71,8 +73,7 @@ CurvesWidget::CurvesWidget ( QWidget * parent ) : QChartView (parent)
  |
  |  Description :
  |
- |   The destructor deletes all  dynamically created objects if there are
- |   any.
+ |   The destructor deletes the curve chart if it exists.
  |
  +-------------------------------------------------------------------------*/
 
@@ -469,7 +470,7 @@ void CurvesWidget::createSeries ()
  |
  |   This function only creates the curve  chart with the axes, no series
  |   are added  the the chart  here. This is  done in updateChart  when a
- |   update is made the to channel curve.
+ |   update is made of the channel curve.
  |
  +-------------------------------------------------------------------------*/
 
@@ -603,7 +604,8 @@ void CurvesWidget::makeSplineSeries ( QColor col )
  |  Description :
  |
  |   This function is reimplemented to  receive mouse double click events
- |   for the item. It deletes the point under the mouse if there is one.
+ |   for the  item.  It  deletes the  point under the  mouse if  there is
+ |   one. The check is done in the ColorChannel.
  |
  |  Input parameters :
  |   mouseEvent      : pointer to a QMouseEvent
@@ -633,7 +635,10 @@ void CurvesWidget::mouseDoubleClickEvent ( QMouseEvent * event )
  |
  |  Description :
  |
- |   This function is the event handler for the mouse press event.
+ |   This function is the event handler for the mouse press event. If the
+ |   curve type  is sigmoid,  then the  event is  ignored. The  linear or
+ |   spline type is determined in evalPoints of the ColorChannel which is
+ |   called in updateChart.
  |
  |  Input parameters :
  |   event           : Graphics scene mouse event
@@ -674,7 +679,9 @@ void CurvesWidget::mousePressEvent ( QMouseEvent * event )
  |
  |  Description :
  |
- |   This function is the event handler for the mouse move event.
+ |   This function  is the event  handler for  the mouse move  event. The
+ |   point from the  previous position is deleted and a  new point is set
+ |   at the current mouse position.
  |
  |  Input parameters :
  |   event           : Graphics scene mouse event
@@ -710,7 +717,10 @@ void CurvesWidget::mouseMoveEvent ( QMouseEvent * event )
  |
  |  Description :
  |
- |   This function is the event handler for the mouse release event.
+ |   This function is the event handler  for the mouse release event.  If
+ |   the mouse is not moving, then the event is ignored. It is similar to
+ |   the mouse move event, but it  updates the points after finishing and
+ |   sends the signal curveChanged if is has changed.
  |
  |  Input parameters :
  |   event           : Graphics scene mouse event
@@ -757,7 +767,7 @@ void CurvesWidget::mouseReleaseEvent ( QMouseEvent * event )
  |   curve. Then the  line or spline series are added  the the chart. The
  |   axes are  already created  in create  chart.  The  parameter 'apply'
  |   tells if also the signal 'applyCurves'  should be sent.  This is the
- |   default behavior only  when it is called from  'AutoLevel' then this
+ |   default behavior; only when it  is called from 'AutoLevel' then this
  |   is already done before.
  |
  +-------------------------------------------------------------------------*/
@@ -781,9 +791,9 @@ void CurvesWidget::updateChart ( bool apply )
  |
  |  Description :
  |
- |   This function  is called  from the  curves dialog  when a  new curve
- |   should be drawn, the curve selection has changed (for colors) or the
- |   points and values have been updated.
+ |   This function is called from the curves dialog at init or when a new
+ |   curve is  loaded. Then  the pointer to  the ColorChannel  is stored,
+ |   also the color for the curve in the chart.
  |
  +-------------------------------------------------------------------------*/
 
@@ -804,9 +814,9 @@ void CurvesWidget::setChannel ( ColorChannel * channel, QColor color )
  |
  |  Description :
  |
- |   This function  is called  from the  curves dialog  when a  new curve
- |   should be drawn, the curve selection has changed (for colors) or the
- |   points and values have been updated.
+ |   This  function is  called  internally before  the  curve points  are
+ |   drawn.  It maps the points from the floating point range 0..1 to the
+ |   percentage range 0..100.
  |
  +-------------------------------------------------------------------------*/
 

@@ -19,7 +19,7 @@
  |
  |  Description :
  |
- |   This object  is derived from QDialog  and shows the  About dialog of
+ |   This object is derived from QDialog  and shows the 'About' dialog of
  |   this program.
  |
  +-------------------------------------------------------------------------*/

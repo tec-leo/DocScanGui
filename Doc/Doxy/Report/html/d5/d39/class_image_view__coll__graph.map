@@ -1,0 +1,19 @@
+<map id="ImageView" name="ImageView">
+<area shape="rect" id="Node000001" title=" " alt="" coords="147,1415,268,2081"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,929,108,999"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,1013,90,1164,123,1350,149,1478,144,1479,118,1351,85,1164,61,1014"/>
+<area shape="rect" id="Node000003" href="$db/dfa/class_image_scene.html" title=" " alt="" coords="133,577,282,1351"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,1350,210,1398,205,1398,205,1350"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="6,284,118,353"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="75,367,135,632,130,633,70,369"/>
+<area shape="rect" id="Node000005" href="$d8/d22/class_graphic_utils.html" title=" " alt="" coords="143,124,291,513"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="217,513,216,561,211,561,211,513"/>
+<area shape="rect" id="Node000006" href="$de/d2e/class_layers_list.html" title=" " alt="" coords="306,684,445,1244"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="326,1244,295,1391,274,1484,269,1483,290,1390,320,1243"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="334,284,398,353"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="369,368,374,684,369,684,364,368"/>
+<area shape="rect" id="Node000008" href="$db/d0a/class_icon_button.html" title=" " alt="" coords="422,177,555,460"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="467,460,430,668,425,667,461,459"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="443,5,534,75"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="491,90,491,177,486,177,486,90"/>
+</map>

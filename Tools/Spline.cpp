@@ -9,13 +9,13 @@
  |   for cubical spline interpolation.  Two types of splines, natural and
  |   periodic, are supported.
  |
- |   The usage is simple, first call setPoints () to determine the spline
+ |   The usage is simple, first  call 'setPoints' to determine the spline
  |   coefficients for a tabulated  function y(x).  After the coefficients
  |   have been set up, the interpolated  function value for an argument x
  |   can be determined by calling Spline::getValueY ().
  |
  |  Developer : Oskar Leirich                Creation date : 26.Mar.2025
- |  Modified  : Oskar Leirich                Last changes  : 28.Mar.2025
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -37,7 +37,7 @@
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor is empty and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -53,7 +53,7 @@ Spline::Spline ()
  |
  |  Description :
  |
- |   The destructor deletes some objects.
+ |   The destructor is empty and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -97,10 +97,10 @@ bool Spline::isValid ()
  |   This function determines the coefficients for a natural spline.
  |
  |  Input parameters :
- |   points          : Points
+ |   points          : Polygon points
  |
  |  Output parameter :
- |   (bool)          : if successful
+ |   (bool)          : true if successful
  |
  +-------------------------------------------------------------------------*/
 
@@ -314,6 +314,8 @@ void Spline::reset ()
  |   store  them internally.   The sequence  of the  x-coordinate of  the
  |   points  has to  be  strictly monotone  increasing,  or the  function
  |   returns with false.
+ |
+ |   Note: only natural is implemented
  |
  |  Input parameters :
  |   points          : Points

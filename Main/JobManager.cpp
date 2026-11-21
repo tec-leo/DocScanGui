@@ -5,14 +5,16 @@
  |  Description :
  |
  |   This  module contains  the class  'JobManager' which  implements the
- |   command line parsing  and handling of 'job' files.  The commands can
- |   be given as a list of key / entry pairs in a configuration file.  It
- |   has control over the gui, can hide  the main window and run all jobs
- |   invisible in the background.
+ |   command line parsing and handling  of 'job' files.  The commands can
+ |   be given as a list of key / entry pairs in a configuration file.  in
+ |   the job file.
+ |
+ |   It has control  over the gui, can  hide the main window  and run all
+ |   jobs from the job file or from the main window.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 23.Sep.2025
- |  Modified  : Oskar Leirich                Last changes  : 23.Sep.2026
+ |  Modified  : Oskar Leirich                Last changes  : 18.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -37,7 +39,7 @@
  |
  |  Description :
  |
- |   The constructor evaluates the command line options.
+ |   The constructor call init to evaluate the command line options.
  |
  +-------------------------------------------------------------------------*/
 
@@ -55,8 +57,7 @@ JobManager::JobManager ()
  |
  |  Description :
  |
- |   The  destructor  deletes  all  created  objects  and  container  and
- |   releases the dynamically reserved memory.
+ |   The destructor deletes the process if it exists.
  |
  +-------------------------------------------------------------------------*/
 
@@ -65,9 +66,6 @@ JobManager::~JobManager ()
 
   if ( process != nullptr )
     delete process;
-
-  if (procTimer)
-    delete procTimer;
 
 }               /*-----  ~JobManager  -----*/
 
@@ -78,7 +76,9 @@ JobManager::~JobManager ()
  |
  |  Description :
  |
- |   This function first evaluates the command line options.
+ |   This function  is called  from the  constructor and  initializes the
+ |   member  variables  and maps.   It  creates  a process  instance  and
+ |   connects the finish function.
  |
  +-------------------------------------------------------------------------*/
 
@@ -100,7 +100,6 @@ void JobManager::init ()
   waitTime   = 1000;
 
   process    = nullptr;
-  procTimer  = nullptr;
   runTools   = mainWnd->getToolsWidget ();
   msgLog     = mainWnd->getMsgLogger ();
 
@@ -142,8 +141,7 @@ void JobManager::init ()
  |  Description :
  |
  |   This function  checks if there are  is a job defined  on the command
- |   line and  if so  then it is  directly added to  the task  queue. The
- |   execute command comes from the main window in this case .
+ |   line and if so then it is directly added to the job queue.
  |
  +-------------------------------------------------------------------------*/
 
@@ -175,8 +173,8 @@ void JobManager::addCmdJob ()
  |  Description :
  |
  |   This function checks the topics and commands in current 'jobInfo' if
- |   are valid. If they  are don't exist then a error  log is created and
- |   the function returns false.
+ |   are valid.  If they don't exist  then an error log  entry is created
+ |   and the function returns false.
  |
  +-------------------------------------------------------------------------*/
 
@@ -218,7 +216,7 @@ bool JobManager::checkJobInfo ()
  |
  |   This function  checks the 'jobFile' if  there are job files  or jobs
  |   defined, stores them in  the job list and adds the  first job to the
- |   task queue.
+ |   job queue.
  |
  +-------------------------------------------------------------------------*/
 
@@ -271,7 +269,9 @@ void JobManager::checkJobs ()
  |
  |  Description :
  |
- |   This function runs the next task in the list.
+ |   This function dequeues  the next job from the job  list and forwards
+ |   it  to  the main  window  which  dispatches  it depending  from  the
+ |   topic. Only the topic 'system' is handled directly in this module.
  |
  +-------------------------------------------------------------------------*/
 
@@ -362,7 +362,7 @@ void JobManager::execJobs ( QString fileName )
  |
  |  Description :
  |
- |   This function executes the system commands given in the JobInfo. It
+ |   This function executes the system  commands given in the JobInfo. It
  |   can  contain any  call for  an executable,  script, batch  or system
  |   command.
  |
@@ -523,7 +523,10 @@ void JobManager::evalArgs ()
  |
  |  Description :
  |
- |   This function parses the command line.
+ |   This  function parses  the command  line for  options. It  split the
+ |   options into key value pairs and stores them in a map. It there is a
+ |   key with the name 'arg_file' then  it loads also the key value pairs
+ |   from it. The name of the job file is handled in eval Args.
  |
  +-------------------------------------------------------------------------*/
 
@@ -605,7 +608,7 @@ void JobManager::evalCmdLine ()
  |
  |  Description :
  |
- |   This function fills the task queue will all jobs in the job list.
+ |   This function fills the job queue with all jobs in the job list.
  |
  +-------------------------------------------------------------------------*/
 
@@ -645,8 +648,8 @@ void JobManager::fillQueue ()
  |
  |  Description :
  |
- |   This  function  returns in  a  string  if  all tasks  are  finished,
- |   working, waiting, pending etc.
+ |   This function returns in a string if all jobs are finished, working,
+ |   waiting, pending etc.
  |
  +-------------------------------------------------------------------------*/
 
@@ -669,8 +672,10 @@ QString JobManager::getStatus ()
  |
  |  Description :
  |
- |   This  function  returns in  a  string  if  all tasks  are  finished,
- |   working, waiting, pending etc.
+ |   This function executes the next job  if the queue is not empty. When
+ |   the queue is  empty then is checks if there  are other job (include)
+ |   files available.  If  so then it fills the queue  with next job file
+ |   and returns if the queue is empty and all jobs are finished.
  |
  +-------------------------------------------------------------------------*/
 
@@ -682,7 +687,6 @@ bool JobManager::nextJob ()
     execJob ();
   }
 
-  // TODO : move jobfiles to check Jobs ?
   if ( jobQueue.isEmpty () )   // current queue has finished
   {
     // check for additional job files
@@ -763,7 +767,7 @@ void JobManager::loadConfig ()
  |  Description :
  |
  |   This function loads and parses the config file for options. They are
- |   organized in win-ini style and can contain several different jobs.
+ |   organized in config-ini style and can contain several different jobs.
  |
  +-------------------------------------------------------------------------*/
 
@@ -959,9 +963,11 @@ void JobManager::loadJobFiles ()
  |
  |  Description :
  |
- |   This  function is  called  from  the timer  when  the  job queue  is
- |   empty. It  checks if 'closeAtEnd' is  true or 'useGui' is  false, in
- |   this cases it starts a timer and then closes the main window.
+ |   This function is called from the  timer when the job queue is empty.
+ |   It shows  the main  windows if  it was hidden  to show  a 'finished'
+ |   message box  for a short  time and then  starts a timer.   When this
+ |   timer triggers it  checks the options for  'closeAtEnd' and 'useGui'
+ |   to hide and/or closing the main window.
  |
  +-------------------------------------------------------------------------*/
 
@@ -1013,10 +1019,8 @@ void JobManager::onBtnClicked ( QAbstractButton * )
  |
  |  Description :
  |
- |   This function is called (signaled) when the process finishes.  After
- |   the process has finished, the  buffers in QProcess are still intact.
- |   You can still read any data that the process may have written before
- |   it finished.
+ |   This function  is called  (signaled) when  the process  finishes and
+ |   updates the status bar with the exit status.
  |
  |  Input parameters :
  |   exitCode        : Exit code of the process
@@ -1047,10 +1051,9 @@ void JobManager::onProcFinished ( int, QProcess::ExitStatus exitStatus )
  |
  |  Description :
  |
- |   This function is called when a  timer event arrived. If any explorer
- |   job  is  running  then  timer  1  is  restarted  until  the  job  is
- |   finished. If  the task queue  is not empty then  timer 0 is  used to
- |   start the next task, this is done also from 'execJobs'.
+ |   This function  is called when  a timer event  arrived. . If  the job
+ |   queue is not empty then timer 0 is used to start the next task, this
+ |   is done also from 'execJobs'.
  |
  +-------------------------------------------------------------------------*/
 

@@ -4,14 +4,12 @@
  |
  |  Description :
  |
- |   This source  file  includes  just  the  standard include  files,  or
- |   project  specific include  files  that are used  frequently, but are
- |   changed not very often.  This file also contains the includes of all
- |   support dll includes in dll.h.
+ |   This source file includes qt  and opencv include files, some utility
+ |   include files and common program definitions.
  |
  |
- |  Developer :  Oskar Leirich               Creation date :  20.Apr.2022
- |  Modified  :  Oskar Leirich               Last changes  :  20.Apr.2022
+ |  Developer : Oskar Leirich                Creation date : 20.Apr.2022
+ |  Modified  : Oskar Leirich                Last changes  : 17.Nov.2026
  |
  +-------------------------------------------------------------------------*/
 

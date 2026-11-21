@@ -4,8 +4,8 @@
  |
  |  Description :
  |
- |   This include  file contains all external declarations  of the module
- |   'MainApp' which is the main application class.
+ |  This include file contains all class definitions  for  the  module
+ |  MainApp.
  |
  +-------------------------------------------------------------------------*/
 
@@ -28,8 +28,8 @@ extern  MainApp  * mainApp;
  |
  |  Description :
  |
- |   This class is  derived from QApplication and the main  window of the
- |   application is a QMainWindow.
+ |   This class is derived from  QApplication and creates the main window
+ |   of the application.
  |
  +-------------------------------------------------------------------------*/
 

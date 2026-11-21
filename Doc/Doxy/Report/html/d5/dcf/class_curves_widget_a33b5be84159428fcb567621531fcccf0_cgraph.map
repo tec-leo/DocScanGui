@@ -1,0 +1,13 @@
+<map id="CurvesWidget::createSplines" name="CurvesWidget::createSplines">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,194,133"/>
+<area shape="rect" id="Node000002" href="$d5/dcf/class_curves_widget.html#acdfc5bb42c7fa290623826c43f525d16" title=" " alt="" coords="248,5,439,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,104,174,73,241,42,262,34,263,39,243,46,177,78,124,108"/>
+<area shape="rect" id="Node000003" href="$d5/dcf/class_curves_widget.html#a3bf1b777487ef75fa335d758b1a952d0" title=" " alt="" coords="242,56,445,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,103,260,84,261,89,168,109"/>
+<area shape="rect" id="Node000004" href="$d5/dcf/class_curves_widget.html#a8b6d2510cbe110b727813942b543e3a9" title=" " alt="" coords="242,107,445,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,117,227,117,227,123,194,123"/>
+<area shape="rect" id="Node000005" href="$d5/dcf/class_curves_widget.html#af562cbaaf110ee684aedb6d85a3c4779" title=" " alt="" coords="255,157,432,200"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="159,131,240,151,239,156,157,136"/>
+<area shape="rect" id="Node000006" href="$d5/dcf/class_curves_widget.html#a7daeec7cf868b384750b4954e227df93" title=" " alt="" coords="255,224,432,251"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="120,132,173,170,243,210,261,216,259,221,241,214,170,175,116,136"/>
+</map>

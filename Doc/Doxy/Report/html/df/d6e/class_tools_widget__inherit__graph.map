@@ -1,0 +1,5 @@
+<map id="ToolsWidget" name="ToolsWidget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,129,1024"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="35,5,99,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,90,70,123,65,123,65,90"/>
+</map>

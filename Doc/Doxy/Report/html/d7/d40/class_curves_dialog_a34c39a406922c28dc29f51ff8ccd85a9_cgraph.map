@@ -1,0 +1,17 @@
+<map id="CurvesDialog::evalAutoLevel" name="CurvesDialog::evalAutoLevel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,188,133"/>
+<area shape="rect" id="Node000002" href="$d5/d2b/class_histogram.html#a053a6beeff1698bf21dcbf3b4b514ca2" title=" " alt="" coords="270,31,395,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,104,235,67,260,59,262,64,236,72,134,109"/>
+<area shape="rect" id="Node000005" href="$d6/d82/class_color_channel.html#a11542db2bc84da8066bfe49ebb91b61a" title=" " alt="" coords="236,81,429,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="188,108,220,104,220,109,189,113"/>
+<area shape="rect" id="Node000006" href="$d5/d2b/class_histogram.html#a129e26f9a91c51381703285211a952a2" title=" " alt="" coords="247,132,418,159"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="189,127,231,132,231,137,188,132"/>
+<area shape="rect" id="Node000007" href="$d6/d82/class_color_channel.html#a47cb967344b754db921054340cec0620" title=" " alt="" coords="246,183,419,209"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="134,131,236,168,262,176,260,181,235,173,132,136"/>
+<area shape="rect" id="Node000003" href="$d5/d2b/class_histogram.html#a7c5f05951699815ff1e556939b1bbbd6" title=" " alt="" coords="478,5,649,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,35,462,27,462,32,395,40"/>
+<area shape="rect" id="Node000004" href="$d6/d64/class_image_mat.html#a10512087478abdcb42007200f8094513" title=" " alt="" coords="486,56,640,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="395,48,471,57,470,62,395,53"/>
+<area shape="rect" id="Node000008" href="$d6/d82/class_color_channel.html#a063a2a7ce9e512bc844460df3d4550e5" title=" " alt="" coords="477,183,649,209"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="419,193,461,193,461,199,419,199"/>
+</map>

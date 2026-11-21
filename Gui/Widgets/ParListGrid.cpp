@@ -6,11 +6,11 @@
  |
  |   This module implements a the  class 'ParListGrid' which implements a
  |   generic widget with a grid layout. It shows all items of a 'ParList'
- |   as controls  in a  grid layout.   This avoids  to define  the layout
- |   individually for all parameter items.
+ |   as controls in a grid layout.  This avoids to create the widgets for
+ |   the layout individually for all parameter items.
  |
  |  Developer : Oskar Leirich                Creation date : 18.Jul.2023
- |  Modified  : Oskar Leirich                Last changes  : 19.Aug.2024
+ |  Modified  : Oskar Leirich                Last changes  : 16.Nov.2026
  |
  |
  |  This unit contains following classes :
@@ -34,12 +34,12 @@
  |
  |  Description :
  |
- |   There  are two  constructors,  one is  the  default constructor,  to
- |   really  use  it  'setParList'  must be  called  before.  The  second
- |   receives a pointer to the ParList directly.
+ |   There are two  constructors, one is the default  constructor, to use
+ |   it  'setParList'  must be  called  before.   The second  receives  a
+ |   pointer to the ParList directly.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |   parList         :  Pointer to the list of parameter items.
  |
  +-------------------------------------------------------------------------*/
@@ -48,6 +48,14 @@ ParListGrid::ParListGrid ( QWidget * parent ) : QWidget (parent)
 {
 
   parList = nullptr;
+  layout  = nullptr;
+  label   = nullptr;
+  grid    = nullptr;
+  group   = nullptr;
+  hBox    = nullptr;
+  vBox    = nullptr;
+  vMain   = nullptr;
+
 
 }               /*----- ParListGrid -----*/
 
@@ -69,8 +77,7 @@ ParListGrid::ParListGrid ( QWidget * parent, ParList * parList )
  |
  |  Description :
  |
- |   The destructor deletes all  dynamically created objects if there are
- |   any.
+ |   The destructor deletes all dynamically created widgets.  any.
  |
  +-------------------------------------------------------------------------*/
 
@@ -84,11 +91,43 @@ ParListGrid::~ParListGrid ()
 
 /*-------------------------------------------------------------------------
  |
+ |  Member function : init  of  ParListGrid
+ |
+ |  Description :
+ |
+ |   This function  is called from  the constructor and  initializes some
+ |   variables and creates the layout.
+ |
+ +-------------------------------------------------------------------------*/
+
+void ParListGrid::init ()
+{
+
+  widgets.clear ();
+  widgetsMap.clear ();
+
+  layout = nullptr;
+  label  = nullptr;
+  grid   = nullptr;
+  group  = nullptr;
+  hBox   = nullptr;
+  vBox   = nullptr;
+  vMain  = nullptr;
+
+  parItems = parList->getParItems ();
+
+  createLayout  ();
+
+}               /*-----  init  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
  |  Member function :  getWidget  of  ParListGrid
  |
  |  Description :
  |
- |   This function returns a pointer to a widget if there is a widget box
+ |   This function  returns a pointer  to a widget  if there is  a widget
  |   which was created from a parItem with the given name.
  |
  +-------------------------------------------------------------------------*/
@@ -113,7 +152,9 @@ QWidget * ParListGrid::getWidget ( QString parName )
  |
  |  Description :
  |
- |   This function creates a check box and adds it to the current layout.
+ |   This  function creates  a  check  box and  adds  it  to the  current
+ |   layout. In  the info map of  the parameter item the  key 'widget' is
+ |   created with a pointer to the checkbox as value.
  |
  +-------------------------------------------------------------------------*/
 
@@ -173,7 +214,9 @@ void ParListGrid::createCheck ( ParItem & parItem, int & row )
  |
  |  Description :
  |
- |   This function creates a combo box edit and adds it to the current layout.
+ |   This function  creates a combo box  edit and adds it  to the current
+ |   layout. In  the info map of  the parameter item the  key 'widget' is
+ |   created with a pointer to the combo box as value.
  |
  +-------------------------------------------------------------------------*/
 
@@ -234,6 +277,8 @@ void ParListGrid::createCombo ( ParItem & parItem, int & row )
  |  Description :
  |
  |   This function creates a line edit and adds it to the current layout.
+ |   In the  info map of the  parameter item the key  'widget' is created
+ |   with a pointer to the line edit widget as value.
  |
  +-------------------------------------------------------------------------*/
 
@@ -287,7 +332,8 @@ void ParListGrid::createEdit ( ParItem & parItem, int & row )
  |  Description :
  |
  |   This function  creates a  radio button  and adds  it to  the current
- |   layout.
+ |   layout. In  the info map of  the parameter item the  key 'widget' is
+ |   created with a pointer to the radio button as value.
  |
  +-------------------------------------------------------------------------*/
 
@@ -550,8 +596,10 @@ void ParListGrid::createLayout ()
  |
  |  Description :
  |
- |   This  function reads  the values  of  controls from  the layout  and
- |   converts the controls back to the parameter item values.
+ |   This function  reads the values  of the controls (widgets)  from the
+ |   layout and converts them back to the parameter item values. When the
+ |   key 'widget'  in the info map  exists then it contains  a pointer to
+ |   the control. If not then the parameter item is ignored.
  |
  +-------------------------------------------------------------------------*/
 
@@ -647,7 +695,9 @@ void ParListGrid::fromGui ()
  |  Description :
  |
  |   This function fills  the controls of the layout with  the content of
- |   the parameter items.
+ |   the parameter items.   When the key 'widget' in the  info map exists
+ |   then it contains a pointer to the control. If not then the parameter
+ |   item is ignored
  |
  +-------------------------------------------------------------------------*/
 
@@ -746,29 +796,6 @@ void ParListGrid::toGui ()
   }
 
 }               /*-----  toGui  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function : init  of  ParListGrid
- |
- |  Description :
- |
- |   This function is called from the constructor.
- |
- +-------------------------------------------------------------------------*/
-
-void ParListGrid::init ()
-{
-
-  widgets.clear ();
-  widgetsMap.clear ();
-
-  parItems = parList->getParItems ();
-
-  createLayout  ();
-
-}               /*-----  init  -----*/
 
 
 /*-------------------------------------------------------------------------

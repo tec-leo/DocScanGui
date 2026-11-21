@@ -86,6 +86,7 @@ class ParManager: public QObject
     AppConfig   * appConfig;
     FileConfig  * fileConfig;
     AppCurves   * appCurves;
+    FileUtils     fileUtils;
     HistoryList   configMRU;
     L_ParData     parData;
     QDir          parDir;

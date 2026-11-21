@@ -10,7 +10,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 28.Sep.2018
- |  Modified  : Oskar Leirich                Last changes  : 12.Dec.2025
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -64,7 +64,7 @@ PathSelect::PathSelect ( QWidget * parent ) : QWidget (parent)
  |
  |  Description :
  |
- |   The  Destructor  deletes   dynamically  creates  objects.
+ |   The destructor saves the history and deletes dropCombo and label.
  |
  +-------------------------------------------------------------------------*/
 
@@ -85,8 +85,8 @@ PathSelect::~PathSelect ()
  |
  |  Description :
  |
- |   This function checks if the file  exist with the given name and adds
- |   it to the combo box and the history list.
+ |   This function checks if the directory with the given name exists and
+ |   adds it then to the combo box and the history list.
  |
  +-------------------------------------------------------------------------*/
 
@@ -123,7 +123,7 @@ void PathSelect::addPath ( QString pathName )
  |
  |  Description :
  |
- |   This function creates the layout for the file options dialog.
+ |   This function creates the layout for the path select widget.
  |
  +-------------------------------------------------------------------------*/
 
@@ -131,7 +131,7 @@ void PathSelect::createLayout ()
 {
   QHBoxLayout * hBox;
 
-  hBox     = new QHBoxLayout ();
+  hBox = new QHBoxLayout ();
 
   btnBrowse = new QPushButton (this);
   btnBrowse->setIcon ( QIcon (iconName) );
@@ -140,7 +140,7 @@ void PathSelect::createLayout ()
   if ( iconSize >= 16 )
     btnBrowse->setIconSize ( QSize ( iconSize, iconSize ) );
 
-  lbPath   = new QLabel ( labelText, this );
+  lbPath = new QLabel ( labelText, this );
 
   hBox->addWidget  (lbPath);
   hBox->addSpacing (5);
@@ -161,7 +161,7 @@ void PathSelect::createLayout ()
  |
  |  Description :
  |
- |   This function creates the signal slot connections
+ |   This function creates the signal slot connections.
  |
  +-------------------------------------------------------------------------*/
 
@@ -189,7 +189,8 @@ void PathSelect::connectSlots ()
  |
  |  Description :
  |
- |   This function initializes the dialog
+ |   This function  creates the  layout, loads the  history and  adds the
+ |   values to the dropCombo.
  |
  +-------------------------------------------------------------------------*/
 
@@ -238,8 +239,8 @@ QString PathSelect::getPath ()
  |  Description :
  |
  |   This  function returns  the selected  files from  a previous  browse
- |   button  action.  The  selection can  contains one  or more  files or
- |   directories.
+ |   button action  (open selection dialog).  The  selection can contains
+ |   one or more files or directories.
  |
  +-------------------------------------------------------------------------*/
 
@@ -257,8 +258,8 @@ L_String PathSelect::getSelection ()
  |
  |  Description :
  |
- |   This  function is  called before  the  dialog should  be closed,  it
- |   stores the gui controls in the files parameter variables.
+ |   This function is called from 'save', it adds the current text of the
+ |   combobox to the history and saves it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -280,9 +281,8 @@ void PathSelect::fromGui ()
  |
  |  Description :
  |
- |   This function is called after  creating  the  dialog,  the  internal
- |   values of the dialog variables are converted  to  the  dialog  (Gui)
- |   controls (widgets).
+ |   This function  is called  after creating the  widget. It  clears the
+ |   dropCombo and adds the values from the history to it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -304,7 +304,7 @@ void PathSelect::toGui ()
  |
  |  Description :
  |
- |   This function loads the path.
+ |   This function loads the recent file list (history).
  |
  +-------------------------------------------------------------------------*/
 
@@ -322,7 +322,8 @@ void PathSelect::load ()
  |
  |  Description :
  |
- |   This function saves some variables.
+ |   This  function  calls 'fromGui'  to  add  the  current text  of  the
+ |   combobox to the history and saving it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -340,8 +341,7 @@ void PathSelect::save ()
  |
  |  Description :
  |
- |   This function  stores if the  file should be  loaded or save  in the
- |   file selection dialog.
+ |   This function stores if the dropCombo should be editable or not.
  |
  +-------------------------------------------------------------------------*/
 
@@ -467,7 +467,7 @@ void PathSelect::onSelect ()
  |  Description :
  |
  |   This function is called when the  combo box selection has changed.
- |   The selection change is send as a signal with the new text.
+ |   The selection change is sent as a signal with the new text.
  |
  +-------------------------------------------------------------------------*/
 
@@ -492,7 +492,8 @@ void PathSelect::onTextChanged ( int index )
  |
  |  Description :
  |
- |   This function adds the given file to the combo box and the history.
+ |   This function adds the given file  or directory to the combo box and
+ |   the history.
  |
  +-------------------------------------------------------------------------*/
 

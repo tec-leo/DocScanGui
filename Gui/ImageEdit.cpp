@@ -42,7 +42,7 @@
  |   The constructor initializes some variables.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |
  +-------------------------------------------------------------------------*/
 

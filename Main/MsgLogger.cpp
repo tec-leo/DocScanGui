@@ -6,11 +6,13 @@
  |
  |   This  module  contains  the  class 'MsgLogger'  which  implements  a
  |   logging  mechanism  which  stores  information,  warning  and  error
- |   messages.
+ |   messages. When the logger is used  from a gui program then the show*
+ |   function show the  message in a QMessageBox, if not  they are stored
+ |   in a log list.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 04.Oct.2024
- |  Modified  : Oskar Leirich                Last changes  : 23.Sep.2026
+ |  Modified  : Oskar Leirich                Last changes  : 18.Nov.2026
  |
  |
  |  This file contains the following functions:
@@ -96,7 +98,7 @@ void MsgLogger::clear ()
  |  Description :
  |
  |   This function combines the messages of  the given message infos to a
- |   string list and returns it.
+ |   string list with a separation of the message type and returns it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -315,8 +317,8 @@ void MsgLogger::setFileName ( QString name )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This function sets the message info  with the given title, info text
+ |   and additional info and adds it to the list of critical messages.
  |
  +-------------------------------------------------------------------------*/
 
@@ -337,8 +339,8 @@ void MsgLogger::putCritical ( QString title, QString text, QString info )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This function sets the message info  with the given title, info text
+ |   and additional info and adds it to the list of error messages.
  |
  +-------------------------------------------------------------------------*/
 
@@ -359,8 +361,8 @@ void MsgLogger::putError ( QString title, QString text, QString info )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This function sets the message info  with the given title, info text
+ |   and additional info and adds it to the list of warning messages.
  |
  +-------------------------------------------------------------------------*/
 
@@ -381,8 +383,8 @@ void MsgLogger::putWarning ( QString title, QString text, QString info )
  |
  |  Description :
  |
- |   This function  shows the given info  message in the  log window with
- |   error level, title and additional info.
+ |   This function sets the message info  with the given title, info text
+ |   and additional info and adds it to the list of information messages.
  |
  +-------------------------------------------------------------------------*/
 
@@ -421,8 +423,9 @@ void MsgLogger::setGuiApp ( bool gui )
  |
  |  Description :
  |
- |   This function is just a shortcut  for issuing a warning message as a
- |   dialog.
+ |   This function logs  the error message and shows it  in a QMessageBox
+ |   when the logger is  used from a gui program, if not  it is stored in
+ |   the error in a log list.
  |
  |  Input parameters :
  |    title          :  Title string for QMessageBox and logging
@@ -443,9 +446,6 @@ void MsgLogger::showError ( QString title, QString msg, QString info )
   {
     log =  title + " : " + msg;
     logText.append (log);
-
-    log.append ( "\n" );
-    printf ( ToString (log) );
   }
 
   putError ( title, msg, info );
@@ -459,8 +459,9 @@ void MsgLogger::showError ( QString title, QString msg, QString info )
  |
  |  Description :
  |
- |   This function is just a shortcut  for issuing a warning message as a
- |   dialog.
+ |   This  function  logs the  information  message  and  shows it  in  a
+ |   QMessageBox when the logger is used from a gui program, if not it is
+ |   stored in the information in a log list.
  |
  |  Input parameters :
  |    title          :  Title string for QMessageBox and logging
@@ -494,9 +495,8 @@ void MsgLogger::showMessage ( QString title, QString msg, QString info )
  |
  |  Description :
  |
- |   This function writes the content  of the message window into the log
- |   file and  closes it.  If the file  already exists then  the original
- |   content will be overwritten.
+ |   This function appends the content of  the logged messages to the log
+ |   file and closes it.
  |
  +-------------------------------------------------------------------------*/
 

@@ -19,8 +19,8 @@
  |  Description :
  |
  |   This class calculates  a histogram from a given OpenCV  image with a
- |   defined number of bins. It the  given image is not grayscale then it
- |   will be converted to gray first.
+ |   defined number of bins. A color image will be converted to grayscale
+ |   before calculating the histogram.
  |
  +-------------------------------------------------------------------------*/
 

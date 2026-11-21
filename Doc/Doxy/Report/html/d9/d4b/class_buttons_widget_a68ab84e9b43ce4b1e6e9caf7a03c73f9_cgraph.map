@@ -1,0 +1,17 @@
+<map id="ButtonsWidget::addButton" name="ButtonsWidget::addButton">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,180,108"/>
+<area shape="rect" id="Node000002" href="$d9/d4b/class_buttons_widget.html#a36fe36b617166dde48ebe95ee60fe08e" title=" " alt="" coords="228,56,417,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,82,212,79,212,84,180,88"/>
+<area shape="rect" id="Node000008" href="$d9/d4b/class_buttons_widget.html#a057bd579599b1808b695b417f98675d2" title=" " alt="" coords="230,107,415,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="180,102,215,105,214,111,179,107"/>
+<area shape="rect" id="Node000003" href="$db/d0a/class_icon_button.html#a4249467574bcb1a2c972be280f166f6b" title=" " alt="" coords="484,5,644,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,53,482,33,483,38,390,58"/>
+<area shape="rect" id="Node000004" href="$d9/d4b/class_buttons_widget.html#a0caabe0731e7e20d94b9197eca4920e6" title=" " alt="" coords="468,56,660,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="418,67,452,67,452,72,418,72"/>
+<area shape="rect" id="Node000006" href="$d9/d4b/class_buttons_widget.html#a23e47e73f02ce7c825f14cfeaad87f1a" title=" " alt="" coords="465,107,663,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="390,81,483,100,482,106,389,86"/>
+<area shape="rect" id="Node000005" href="$d9/d4b/class_buttons_widget.html#a1c397b68286356af180531aea7881b11" title=" " alt="" coords="712,56,907,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="661,67,697,67,697,72,661,72"/>
+<area shape="rect" id="Node000007" href="$d9/d4b/class_buttons_widget.html#a13e70d132915b5aed6def45a93115fe4" title=" " alt="" coords="711,107,908,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="664,117,696,117,696,123,664,123"/>
+</map>

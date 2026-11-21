@@ -46,8 +46,15 @@ typedef  QHash  < QString, SectionMap * >  H_StrSectHash;
  |
  |  Description :
  |
- |   This class  is derived from  QSettings which provides  functions for
- |   accessing the parameters from a parameter file.
+ |   This class provides functions for  accessing the sections and values
+ |   of a parameter file in the style  of a config-ini. It provides a lot
+ |   of overdefinitions  for different data  types to read and  write the
+ |   entries and sections.
+ |
+ |   The content  of a config file  is loaded into the  internal hash and
+ |   map structures. The  application works only on  this structures over
+ |   the provided functions and is only  written to a file when 'save' is
+ |   called.
  |
  +-------------------------------------------------------------------------*/
 

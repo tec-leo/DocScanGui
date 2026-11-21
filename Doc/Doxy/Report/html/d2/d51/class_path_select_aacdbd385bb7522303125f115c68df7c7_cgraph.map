@@ -1,0 +1,7 @@
+<map id="PathSelect::save" name="PathSelect::save">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,125,32"/>
+<area shape="rect" id="Node000002" href="$d2/d51/class_path_select.html#abacd35d7cdf1f540f4b2570c5b26d701" title=" " alt="" coords="173,5,311,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,16,157,16,157,21,125,21"/>
+<area shape="rect" id="Node000003" href="$d2/d51/class_path_select.html#a0a2d2b8ff96824b3b1faab974253e8e3" title=" " alt="" coords="359,5,497,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,16,343,16,343,21,312,21"/>
+</map>

@@ -4,18 +4,20 @@
  |
  |  Description :
  |
- |   This modul contains several helper functions plotting functions like
- |   clipping etc.
+ |   This  modul contains  the class  'GraphicUtils' which  provides some
+ |   functions  for clipping,  rectangle conversion,  point distance  and
+ |   more.
  |
  |  Developer : Oskar Leirich                Creation date : 22.Jul.2025
- |  Modified  : Oskar Leirich                Last changes  : 09.Sep.2026
+ |  Modified  : Oskar Leirich                Last changes  : 20.Nov.2026
  |
  |  This unit contains following member functions :
  |   of GraphicUtils :
  |    GraphicUtils              ~GraphicUtils             clipLiangBrasky
  |    clipSutherland            clipTestLiangBrasky       clipTestSutherland
- |    convRectF                 findIntersect             getPointsRectF
- |    getRectFMoveBy            setWinDimension
+ |    containsPoint             convRectF                 findIntersect
+ |    getDistance               getPointsRectF            getRectFMoveBy
+ |    setWinDimension
  |
  +-------------------------------------------------------------------------*/
 
@@ -39,7 +41,7 @@ const  int  TOP    = 8;  // 1000
  |
  |  Description :
  |
- |   The constructor initializes the content with default values
+ |   The constructor initializes the some member variables.
  |
  +-------------------------------------------------------------------------*/
 
@@ -60,7 +62,7 @@ GraphicUtils::GraphicUtils ()
  |
  |  Description :
  |
- |   Nothing to do
+ |   This is the default constructor.
  |
  +-------------------------------------------------------------------------*/
 
@@ -72,11 +74,46 @@ GraphicUtils::~GraphicUtils ()
 
 /*-------------------------------------------------------------------------
  |
+ |  Member function :  containsPoint  of  GraphicUtils
+ |
+ |  Description :
+ |
+ |   This function  checks if the  given widget contains the  given point
+ |   (in global screen coordinates) and returns the result of the test.
+ |
+ |  Input parameters :
+ |   widget          :  pointer to the widget
+ |   point           :  point to test (in global screen coordinates)
+ |
+ +-------------------------------------------------------------------------*/
+
+bool GraphicUtils::containsPoint ( QWidget * widget, QPoint point )
+{
+  QPointF pos;
+  QPointF pnt;
+  QRectF  rect;
+
+  pos  = widget->mapToGlobal ( widget->pos () );
+  pnt  = widget->mapToGlobal (point);
+
+  rect = widget->rect ();
+  rect.translate (pnt);
+
+  return rect.contains (pnt);
+
+}               /*-----  containsPoint  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
  |  Member function :  clipTestLiangBrasky  of  GraphicUtils
  |
  |  Description :
  |
- |   This function
+ |   This function  implements the Liang-Barsky line  clipping algorithm.
+ |   This algorithm is more efficient than Cohen-Sutherland line clipping
+ |   algorithm  and can  be  extended to  3-Dimensional  clipping and  is
+ |   considered to be the faster parametric line-clipping algorithm.
  |
  |  Input parameters :
  |   p               :
@@ -132,7 +169,10 @@ bool GraphicUtils::clipTestLiangBrasky ( const float & p, const float & q,
  |
  |  Description :
  |
- |   This function
+ |   This function  implements the Liang-Barsky line  clipping algorithm.
+ |   This algorithm is more efficient than Cohen-Sutherland line clipping
+ |   algorithm  and can  be  extended to  3-Dimensional  clipping and  is
+ |   considered to be the faster parametric line-clipping algorithm.
  |
  |  Input parameters :
  |   p               :
@@ -192,7 +232,10 @@ bool GraphicUtils::clipLiangBrasky ( QPointF & p, QPointF & q )
  |
  |  Description :
  |
- |   This function
+ |   This function  implements the  Cohen-Sutherland line  clipping.  The
+ |   algorithm divides  a two-dimensional space  into 9 regions  and then
+ |   efficiently  determines the  lines and  portions of  lines that  are
+ |   visible in the central region of interest (the viewport).
  |
  |  Input parameters :
  |   x               :
@@ -421,7 +464,7 @@ QRect GraphicUtils::convRectF ( QRectF rectF )
  |
  |   This function searches if there  is a intersection between the given
  |   line and the  rectangle within the start and end  point of the line.
- |   If a  bounded intersection is  found then the intersection  point is
+ |   When a bounded intersection is  found then the intersection point is
  |   valid.
  |
  |  Input parameters :

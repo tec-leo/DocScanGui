@@ -1,0 +1,13 @@
+<map id="JobManager::nextJob" name="JobManager::nextJob">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,150,83"/>
+<area shape="rect" id="Node000002" href="$dd/d59/class_job_manager.html#a84aac2059d339d3729bd4f66bc6bbd67" title=" " alt="" coords="199,5,347,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,53,203,34,205,39,133,58"/>
+<area shape="rect" id="Node000004" href="$dd/d59/class_job_manager.html#a265d47bd78dac3aa8a678e4b3e70e284" title=" " alt="" coords="198,56,348,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,67,183,67,183,72,150,72"/>
+<area shape="rect" id="Node000006" href="$dd/d59/class_job_manager.html#a4fd7744a6fc5404f177a924b9c910a10" title=" " alt="" coords="198,107,348,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="133,81,205,100,203,105,131,86"/>
+<area shape="rect" id="Node000003" href="$dd/d59/class_job_manager.html#a708a02723393f65050c7ece61f5c1105" title=" " alt="" coords="397,5,569,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,16,381,16,381,21,347,21"/>
+<area shape="rect" id="Node000005" href="$dd/d59/class_job_manager.html#a1ed46d7e54f88235908bbacfff6d8177" title=" " alt="" coords="396,56,570,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="348,67,380,67,380,72,348,72"/>
+</map>

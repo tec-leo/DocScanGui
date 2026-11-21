@@ -1,0 +1,9 @@
+<map id="MsgInfo::setCritical" name="MsgInfo::setCritical">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,138,57"/>
+<area shape="rect" id="Node000002" href="$df/daa/class_msg_info.html#abb295e3f7629522b1aca1771be76e4b6" title=" " alt="" coords="186,31,298,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,41,170,41,170,47,138,47"/>
+<area shape="rect" id="Node000003" href="$d8/d1c/class_var_utils.html#a13f721776fa51e9271e595f8ce9a4a1b" title=" " alt="" coords="347,5,467,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,33,331,28,332,33,299,38"/>
+<area shape="rect" id="Node000004" href="$d8/d1c/class_var_utils.html#a4728f5f1ffd38c05fd7580fb42569a31" title=" " alt="" coords="346,56,467,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="299,50,331,55,330,60,298,55"/>
+</map>

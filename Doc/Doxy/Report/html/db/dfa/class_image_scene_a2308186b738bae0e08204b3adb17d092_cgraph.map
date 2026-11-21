@@ -1,0 +1,7 @@
+<map id="ImageScene::ImageScene" name="ImageScene::ImageScene">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,179,32"/>
+<area shape="rect" id="Node000002" href="$db/dfa/class_image_scene.html#a6a9e62dfcfc2fe53359b063363f0e807" title=" " alt="" coords="227,5,345,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,16,211,16,211,21,179,21"/>
+<area shape="rect" id="Node000003" href="$db/dfa/class_image_scene.html#a63697bd3d88a37c5993332a95978351e" title=" " alt="" coords="393,5,549,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="345,16,377,16,377,21,345,21"/>
+</map>

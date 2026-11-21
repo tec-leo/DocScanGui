@@ -1,0 +1,17 @@
+<map id="ColorChannel::createSplines" name="ColorChannel::createSplines">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,191,57"/>
+<area shape="rect" id="Node000002" href="$d6/d82/class_color_channel.html#a15c083cc536138986762abd903382373" title=" " alt="" coords="245,5,411,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,31,229,27,229,32,191,36"/>
+<area shape="rect" id="Node000003" href="$d6/d82/class_color_channel.html#a8e493e63c1d1e42c842be8f350265987" title=" " alt="" coords="239,56,417,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,52,223,55,223,60,191,57"/>
+<area shape="rect" id="Node000004" href="$d3/d76/class_spline.html#a40195f42dd6198f0196eb8aba6bffdc4" title=" " alt="" coords="465,31,590,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="417,55,449,51,450,57,418,61"/>
+<area shape="rect" id="Node000006" href="$d3/d76/class_spline.html#a240763e3e60473cba9cd9a5fd61d6dda" title=" " alt="" coords="468,81,588,108"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="418,78,452,82,452,88,417,83"/>
+<area shape="rect" id="Node000005" href="$d3/d76/class_spline.html#a7f5a70baa24a1ad63cb2135295864846" title=" " alt="" coords="647,31,763,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="591,41,632,41,632,47,591,47"/>
+<area shape="rect" id="Node000007" href="$d3/d76/class_spline.html#ac1e5b961e92239e3e186e62e5d4a10c8" title=" " alt="" coords="638,81,772,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="588,92,623,92,623,97,588,97"/>
+<area shape="rect" id="Node000008" href="$d3/d76/class_spline.html#a6dff4e6c6cf473d0b8d1600b3a948603" title=" " alt="" coords="658,132,752,159"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="578,106,644,125,642,130,576,111"/>
+</map>

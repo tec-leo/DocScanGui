@@ -35,7 +35,7 @@ typedef  QList  < ColorChannel * >  L_ColorChannel;
  |  Description :
  |
  |   This  class implements  functions  to apply  black  and white  point
- |   convertion  and color  space stretching.   It can  apply a  color or
+ |   conversion  and color  space stretching.   It can  apply a  color or
  |   grayscale channel to modify an image from OpenCV.
  |
  +-------------------------------------------------------------------------*/
@@ -80,12 +80,12 @@ class ColorCurves
     ColorChannel   chanBlue;
     ColorChannel   chanGray;
 
-    QString       curveName;
-    ImageMat      imageMat;
-    cv::Mat       matIn;
-    cv::Vec3b     color;
-    bool          isGray;
-    bool          applyColors;  // only used in applyCurve
+    QString        curveName;
+    ImageMat       imageMat;
+    cv::Mat        matIn;
+    cv::Vec3b      color;
+    bool           isGray;
+    bool           applyColors;  // only used in applyCurve
 
 };
 

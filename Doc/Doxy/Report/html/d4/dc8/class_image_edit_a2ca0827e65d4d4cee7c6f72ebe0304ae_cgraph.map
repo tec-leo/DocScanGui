@@ -1,0 +1,9 @@
+<map id="ImageEdit::onCopy" name="ImageEdit::onCopy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,137,32"/>
+<area shape="rect" id="Node000002" href="$d4/dc8/class_image_edit.html#ad62f7aeaae0de7cb91195eb90d017c4c" title=" " alt="" coords="185,5,313,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,16,169,16,169,21,137,21"/>
+<area shape="rect" id="Node000003" href="$d4/dc8/class_image_edit.html#a92d616dfbc0b217b97cdea8b8029fbc9" title=" " alt="" coords="361,5,514,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="313,16,345,16,345,21,313,21"/>
+<area shape="rect" id="Node000004" href="$d4/dc8/class_image_edit.html#a90aa990aad766f3aeb741cb6386204bb" title=" " alt="" coords="562,5,704,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="515,16,547,16,547,21,515,21"/>
+</map>

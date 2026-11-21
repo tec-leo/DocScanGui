@@ -1,0 +1,13 @@
+<map id="LayersList::createButton" name="LayersList::createButton">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,169,83"/>
+<area shape="rect" id="Node000002" href="$db/d0a/class_icon_button.html#a4249467574bcb1a2c972be280f166f6b" title=" " alt="" coords="223,5,383,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,53,228,34,229,39,148,58"/>
+<area shape="rect" id="Node000003" href="$de/d2e/class_layers_list.html#ad3c9157574b26c26fa1df6445f7284e0" title=" " alt="" coords="220,56,386,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,67,204,67,204,72,169,72"/>
+<area shape="rect" id="Node000005" href="$de/d2e/class_layers_list.html#abe63ef8af0419ecef0a48ffe9c9f5dda" title=" " alt="" coords="217,107,389,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="148,81,229,100,228,105,147,86"/>
+<area shape="rect" id="Node000004" href="$de/d2e/class_layers_list.html#ac46b799f50a32fad1b9bc1fb229ad99e" title=" " alt="" coords="441,56,609,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="387,67,425,67,425,72,387,72"/>
+<area shape="rect" id="Node000006" href="$de/d2e/class_layers_list.html#a51793e6634eb508d76302ffca6820214" title=" " alt="" coords="437,107,613,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="389,117,421,117,421,123,389,123"/>
+</map>

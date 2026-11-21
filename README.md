@@ -40,17 +40,23 @@ On a Linux system you have to compile it by yourself.
 The program is developed with Qt6 for Windows and GNU / Linux.
 It uses OpenCV in version 5.0, but a 4.10 or even older should also work.
 
-There are no specific project files for MacOS as I have no development
+There are no specific project files for **MacOS** as I have no development
 platform for this.
 
-For Windows there is a project file for Visual Studio 2026
+For **Windows** there is a project file for Visual Studio 2026
 (Community Edition) **DocScanGui.vcxproj**.
 For Windows and Linux there is a project file for Qt Creator 20.0
 **DocScanGui.pro**.
 
+For a **Linux** system there is a build script in the main directory: **buildCV.sh**.
+If you do not have OpenCV 5.x on your PC installed, then you can build it.
+It gets the latest OpenCV 5.x version from github and then builds it.
+There are user input commands between all steps, so you can stop it e.g.
+if some dependencies are not fulfilled or in cse of errors.
+
 ### Requirements
 
-- **Qt version 6.11** - also some older or versions should work.
+- **Qt version 6.12** - also some older or versions should work.
 - **OpenCV 5.0** - You need include files and libraries, for vcxproj you have
 to change the paths in **OpenCV.props** or the paths in **DocScanGui.pro**.
 
@@ -61,12 +67,8 @@ If you want to get the very latest version of DocScanGui direct from the
 source code repository, then you will need to use git.
 The git repo is hosted [on GitHub][1].
 
-[1]: https://github.com/tec-leo
+[1]: https://github.com/tec-leo/DocScanGui
 
-See [the download page][2] for full details on all the ways to grab the
-source.
-
-[2]: https://https://github.com/tec-leo
 
 ### Bug Reports
 

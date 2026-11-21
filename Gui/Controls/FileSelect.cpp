@@ -11,7 +11,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 30.Oct.2025
- |  Modified  : Oskar Leirich                Last changes  : 12.Dec.2025
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -48,7 +48,6 @@ FileSelect::FileSelect ( QWidget * parent ) : QWidget (parent)
 {
 
   filter      = "All Files (*.*)";
-
   iconName    = ":/Icons/Open";
   mustExist   = true;
   withHistory = false;
@@ -69,7 +68,7 @@ FileSelect::FileSelect ( QWidget * parent ) : QWidget (parent)
  |
  |  Description :
  |
- |   The destructor deletes dynamically created objects.
+ |   The destructor saves the history and deletes dropCombo and label.
  |
  +-------------------------------------------------------------------------*/
 
@@ -90,19 +89,16 @@ FileSelect::~FileSelect ()
  |
  |  Description :
  |
- |   This function checks if the file  exist with the given name and adds
- |   it to the combo box and the history list.
+ |   This function call 'fileChanged' to check if the file exist with the
+ |   given name and adds it to the combo box and the history list.
  |
  +-------------------------------------------------------------------------*/
 
 void FileSelect::addFile ( QString fileName )
 {
 
-  dropCombo->blockSignals (true);
-
   fileChanged (fileName);
 
-  dropCombo->blockSignals (false);
 
 }               /*-----  addFile  -----*/
 
@@ -114,7 +110,7 @@ void FileSelect::addFile ( QString fileName )
  |  Description :
  |
  |   This function is a convenient function to easily add a widget at the
- |   end without dealing with the layout manager
+ |   end without dealing with the layout manager.
  |
  +-------------------------------------------------------------------------*/
 
@@ -133,7 +129,7 @@ void FileSelect::addWidget ( QWidget * widget )
  |
  |  Description :
  |
- |   This function creates the layout for the file options dialog.
+ |   This function creates the layout for the file select widget.
  |
  +-------------------------------------------------------------------------*/
 
@@ -174,7 +170,7 @@ void FileSelect::createLayout ()
  |
  |  Description :
  |
- |   This function creates the signal slot connections
+ |   This function creates the signal slot connections.
  |
  +-------------------------------------------------------------------------*/
 
@@ -199,7 +195,8 @@ void FileSelect::connectSlots ()
  |
  |  Description :
  |
- |   This function initializes the dialog
+ |   This function  creates the  layout, loads the  history and  adds the
+ |   values to the dropCombo.
  |
  +-------------------------------------------------------------------------*/
 
@@ -239,7 +236,7 @@ void FileSelect::clearFiles ()
     entry = files [i];
 
     if ( not QFile::exists (entry) )
-      history.remove (entry);
+      history.deleteItem (entry);
   }
 
   dropCombo->blockSignals (true);
@@ -258,8 +255,9 @@ void FileSelect::clearFiles ()
  |
  |  Description :
  |
- |   This function  is called when  a new files  is dropped on  the combo
- |   box. Then the new file is added to the combo box and the history.
+ |   This function  is called  when a  new file is  dropped on  the combo
+ |   box. Then the  new file is added  to the combo box  and the history.
+ |   The signals from dropCombo are blocked during the operation.
  |
  +-------------------------------------------------------------------------*/
 
@@ -286,7 +284,7 @@ void FileSelect::fileChanged ( QString fileName )
 
   if ( not QFile::exists (fileName) )
   {
-    history.remove (fileName);
+    history.deleteItem (fileName);
 
     if ( index >= 0 )
       dropCombo->removeItem (index);
@@ -319,9 +317,7 @@ void FileSelect::fileChanged ( QString fileName )
  |
  |  Description :
  |
- |   This function  returns the current  text of the combo  box.  Because
- |   'currentText' of  the combo box works  only if it is  editable, this
- |   function uses the current index and works always.
+ |   This function returns the current text of the combo box.
  |
  +-------------------------------------------------------------------------*/
 
@@ -343,8 +339,8 @@ QString FileSelect::getFileName ()
  |
  |  Description :
  |
- |   This  function is  called before  the  dialog should  be closed,  it
- |   stores the gui controls in the files parameter variables.
+ |   This function is called from 'save', it adds the current text of the
+ |   combobox to the history and saves it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -368,9 +364,8 @@ void FileSelect::fromGui ()
  |
  |  Description :
  |
- |   This function is called after  creating  the  dialog,  the  internal
- |   values of the dialog variables are converted  to  the  dialog  (Gui)
- |   controls (widgets).
+ |   This function  is called  after creating the  widget. It  clears the
+ |   dropCombo and adds the values from the history to it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -411,8 +406,8 @@ void FileSelect::load ()
  |
  |  Description :
  |
- |   This function saves some variables like directory list, control file
- |   etc.
+ |   This  function  calls 'fromGui'  to  add  the  current text  of  the
+ |   combobox to the history and saving it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -430,8 +425,7 @@ void FileSelect::save ()
  |
  |  Description :
  |
- |   This function  stores if the  file should be  loaded or save  in the
- |   file selection dialog.
+ |   This function stores if the dropCombo should be editable or not.
  |
  +-------------------------------------------------------------------------*/
 
@@ -452,8 +446,7 @@ void FileSelect::setEditable ( bool edit )
  |
  |  Description :
  |
- |   This  function  stores  the  filter  used  for  selecting  files  or
- |   directories.
+ |   This function stores the filter used for the file selection dialog.
  |
  +-------------------------------------------------------------------------*/
 
@@ -471,7 +464,7 @@ void FileSelect::setFilter ( QString filter )
  |
  |  Description :
  |
- |   This function  stores if the  file should be  loaded or save  in the
+ |   This function  stores if the file  should be loaded or  saved in the
  |   file selection dialog.
  |
  +-------------------------------------------------------------------------*/
@@ -491,7 +484,7 @@ void FileSelect::setLoadFile ( bool load )
  |  Description :
  |
  |   This function  stores if the file  must exist in the  file selection
- |   dialog (load) or not (store).
+ |   dialog (load) or not (save).
  |
  +-------------------------------------------------------------------------*/
 
@@ -510,7 +503,7 @@ void FileSelect::setMustExist ( bool mustExist )
  |  Description :
  |
  |   This function creates an file open  dialog to search for an existing
- |   file.
+ |   file. It uses the utility function of fileUtils.
  |
  +-------------------------------------------------------------------------*/
 
@@ -541,7 +534,7 @@ void FileSelect::onSelectFile ()
  |
  |  Description :
  |
- |   This function is called when the  combo box selection has changed.
+ |   This function is called when the combo box selection has changed.
  |
  +-------------------------------------------------------------------------*/
 
@@ -582,7 +575,8 @@ void FileSelect::onTextChanged ( const QString & text )
  |
  |  Description :
  |
- |   This function adds the given file to the combo box and the history.
+ |   This function  is called when  the user drops  a text (file)  to the
+ |   dropCombo. It is invoked by the signal 'textDropped' from dropCombo.
  |
  +-------------------------------------------------------------------------*/
 
@@ -622,7 +616,7 @@ void FileSelect::setHistory ( QString section, QString key )
  |
  |  Description :
  |
- |   This  function sets the label text left to the drop combobox.
+ |   This function sets the label text left to the drop combobox.
  |
  +-------------------------------------------------------------------------*/
 

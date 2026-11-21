@@ -11,7 +11,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 07.Dec.2025
- |  Modified  : Oskar Leirich                Last changes  : 07.Dec.2025
+ |  Modified  : Oskar Leirich                Last changes  : 16.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -33,7 +33,8 @@
  |   This class contains icon buttons with state and name.
  |
  |  Input parameters :
- |   parent          : parent widget
+ |   parent          : Pointer to the parent widget
+ |   innerWidget     : Pointer to the inner widget
  |
  +-------------------------------------------------------------------------*/
 

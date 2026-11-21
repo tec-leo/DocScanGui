@@ -144,7 +144,11 @@ void MainWnd::closeEvent ( QCloseEvent * event )
  |
  |  Description :
  |
- |   This function is called from the constructor.
+ |   This function  is called  from the  constructor and  initializes the
+ |   member variables.  Then it initializes  the settings and creates the
+ |   application classes, toolbar  and status bar. It  creates the layout
+ |   and makes  the signal -  slot connections. At  the end it  loads the
+ |   configuration from file starts a timer to load a the last image.
  |
  +-------------------------------------------------------------------------*/
 
@@ -222,8 +226,8 @@ void MainWnd::connectSlots ()
  |
  |  Description :
  |
- |   This  function  creates  the  gui  objects  like  images  tab,  file
- |   explorer, config pages etc.
+ |   This function creates the gui  objects like images widget, view, job
+ |   manager and tools widget.
  |
  +-------------------------------------------------------------------------*/
 
@@ -243,7 +247,6 @@ void MainWnd::createObjects ()
   jobMan      = new JobManager ();
   msgBox      = new QMessageBox (this);
 
-
 }               /*-----  createObjects  -----*/
 
 
@@ -253,8 +256,10 @@ void MainWnd::createObjects ()
  |
  |  Description :
  |
- |   This  function  creates  the  gui  objects  like  images  tab,  file
- |   explorer, config pages etc.
+ |   This  function creates  the  parameter manager  and  reads the  last
+ |   configuration file  from the global  config or creates a  default if
+ |   there is no valid configuration. Then it reads the settings from the
+ |   config file and stores the pointer for the config files.
  |
  +-------------------------------------------------------------------------*/
 
@@ -263,8 +268,9 @@ void MainWnd::createSettings ()
   FileUtils fileUtils;
   QString   fileName;
 
-  regFile    = new RegFile ();  // values are set in MainApp
-  fileName   = regFile->fileName ();
+  fileName = RegFile::getFilePath () + "/GlobalConfig.ini";
+  regFile  = new RegFile (fileName);
+
   defaultIni = fileUtils.absolutePath (fileName) + "/DefaultConfig.ini";
 
   // create the parameter manager, must be one of the first steps
@@ -313,7 +319,7 @@ void MainWnd::createSettings ()
  |
  |  Description :
  |
- |   This function initializes all control bars like the button toolbars.
+ |   This function initializes the main toolbar and the image toolbar.
  |
  +-------------------------------------------------------------------------*/
 
@@ -338,7 +344,7 @@ void MainWnd::createToolBar ()
  |
  |  Description :
  |
- |   This function creates a statusbar.
+ |   This function creates a statusbar and defines the layout for it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -380,7 +386,8 @@ void MainWnd::createStatusBar ()
  |
  |  Description :
  |
- |   This function creates all widgets and sets up the main window.
+ |   This function  creates all widgets and  the splitter and sets  it as
+ |   the central widget.
  |
  +-------------------------------------------------------------------------*/
 
@@ -416,7 +423,7 @@ void MainWnd::createLayout ()
  |
  |  Description :
  |
- |   This function loads all data from the parameter (ini) file.
+ |   This function loads all parameters from the configuration file.
  |
  +-------------------------------------------------------------------------*/
 
@@ -438,7 +445,7 @@ void MainWnd::loadConfig ()
  |
  |  Description :
  |
- |   This function saves all data to the parameter (ini) file.
+ |   This function saves all parameters from the configuration file.
  |
  +-------------------------------------------------------------------------*/
 
@@ -460,8 +467,8 @@ void MainWnd::saveConfig ()
  |
  |  Description :
  |
- |   This  function reads  the values  of some  widget from  the gui  and
- |   updates the member variables with this values.
+ |   This  function calls  'fromGui from  the  image and  tool widget  to
+ |   update the member variables with this value of the controls.
  |
  +-------------------------------------------------------------------------*/
 
@@ -480,7 +487,8 @@ void MainWnd::fromGui ()
  |
  |  Description :
  |
- |   This  function update  some widget  in the  gui from  values of  the
+ |   This function calls 'toGui from the image and tool widget to set the
+ |   values  of the  controls in  these widgets  with the  values of  the
  |   member variables.
  |
  +-------------------------------------------------------------------------*/
@@ -555,9 +563,8 @@ void MainWnd::onRunJobs ()
  |
  |  Description :
  |
- |   This  function  loads  a  configuration   from  file  or  sets  some
- |   configuration options.   These options  have the  same name  as they
- |   appear in the configuration file.
+ |   This function is called from  'executeJob' evaluates the command for
+ |   configuration jobs like load, save, save curve and set options.
  |
  +-------------------------------------------------------------------------*/
 
@@ -691,7 +698,7 @@ void MainWnd::executeJob ( JobInfo curJob )
  |
  |   This function  restores the state  of this toolbars  and dockwidgets
  |   and the  position and size  of the  main window. The  information is
- |   read from the registry as a per user setting.
+ |   read from the global configuration file as a per user setting.
  |
  +-------------------------------------------------------------------------*/
 
@@ -730,7 +737,7 @@ void MainWnd::loadAppState ()
  |
  |   This function  saves the state  of the toolbars and  dockwidgets and
  |   the position and size of the  main window. The information is stored
- |   to the registry as a per user setting.
+ |   in the global configuration file as a per user setting.
  |
  +-------------------------------------------------------------------------*/
 
@@ -761,8 +768,9 @@ void MainWnd::saveAppState ()
  |
  |  Description :
  |
- |   This  function sets the cursor to the arrow curser or to the given cursor
- |   when the mouse is over this widget.
+ |   This function  called from the image  widget and sets the  cursor to
+ |   the  arrow curser  or to  the given  cursor when  a color  picker is
+ |   diabled or started.
  |
  |  Input parameters :
  |   cursor          : Cursor to use in this widget

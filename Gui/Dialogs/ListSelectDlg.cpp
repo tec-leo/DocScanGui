@@ -9,7 +9,7 @@
  |   deleted or a new one defined.
  |
  |  Developer : Oskar Leirich                Creation date : 18.May.2026
- |  Modified  : Oskar Leirich                Last changes  : 19.May.2026
+ |  Modified  : Oskar Leirich                Last changes  : 14.Nov.2026
  |
  |
  |  This unit contains following classes :
@@ -23,7 +23,6 @@
  |
  +-------------------------------------------------------------------------*/
 
-#include "AppInc.h"
 #include "ListSelectDlg.h"
 
 
@@ -33,10 +32,11 @@
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor  initializes some  variables and sets  window title,
+ |   icon and size.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |   optList         :  String list of options
  |   title           :  Title of the dialog
  |   addOptions      :  Allows to add new options (true)
@@ -86,7 +86,7 @@ ListSelectDlg::~ListSelectDlg ()
  |
  |  Description :
  |
- |   This function creates all controls and layout the dialog.
+ |   This function creates all controls and layout of the dialog.
  |
  +-------------------------------------------------------------------------*/
 
@@ -133,7 +133,8 @@ void ListSelectDlg::createLayout ()
  |
  |  Description :
  |
- |   This function is called from the constructor.
+ |   This  function is called  from the  constructor and  initializes the
+ |   dialog with the gui (layout), actions and signal / slot connections.
  |
  +-------------------------------------------------------------------------*/
 
@@ -226,8 +227,8 @@ void ListSelectDlg::onSelChanged ( int row )
  |
  |  Description :
  |
- |   This function is called when the 'Ok' button  is pressed. It updates
- |   the array of selected fire logics.
+ |   This function is called when the  'Ok' button is pressed. It updates
+ |   the text edit field and closes the dialog.
  |
  +-------------------------------------------------------------------------*/
 

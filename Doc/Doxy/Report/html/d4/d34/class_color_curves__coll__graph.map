@@ -1,0 +1,7 @@
+<map id="ColorCurves" name="ColorCurves">
+<area shape="rect" id="Node000001" title=" " alt="" coords="75,805,207,1195"/>
+<area shape="rect" id="Node000002" href="$d6/d82/class_color_channel.html" title=" " alt="" coords="5,5,132,693"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,693,117,781,118,788,113,789,112,782,102,694"/>
+<area shape="rect" id="Node000003" href="$d6/d64/class_image_mat.html" title=" " alt="" coords="157,69,271,629"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,629,187,782,186,789,181,789,182,781,198,629"/>
+</map>

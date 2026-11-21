@@ -4,12 +4,13 @@
  |
  |  Description :
  |
- |   This module implements the  class 'ColorChannel' which contains color
- |   or grayscale curve points and  samples and the conversion functions,
- |   e.g. from points  to curves.
+ |   This module  implements the class 'ColorChannel'  with functions for
+ |   setting, modifying and reading curve  points and samples for a color
+ |   or  gray channel.   It contains  functions for  the conversion  from
+ |   points to curves, handling and creating of lookup tables.
  |
  |  Developer : Oskar Leirich                Creation date : 17.Feb.2025
- |  Modified  : Oskar Leirich                Last changes  : 11.Jun.2026
+ |  Modified  : Oskar Leirich                Last changes  : 18.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -46,7 +47,7 @@ const int   cSplinePoints = 7;
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor initializes the color channel member variables.
  |
  +-------------------------------------------------------------------------*/
 
@@ -104,7 +105,7 @@ bool ColorChannel::ascendingX ( QPointF firstObj, QPointF secondObj )
  |  Description :
  |
  |   This function  initializes the  curve with type  linear and  the two
- |   points black and white.
+ |   points black and white and creates an 8 bit lookup table.
  |
  +-------------------------------------------------------------------------*/
 
@@ -202,7 +203,7 @@ void ColorChannel::calcSamplePnts ()
  |
  |  Description :
  |
- |   This function  creates a line  series from  the levels curve  if the
+ |   This function  creates a lookup table  from the levels curve  if the
  |   type is linear.  It always has a point at the beginnning (0) and end
  |   (100) on the x-coordinate.
  |
@@ -284,8 +285,8 @@ void ColorChannel::createLinear ()
  |
  |  Description :
  |
- |   This function creates a series of points with the shape of a sigmoid
- |   and fills the lookup table with it.
+ |   This function creates a lookup table with the shape of a sigmoid and
+ |   stores the points also in a 'sigmoid' vector.
  |
  |              1
  |   y = -----------------
@@ -331,9 +332,9 @@ void ColorChannel::createSigmoid ()
  |
  |  Description :
  |
- |   This function  creates a line  series from  the levels curve  if the
- |   type is linear.  It always has a point at the beginnning (0) and end
- |   (100) on the x-coordinate.
+ |   This function  creates a lookup table  from the levels curve  if the
+ |   type is  spline.  It  calculates a natural  spline within  the given
+ |   points.
  |
  +-------------------------------------------------------------------------*/
 
@@ -378,9 +379,9 @@ void ColorChannel::createSpline ( L_PointF inPoints )
  |
  |  Description :
  |
- |   This function creates  a spline series from the levels  curve if the
- |   type is not linear.  It always has a point at the beginnning (0) and
- |   end (100) on the x-coordinate.
+ |   This function  creates a lookup table  from the levels curve  if the
+ |   type is spline.  It can contain  three sections: a linear one, then
+ |   a spline section and again a linear one at the end.
  |
  +-------------------------------------------------------------------------*/
 
@@ -573,9 +574,9 @@ int ColorChannel::findPoint ( QPointF point )
  |
  |  Description :
  |
- |   This function  replaces the point  with the  given index. It  is not
- |   checked if the  points are sorted by the x-coordinate,  this must be
- |   done outside.
+ |   This function replaces the point with the given index and then sorts
+ |   the points by the  x-coordinate or adds the point at  the end if the
+ |   index is outside the range.
  |
  +-------------------------------------------------------------------------*/
 
@@ -604,8 +605,9 @@ void ColorChannel::setPoint ( int & index, QPointF point )
  |
  |  Description :
  |
- |   This  function  replaces the  given  point  in  the  list if  it  is
- |   contained in the list. If not then it is just added to the list.
+ |   This function replaces the given point  in the list when it is found
+ |   in the list and sorts the points by the x-coordinate. If not then it
+ |   is just added to the list.
  |
  +-------------------------------------------------------------------------*/
 
@@ -685,8 +687,8 @@ void ColorChannel::evalSpline ()
 {
   QPointF  point;
   int      cnt;
-  float    x1, y1;
-  float    x, y;
+  float    y1;
+  float    y;
 
   cnt       = points.count ();
   splineBeg = 0;
@@ -694,7 +696,6 @@ void ColorChannel::evalSpline ()
 
   point = points.first ();
 
-  x = point.x ();
   y = point.y ();
 
   // evaluate if the curve is linear at the beginning
@@ -702,7 +703,6 @@ void ColorChannel::evalSpline ()
   {
     for ( int i = 1; i < cnt; i++ )
     {
-      x1 = points [i].x ();
       y1 = points [i].y ();
 
       if ( not isEqual ( y1, y ) )
@@ -720,7 +720,6 @@ void ColorChannel::evalSpline ()
 
     for ( int i = cnt - 2; i > splineBeg; i-- )
     {
-      x1 = points [i].x ();
       y1 = points [i].y ();
 
       if ( not isEqual ( y1, y ) )
@@ -740,10 +739,9 @@ void ColorChannel::evalSpline ()
  |
  |  Description :
  |
- |   This function creates the sample values from the points depending on
- |   the curve  type. The  lookup table  is scaled  with 256  because the
- |   lookup table is of type 'uchar', with float it does not work what is
- |   very strange
+ |   This  function evaluates  it the  points  build a  linear or  spline
+ |   curve. In case of a sigmoid it creates a lookup table with the shape
+ |   of a sigmoid.
  |
  +-------------------------------------------------------------------------*/
 
@@ -819,7 +817,7 @@ void ColorChannel::evalPoints ( )
  |
  |  Description :
  |
- |   This function checks  if the two give values are  identical within a
+ |   This function checks if the two  given values are identical within a
  |   certain tolerance.
  |
  +-------------------------------------------------------------------------*/
@@ -970,7 +968,7 @@ void ColorChannel::setCurveType ( QString type )
  |  Description :
  |
  |   This function sets  the black point to the given  value. There is no
- |   need to checks if the x-value is at the corner, if the curve type is
+ |   need to check if the x-value is  at the corner, if the curve type is
  |   linear then there are only two points.
  |
  +-------------------------------------------------------------------------*/
@@ -995,7 +993,7 @@ void ColorChannel::setBlackPnt ( float x )
  |  Description :
  |
  |   This function sets  the white point to the given  value. There is no
- |   need to checks if the x-value is at the corner, if the curve type is
+ |   need to check if the x-value is  at the corner, if the curve type is
  |   linear then there are only two points.
  |
  +-------------------------------------------------------------------------*/

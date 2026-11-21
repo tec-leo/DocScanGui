@@ -1,0 +1,13 @@
+<map id="ColorCurves::applyCurve" name="ColorCurves::applyCurve">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,167,108"/>
+<area shape="rect" id="Node000002" href="$d7/db0/class_color_curves.html#ae54fc72aec1fac7bc910188c54ffa830" title=" " alt="" coords="215,56,383,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,82,199,79,199,84,167,88"/>
+<area shape="rect" id="Node000006" href="$d7/db0/class_color_curves.html#a320b226c31a7b6511ff3a6ce70c53537" title=" " alt="" coords="223,107,375,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="167,102,208,107,207,112,166,107"/>
+<area shape="rect" id="Node000003" href="$d6/d82/class_color_channel.html#a9f9253f2b255c6d9e24009893179c815" title=" " alt="" coords="439,5,616,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="362,53,449,33,450,39,363,58"/>
+<area shape="rect" id="Node000004" href="$d6/d82/class_color_channel.html#aeb7682f89d74f4d56594c6783b7dbbe3" title=" " alt="" coords="445,56,611,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="383,67,429,67,429,72,383,72"/>
+<area shape="rect" id="Node000005" href="$d6/d82/class_color_channel.html#a0fad9f61dc12eadd240f69cc4d704e4b" title=" " alt="" coords="431,107,624,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="363,81,450,100,449,105,362,86"/>
+</map>

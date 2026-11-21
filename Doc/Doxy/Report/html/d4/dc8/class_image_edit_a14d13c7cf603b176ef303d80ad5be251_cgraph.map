@@ -1,0 +1,9 @@
+<map id="ImageEdit::onDeskew" name="ImageEdit::onDeskew">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,153,57"/>
+<area shape="rect" id="Node000002" href="$d4/dc8/class_image_edit.html#a2d80f508326c5dc6f26502d068eed6ba" title=" " alt="" coords="201,5,354,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,32,185,28,186,33,154,37"/>
+<area shape="rect" id="Node000003" href="$d4/dc8/class_image_edit.html#a92d616dfbc0b217b97cdea8b8029fbc9" title=" " alt="" coords="201,56,354,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,51,186,55,185,60,153,56"/>
+<area shape="rect" id="Node000004" href="$d4/dc8/class_image_edit.html#a90aa990aad766f3aeb741cb6386204bb" title=" " alt="" coords="402,56,543,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="354,67,387,67,387,72,354,72"/>
+</map>

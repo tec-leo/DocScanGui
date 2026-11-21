@@ -9,7 +9,7 @@
  |   the histogram of the Open CV matrix which contains an image.
  |
  |  Developer : Oskar Leirich                Creation date : 07.Jan.2025
- |  Modified  : Oskar Leirich                Last changes  : 22.Apr.2025
+ |  Modified  : Oskar Leirich                Last changes  : 16.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -30,10 +30,11 @@
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor  calls 'init'  to initialize  some variables  and it
+ |   sets the render hint to Antialiasing.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |
  +-------------------------------------------------------------------------*/
 
@@ -53,8 +54,7 @@ HistogramWidget::HistogramWidget ( QWidget * parent ) : QChartView (parent)
  |
  |  Description :
  |
- |   The destructor deletes all  dynamically created objects if there are
- |   any.
+ |   The destructor deletes the bar chart if it exists.
  |
  +-------------------------------------------------------------------------*/
 

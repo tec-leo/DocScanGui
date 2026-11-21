@@ -5,12 +5,11 @@
  |  Description :
  |
  |   This module provides the class 'FileUtils' which contains helper and
- |   utility functions to load text files and store all lines in a string
- |   array in several  orientations. It contains also  functions to check
- |   the file type, compare files and a lot of more.
+ |   utility functions to load text files,  split file and path names and
+ |   more.
  |
  |  Developer : Oskar Leirich                Creation date : 09.Jan.2022
- |  Modified  : Oskar Leirich                Last changes  : 30.Jun.2026
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -21,10 +20,10 @@
  |    findRecursive             getBaseName               getBaseNames
  |    getFile                   getFileName               getSize
  |    isDir                     joinFileName              makeFilePath
- |    makePath                  openFile                  readChunkLines
- |    readFile                  readLine                  readLines
- |    selectDir                 selectFile                selectFiles
- |    setFileName               splitFileName             writeFile
+ |    makePath                  openFile                  readFile
+ |    readLine                  readLines                 selectDir
+ |    selectFile                selectFiles               setFileName
+ |    splitFileName             writeFile
  |
  +-------------------------------------------------------------------------*/
 
@@ -37,10 +36,10 @@
  |
  |  Description :
  |
- |   The constructor initializes several variables.
+ |   The constructor initializes sets the given filename.
  |
  |  Input parameters :
- |   FileName        :
+ |   FileName        : file for the next operations
  |
  +-------------------------------------------------------------------------*/
 
@@ -58,7 +57,7 @@ FileUtils::FileUtils ( QString fileName ) : QFile ()
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   This is the default constructor.
  |
  +-------------------------------------------------------------------------*/
 
@@ -74,8 +73,7 @@ FileUtils::FileUtils ()
  |
  |  Description :
  |
- |   The  destructor  deletes  all  created  objects  and  container  and
- |   releases the dynamically reserved memory.
+ |   The destructor is emtpy and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -150,12 +148,59 @@ QString FileUtils::absolutePath ( QString fileName )
 
 /*-------------------------------------------------------------------------
  |
+ |  Member function :  closeFile  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function closes the input file.
+ |
+ +-------------------------------------------------------------------------*/
+
+void FileUtils::closeFile ()
+{
+
+  inFile.close ();
+
+}               /*-----  closeFile  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  createFile  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function creates  a file with the given name.  If the path does
+ |   not exist it will be created first.
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::createFile ( QString newFile )
+{
+  QString path;
+
+  path = absolutePath (newFile);
+
+  if ( not fileDir.mkpath (path) )
+    return false;
+
+  setFileName (newFile);
+
+  writeFile ( QString ( " " ) );
+
+  return true;
+
+}               /*-----  createFile  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
  |  Member function :  compareFiles  of  FileUtils
  |
  |  Description :
  |
  |   This function compares two files with  the given names line by line.
- |   if 'skipEmptyLines' is  true then all empty lines  are removed first
+ |   When 'skipEmptyLines' is true then all empty lines are removed first
  |   from the string lists.
  |
  |  Input parameters :
@@ -168,7 +213,8 @@ QString FileUtils::absolutePath ( QString fileName )
  |
  +-------------------------------------------------------------------------*/
 
-bool FileUtils::compareFiles ( QString file1, QString file2, bool skipEmptyLines )
+bool FileUtils::compareFiles ( QString file1, QString file2,
+                               bool skipEmptyLines )
 {
   L_String content1;
   L_String content2;
@@ -205,9 +251,8 @@ bool FileUtils::compareFiles ( QString file1, QString file2, bool skipEmptyLines
  |
  |  Description :
  |
- |   This function returns a formated string through a reference that has
- |   had its invalid characters removed/replaced; and  a  bool  value  of
- |   true if removal was succesful
+ |   This  function returns  a  formated string  after replacing  invalid
+ |   characters.
  |
  |  Input parameters :
  |   fileName        : original file name
@@ -281,12 +326,12 @@ QString FileUtils::getBaseName ( QString fileName, bool withSuffix )
  |  Description :
  |
  |   This function  reads all files in  a directory and returns  only the
- |   unique base  name without  double entries.  If 'withSuffix'  is true
- |   then the extension is added to the file name.
+ |   unique base name without double  entries in a list.  If 'withSuffix'
+ |   is true then the extension is added to the file name.
  |
  |  Input parameters :
  |   path            : Directory path for the search
- |   withSuffix      : add extension (true) or not
+ |   withSuffix      : add suffix (true) or not
  |
  |  Output parameter :
  |   (L_String)      : String list with the base names
@@ -333,60 +378,12 @@ L_String FileUtils::getBaseNames ( QString path, bool withSuffix )
 
 /*-------------------------------------------------------------------------
  |
- |  Member function :  closeFile  of  FileUtils
- |
- |  Description :
- |
- |   This function closes the input file.
- |
- +-------------------------------------------------------------------------*/
-
-void FileUtils::closeFile ()
-{
-
-  inFile.close ();
-
-}               /*-----  closeFile  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  createFile  of  FileUtils
- |
- |  Description :
- |
- |   This function creates  a file with the given name.  If the path does
- |   not exist it will be created first.
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::createFile ( QString newFile )
-{
-  QString path;
-
-  path = absolutePath (newFile);
-
-  if ( not fileDir.mkpath (path) )
-    return false;
-
-  setFileName (newFile);
-
-  writeFile ( QString ( " " ) );
-
-  return true;
-
-}               /*-----  createFile  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
  |  Member function :  openFile  of  FileUtils
  |
  |  Description :
  |
- |   This  function tries  to  open the  input file  in  read only  mode.
- |   Optional it  can be opened in  text mode depending on  the parameter
- |   'text'.  The return value is success or not.
+ |   This function tries  to open the input file in  with the given mode.
+ |   The return value is always true, errors are collected.
  |
  |  Output parameter :
  |   (bool)          :  success or not
@@ -395,9 +392,6 @@ bool FileUtils::createFile ( QString newFile )
 
 bool FileUtils::openFile ( QIODevice::OpenMode mode )
 {
-
-  chunkRest = "";
-  fileSize  = 0;
 
   if ( inFile.isOpen () )
     closeFile ();
@@ -411,8 +405,6 @@ bool FileUtils::openFile ( QIODevice::OpenMode mode )
 
     return false;
   }
-
-  fileSize = inFile.size ();
 
   return true;
 
@@ -454,7 +446,7 @@ bool FileUtils::openFile ( bool text )
  |
  |  Description :
  |
- |   This function returns the member variable 'inFile'.
+ |   This function returns a pointer to the 'inFile' (QFile).
  |
  |  Output parameter :
  |   (inFile)        :  return a pointer to inFile
@@ -475,7 +467,7 @@ QFile * FileUtils::getFile ()
  |
  |  Description :
  |
- |   This function returns the current active 'fileName'.
+ |   This function returns the current 'fileName'.
  |
  |  Output parameter :
  |   (QString)       : return variable fileName
@@ -488,33 +480,6 @@ QString FileUtils::getFileName ()
   return fileName;
 
 }               /*-----  getFileName  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  setFileName  of  FileUtils
- |
- |  Description :
- |
- |   This function sets member variable 'fileName' to the given value.
- |
- |  Input parameters :
- |   fileName        : New value for variable fileName
- |
- +-------------------------------------------------------------------------*/
-
-void FileUtils::setFileName ( QString fileName )
-{
-
-  this->fileName = fileName;
-
-  inFile.setFileName (fileName);
-
-  fileSize = 0;
-
-  clearErrors ();
-
-}               /*-----  setFileName  -----*/
 
 
 /*-------------------------------------------------------------------------
@@ -555,7 +520,7 @@ int FileUtils::getSize ( QString & name )
  |  Description :
  |
  |   This function searches in the given list of directories for the file
- |   'name' and returns the full path if  can  be  located  or  an  empty
+ |   'name' and returns  the full path if  it can be located  or an empty
  |   string if it was not found.
  |
  |  Input parameters :
@@ -639,12 +604,12 @@ bool FileUtils::findFile ( QString & fileName, L_String & dirs,
  |  Description :
  |
  |   This function  searches from  the given start  directory recursively
- |   for  all files  with  the given  fileSpec  (regular expression)  and
- |   returns all  found files in  a string  list which contains  the full
- |   path over every match.
+ |   for all files with the  given wildcard (globbing) filter. It returns
+ |   all found  files in a string  list which contains the  full path for
+ |   every match.
  |
  |  Input parameters :
- |   nameFilters     : file name filter (regular expression)
+ |   nameFilters     : file name filter - wildcard (globbing)
  |   startDir        : start directory list of directories to search
  |
  |  Output parameter :
@@ -703,14 +668,15 @@ L_String FileUtils::findRecursive ( L_String nameFilters, QString startDir )
  |
  |  Description :
  |
- |   This function  searches from  the given start  directory recursively
- |   for  all files  with  the given  fileSpec  (regular expression)  and
- |   returns all  found files in  a string  list which contains  the full
- |   path over every match.
+ |   This function  checks for every file  or directory in 'files'  if it
+ |   can  be found.   When  the entry  is a  directory  then it  searches
+ |   recursively from this  start directory for all files  with the given
+ |   wildcard (globbing) filter.  It returns  all found files in a string
+ |   list.
  |
  |  Input parameters :
- |   nameFilters     : file name filter (regular expression)
- |   startDir        : start directory list of directories to search
+ |   nameFilters     : file name filter - wildcard (globbing)
+ |   files           : files or directory to search for
  |
  |  Output parameter :
  |   (QString)       : final list of found files
@@ -755,34 +721,6 @@ L_String FileUtils::findRecursive ( L_String nameFilters, L_String files )
 
 /*-------------------------------------------------------------------------
  |
- |  Member function :  readFile  of  FileUtils
- |
- |  Description :
- |
- |   This function is the starting point for reading the text file into a
- |   string array.
- |
- |  Input parameters :
- |   lines           : String array containing all lines of the file
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::readFile ( L_String & lines )
-{
-  QString  text;
-
-  if ( not readFile (text) )
-    return false;
-
-  lines = text.split ( "\n" );
-
-  return true;
-
-}               /*-----  readFile  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
  |  Member function :  isDir  of  FileUtils
  |
  |  Description :
@@ -801,297 +739,6 @@ bool FileUtils::isDir ( QString fileName )
   return fileInfo.isDir ();
 
 }               /*-----  isDir  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  readFile  of  FileUtils
- |
- |  Description :
- |
- |   This function is the starting point for reading the text file into a
- |   string.
- |
- |  Input parameters :
- |   lines           : String containing the content of the file
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::readFile ( QString & content )
-{
-
-  inFile.setFileName (fileName);
-
-  if ( not inFile.open ( QIODevice::ReadOnly | QIODevice::Text ) )
-  {
-    msg = "Cannot open file : " + fileName +  " for reading !!";
-    addError (msg);
-
-    return false;
-  }
-
-  fileSize = inFile.size ();
-
-  if ( fileSize > 100000 )
-  {
-    msg = "File size of " + fileName +  " is huge\n";
-    msg.append ( "Usage of block read is recommended !!" );
-
-    addError (msg);
-  }
-
-  content = inFile.readAll ();
-
-  inFile.close ();
-
-  return true;
-
-}               /*-----  readFile  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  writeFile  of  FileUtils
- |
- |  Description :
- |
- |   This function writes the given string array as a text file with  the
- |   name given to this class when creating it.
- |
- |  Input parameters :
- |   lines           : String array containing all lines of the file
- |   append          : Open in AppendMode (true) or WriteOnly (default)
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::writeFile ( L_String lines, bool append )
-{
-  QByteArray  text;
-  bool  ok;
-
-  if (append)
-    ok = inFile.open ( QIODevice::Append );
-  else
-    ok = inFile.open ( QIODevice::WriteOnly );
-
-  if ( not ok )
-  {
-    msg = "Cannot open file : " + fileName +  " for writing !!";
-    addError (msg);
-
-    return false;
-  }
-
-  for ( int i = 0; i < lines.count (); i++ )
-  {
-    text = lines.at (i).toUtf8 () + "\n";
-    inFile.write (text);
-  }
-
-  inFile.close ();      // close file
-
-  return true;
-
-}               /*-----  writeFile  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  writeFile  of  FileUtils
- |
- |  Description :
- |
- |   This function writes the given string array as a text file with  the
- |   name given to this class when creating it.
- |
- |  Input parameters :
- |   content         : String containing content of the file
- |   append          : Open in AppendMode (true) or WriteOnly (default)
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::writeFile ( QString content, bool append )
-{
-  QByteArray  text;
-  bool  ok;
-
-  if (append)
-    ok = inFile.open ( QIODevice::Append );
-  else
-    ok = inFile.open ( QIODevice::WriteOnly );
-
-  if ( not ok )
-  {
-    msg = "Cannot open file : " + fileName +  " for writing !!";
-    addError (msg);
-
-    return false;
-  }
-
-  text = content.toLocal8Bit ();
-
-  inFile.write (text);
-
-  inFile.close ();      // close file
-
-  return true;
-
-}               /*-----  writeFile  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  writeFile  of  FileUtils
- |
- |  Description :
- |
- |   This function  writes the given byte  array as a text  file with the
- |   name given to this class when creating it.
- |
- |  Input parameters :
- |   content         : byte array containing content of the file
- |   append          : Open in AppendMode (true) or WriteOnly (default)
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::writeFile ( QByteArray content, bool append )
-{
-  bool  ok;
-
-  if (append)
-    ok = inFile.open ( QIODevice::Append );
-  else
-    ok = inFile.open ( QIODevice::WriteOnly );
-
-  if ( not ok )
-  {
-    msg = "Cannot open file : " + fileName +  " for writing !!";
-    addError (msg);
-
-    return false;
-  }
-
-  inFile.write (content);
-
-  inFile.close ();      // close file
-
-  return true;
-
-}               /*-----  writeFile  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  readLine  of  FileUtils
- |
- |  Description :
- |
- |   This function reads one line from the given text file.
- |
- |  Input parameters :
- |   infile          : Reference to the open text file
- |   line            :
- |
- |  Output parameter :
- |   (bool)          : Status: true - no error
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::readLine ( QFile & file, QString & line )
-{
-  QByteArray buffer;
-  bool       status;
-
-  status = true;
-
-  line.clear ();
-  msg.clear ();
-
-  buffer = file.readLine ();
-
-  if ( buffer.isEmpty () )
-  {
-    status = false;       // end of file encountered
-    msg    = "End of file encountered !";
-  }
-  else
-  {
-    line = buffer.trimmed ();    // remove trailing line feeds
-  }
-
-  return status;
-
-}               /*-----  readLine  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  readLine  of  FileUtils
- |
- |  Description :
- |
- |   This function reads one line from the input file.
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::readLine ( QString & line )
-{
-
-  return readLine ( inFile, line );
-
-}               /*-----  readLine  -----*/
-
-
-/*-------------------------------------------------------------------------
- |
- |  Member function :  readLines  of  FileUtils
- |
- |  Description :
- |
- |   This function  reads the number of  lines from the given  text file.
- |   If it does not contains this amount of lines then the status 'false'
- |   is given back.
- |
- |  Input parameters :
- |   infile          : Reference to the open text file
- |   line            :
- |
- |  Output parameter :
- |   (bool)          : Status: true - no error
- |
- +-------------------------------------------------------------------------*/
-
-bool FileUtils::readLines ( L_String & lines, int cnt )
-{
-  QByteArray buffer;
-  QString    line;
-  bool       status;
-
-  status = true;
-
-  lines.clear ();
-  line.clear ();
-  msg.clear ();
-
-  for ( int i = 0; i < cnt; i++ )
-  {
-    buffer = inFile.readLine ();
-
-    if ( buffer.isEmpty () )
-    {
-      status = false;       // end of file encountered
-      break;
-    }
-    else
-    {
-      line = buffer.trimmed ();    // remove trailing line feeds
-      lines.append (line);
-    }
-  }
-
-  return status;
-
-}               /*-----  readLines  -----*/
 
 
 /*-------------------------------------------------------------------------
@@ -1178,8 +825,7 @@ bool FileUtils::makePath ( QString dirPath )
  |  Description :
  |
  |   This function  joins the given  parts of  a complete file  name with
- |   path, base  name and  suffix and  returns it in  a string.  The last
- |   entry is optional  contains the base name and  suffix. The functions
+ |   path, base name and suffix and returns it in a string. The functions
  |   is the opposite of splitFileName.
  |
  |  Input parameters :
@@ -1187,7 +833,7 @@ bool FileUtils::makePath ( QString dirPath )
  |                      - absolutePath
  |                      - baseName
  |                      - suffix
- |                      - baseName + suffix (optional)
+ |                      - baseName + suffix (optional) -  not used
  |
  +-------------------------------------------------------------------------*/
 
@@ -1209,7 +855,7 @@ QString FileUtils::joinFileName ( L_String parts )
  |  Description :
  |
  |   This function  splits the given file  name into path, base  name and
- |   suffix and returns them as string references.
+ |   suffix and name + suffix.
  |
  |  Input parameters :
  |   fileName        : original file name
@@ -1245,8 +891,7 @@ void FileUtils::splitFileName ( QString fileName, QString & path,
  |  Description :
  |
  |   This function  splits the given file  name into path, base  name and
- |   suffix and returns it in a  string list. The last entry contains the
- |   base name and suffix.
+ |   suffix and name + suffix and returns it in a string list.
  |
  |  Input parameters :
  |   fileName        : original file name
@@ -1513,4 +1158,342 @@ bool FileUtils::selectFiles ( L_String & files, QString filter, bool load )
   return ok;
 
 }               /*-----  selectFiles  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  setFileName  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function sets  a new value for 'fileName', sets  it also in the
+ |   QFile and clears all errors.
+ |
+ |  Input parameters :
+ |   fileName        : New value for variable fileName
+ |
+ +-------------------------------------------------------------------------*/
+
+void FileUtils::setFileName ( QString fileName )
+{
+
+  this->fileName = fileName;
+
+  inFile.setFileName (fileName);
+
+  clearErrors ();    // not yet implemented
+
+}               /*-----  setFileName  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  readLine  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function reads one line from the given text file.
+ |
+ |  Input parameters :
+ |   infile          : Reference to the open text file
+ |   line            :
+ |
+ |  Output parameter :
+ |   (bool)          : Status: true - no error, false - end of file
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::readLine ( QFile & file, QString & line )
+{
+  QByteArray buffer;
+  bool       status;
+
+  status = true;
+
+  line.clear ();
+  msg.clear ();
+
+  buffer = file.readLine ();
+
+  if ( buffer.isEmpty () )
+  {
+    status = false;       // end of file encountered
+    msg    = "End of file encountered !";
+  }
+  else
+  {
+    line = buffer.trimmed ();    // remove trailing line feeds
+  }
+
+  return status;
+
+}               /*-----  readLine  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  readLine  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function reads one line from the input file.
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::readLine ( QString & line )
+{
+
+  return readLine ( inFile, line );
+
+}               /*-----  readLine  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  readLines  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function  reads the number of  lines from the given  text file.
+ |   If it does not contains this amount of lines then the status 'false'
+ |   is given back.
+ |
+ |  Input parameters :
+ |   infile          : Reference to the open text file
+ |   line            :
+ |
+ |  Output parameter :
+ |   (bool)          : Status: true - no error, false - end of file
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::readLines ( L_String & lines, int cnt )
+{
+  QByteArray buffer;
+  QString    line;
+  bool       status;
+
+  status = true;
+
+  lines.clear ();
+  line.clear ();
+  msg.clear ();
+
+  for ( int i = 0; i < cnt; i++ )
+  {
+    buffer = inFile.readLine ();
+
+    if ( buffer.isEmpty () )
+    {
+      status = false;       // end of file encountered
+      break;
+    }
+    else
+    {
+      line = buffer.trimmed ();    // remove trailing line feeds
+      lines.append (line);
+    }
+  }
+
+  return status;
+
+}               /*-----  readLines  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  readFile  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function reads a text file into a string list.
+ |
+ |  Input parameters :
+ |   lines           : String array containing all lines of the file
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::readFile ( L_String & lines )
+{
+  QString  text;
+
+  if ( not readFile (text) )
+    return false;
+
+  lines = text.split ( "\n" );
+
+  return true;
+
+}               /*-----  readFile  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  readFile  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function reads a text file into  a string. On 32 bit system the
+ |   file size was limited  to 2 GB, on 64 bit  systems the limitation is
+ |   only the system hardware and operating system.
+ |
+ |  Input parameters :
+ |   lines           : String containing the content of the file
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::readFile ( QString & content )
+{
+  qint64 fileSize;
+
+  inFile.setFileName (fileName);
+
+  if ( not inFile.open ( QIODevice::ReadOnly | QIODevice::Text ) )
+  {
+    msg = "Cannot open file : " + fileName +  " for reading !!";
+    addError (msg);
+
+    return false;
+  }
+
+  fileSize = inFile.size ();
+
+  content = inFile.readAll ();
+
+  inFile.close ();
+
+  return true;
+
+}               /*-----  readFile  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  writeFile  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function writes the given string list as a text file with  the
+ |   name given to this class when creating it.
+ |
+ |  Input parameters :
+ |   lines           : String array containing all lines of the file
+ |   append          : Open in AppendMode (true) or WriteOnly (default)
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::writeFile ( L_String lines, bool append )
+{
+  QByteArray  text;
+  bool  ok;
+
+  if (append)
+    ok = inFile.open ( QIODevice::Append );
+  else
+    ok = inFile.open ( QIODevice::WriteOnly );
+
+  if ( not ok )
+  {
+    msg = "Cannot open file : " + fileName +  " for writing !!";
+    addError (msg);
+
+    return false;
+  }
+
+  for ( int i = 0; i < lines.count (); i++ )
+  {
+    text = lines.at (i).toUtf8 () + "\n";
+    inFile.write (text);
+  }
+
+  inFile.close ();      // close file
+
+  return true;
+
+}               /*-----  writeFile  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  writeFile  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function writes  the given string as a text  file with the name
+ |   given to this class when creating it.
+ |
+ |  Input parameters :
+ |   content         : String containing content of the file
+ |   append          : Open in AppendMode (true) or WriteOnly (default)
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::writeFile ( QString content, bool append )
+{
+  QByteArray  text;
+  bool  ok;
+
+  if (append)
+    ok = inFile.open ( QIODevice::Append );
+  else
+    ok = inFile.open ( QIODevice::WriteOnly );
+
+  if ( not ok )
+  {
+    msg = "Cannot open file : " + fileName +  " for writing !!";
+    addError (msg);
+
+    return false;
+  }
+
+  text = content.toLocal8Bit ();
+
+  inFile.write (text);
+
+  inFile.close ();      // close file
+
+  return true;
+
+}               /*-----  writeFile  -----*/
+
+
+/*-------------------------------------------------------------------------
+ |
+ |  Member function :  writeFile  of  FileUtils
+ |
+ |  Description :
+ |
+ |   This function  writes the given byte  array as a text  file with the
+ |   name given to this class when creating it.
+ |
+ |  Input parameters :
+ |   content         : byte array containing content of the file
+ |   append          : Open in AppendMode (true) or WriteOnly (default)
+ |
+ +-------------------------------------------------------------------------*/
+
+bool FileUtils::writeFile ( QByteArray content, bool append )
+{
+  bool  ok;
+
+  if (append)
+    ok = inFile.open ( QIODevice::Append );
+  else
+    ok = inFile.open ( QIODevice::WriteOnly );
+
+  if ( not ok )
+  {
+    msg = "Cannot open file : " + fileName +  " for writing !!";
+    addError (msg);
+
+    return false;
+  }
+
+  inFile.write (content);
+
+  inFile.close ();      // close file
+
+  return true;
+
+}               /*-----  writeFile  -----*/
 

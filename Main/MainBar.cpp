@@ -9,14 +9,14 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 24.Jul.2023
- |  Modified  : Oskar Leirich                Last changes  : 18.Sep.2026
+ |  Modified  : Oskar Leirich                Last changes  : 18.Nov.2026
  |
  |
  |  This unit contains following member functions :
  |   of MainBar :
  |    MainBar                   ~MainBar                  buildToolBar
  |    connectActions            createActions             helpAbout
- |    helpContents
+ |    helpContents              onBtnConfig
  |
  +-------------------------------------------------------------------------*/
 
@@ -34,8 +34,8 @@
  |
  |  Description :
  |
- |   The constructor  creates the actions  for the toolbar and  makes the
- |   signal / slot connections.
+ |   The constructor sets  the toolbar title and creates  the actions for
+ |   the toolbar and makes the signal / slot connections.
  |
  |  Input parameters :
  |   mainWnd         : Parent window, typically the main window
@@ -64,7 +64,7 @@ MainBar::MainBar ( MainWnd * mainWnd ) : QToolBar (mainWnd)
  |
  |  Description :
  |
- |   The destructor deletes some actions.
+ |   The destructor deletes the actions.
  |
  +-------------------------------------------------------------------------*/
 
@@ -184,7 +184,7 @@ void MainBar::createActions ()
  |
  |  Description :
  |
- |   This function builds the ToolBar by adding all actions.
+ |   This function builds the toolBar by adding all actions.
  |
  +-------------------------------------------------------------------------*/
 
@@ -220,9 +220,7 @@ void MainBar::buildToolBar ()
  |
  |  Description :
  |
- |   This  function makes  the connections  for parameter  and help  info
- |   between the actions and the used class functions for parameter, help
- |   menu and more.
+ |   This function makes the connections for the main toolbar.
  |
  +-------------------------------------------------------------------------*/
 
@@ -292,7 +290,8 @@ void MainBar::helpAbout ()
  |  Description :
  |
  |   This function shows  the 'content' of the user  manual. Therefore it
- |   locates the pdf file and opens it.
+ |   locates the pdf file and opens  it or extracts is from the resources
+ |   it it does not exist.
  |
  +-------------------------------------------------------------------------*/
 
@@ -335,7 +334,7 @@ void MainBar::helpContents ()
  |
  |   This function  is called  when the 'Config'  button is  pressed.  It
  |   opens a dialog with the configuration options for loading and saving
- |   the image files.
+ |   the image files and the OCR options.
  |
  +-------------------------------------------------------------------------*/
 

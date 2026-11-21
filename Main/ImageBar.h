@@ -26,7 +26,7 @@ class MainWnd;
  |
  |  Description :
  |
- |   This class implements a toolbar for the image editing functionlity.
+ |   This class implements a toolbar for the image editing functionality.
  |
  +-------------------------------------------------------------------------*/
 

@@ -19,8 +19,8 @@
  |
  |  Description :
  |
- |   This  class  contains  some   'QString'  and  'QStringList'  utility
- |   functions e.g. for easy formatting.
+ |   This  class contains  some  utility functions  for  string and  text
+ |   formatting, manipulation and converting.
  |
  +-------------------------------------------------------------------------*/
 
@@ -74,7 +74,7 @@ class StringUtils
     int      indexOf       ( L_String lines, QString pattern,
                              bool ignoreCase = true );
     M_StrStr listToMap     ( L_String entries );
-    M_StrStr listToMap     ( QString entry, QString sep );
+    M_StrStr listToMap     ( QString entry, QString sep = QString ( "," ) );
 
     void     setPrecision  ( int prec     ) { precision = prec;      }
     void     setWidth      ( int width    ) { this->width = width;   }

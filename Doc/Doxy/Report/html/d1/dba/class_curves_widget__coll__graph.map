@@ -1,0 +1,9 @@
+<map id="CurvesWidget" name="CurvesWidget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="111,757,237,1445"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,315,87,384"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,398,101,693,114,770,109,770,95,694,50,399"/>
+<area shape="rect" id="Node000003" href="$d6/d82/class_color_channel.html" title=" " alt="" coords="111,5,237,693"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,693,177,740,171,740,171,693"/>
+<area shape="rect" id="Node000004" href="$da/d11/class_channel_info.html" title=" " alt="" coords="261,165,343,533"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="278,534,253,694,242,753,237,753,247,693,273,533"/>
+</map>

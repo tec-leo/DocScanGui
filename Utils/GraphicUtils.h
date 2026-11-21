@@ -5,7 +5,7 @@
  |  Description :
  |
  |  This include file contains all class definitions  for  the  module
- |  GraphicTypes.
+ |  GraphicUtils.
  |
  +-------------------------------------------------------------------------*/
 
@@ -24,8 +24,8 @@ typedef  QList < QPointF >  L_PointsF;
  |
  |  Description :
  |
- |   This  class is  a  utility  class which  contain  some plot  support
- |   functions like clipping etc.
+ |   This  class is  a utility  class which  contains some  functions for
+ |   clipping, rectangle conversion, point distance and more.
  |
  +-------------------------------------------------------------------------*/
 
@@ -39,6 +39,8 @@ class GraphicUtils
     {
       Inside, Outside, Changed
     };
+
+    static bool containsPoint ( QWidget * widget, QPoint point );
 
     QRect      convRectF           ( QRectF rectF );
     bool       clipTestLiangBrasky ( const float & p, const float & q,

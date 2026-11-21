@@ -1,0 +1,15 @@
+<map id="ToolsWidget::runTool" name="ToolsWidget::runTool">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,149,159"/>
+<area shape="rect" id="Node000002" href="$d5/d71/class_tools_widget.html#afb3e34bbf2a7d5a7f866f934883a125a" title=" " alt="" coords="197,5,387,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,130,133,86,163,62,195,42,209,35,211,40,198,46,166,67,136,90,92,134"/>
+<area shape="rect" id="Node000003" href="$d5/d71/class_tools_widget.html#a0f1353852eb522449a70a3f3bff925a0" title=" " alt="" coords="209,56,375,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,129,196,92,218,85,220,90,198,97,109,134"/>
+<area shape="rect" id="Node000004" href="$d5/d71/class_tools_widget.html#ab2f6efa7027ba2c097fd49065d1f38c2" title=" " alt="" coords="218,107,366,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,134,202,128,203,133,149,140"/>
+<area shape="rect" id="Node000005" href="$d5/d71/class_tools_widget.html#a228c5f7118ce0841d77bfe59d02e7cab" title=" " alt="" coords="214,157,370,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="149,151,199,157,198,162,149,156"/>
+<area shape="rect" id="Node000006" href="$d5/d71/class_tools_widget.html#a64ad4fc84d90b7f471f7a795ee3f1389" title=" " alt="" coords="198,208,386,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="109,157,198,193,220,201,218,206,196,199,107,162"/>
+<area shape="rect" id="Node000007" href="$d5/d71/class_tools_widget.html#abfdd39ce0c8132dd7ecf72db04161740" title=" " alt="" coords="208,259,376,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="92,157,136,200,166,224,198,244,211,250,209,255,195,249,163,228,133,204,89,161"/>
+</map>

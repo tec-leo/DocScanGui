@@ -1,0 +1,18 @@
+<map id="ColorChannel::setPoint" name="ColorChannel::setPoint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,100,160,127"/>
+<area shape="rect" id="Node000002" href="$d6/d82/class_color_channel.html#aa418851e0a515f95b220c40592fd1611" title=" " alt="" coords="217,100,375,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,111,202,111,202,116,160,116"/>
+<area shape="rect" id="Node000003" href="$d6/d82/class_color_channel.html#a4f2b5a7b60d07834a6506c4649ea466c" title=" " alt="" coords="432,5,604,32"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="112,97,156,78,207,61,315,39,416,25,417,30,315,44,208,67,158,83,114,102"/>
+<area shape="rect" id="Node000004" href="$d6/d82/class_color_channel.html#aeec31f11e2936220551a0b81600c7671" title=" " alt="" coords="440,63,596,89"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="142,97,207,85,320,76,424,73,425,78,320,81,208,91,143,102"/>
+<area shape="rect" id="Node000005" href="$d6/d82/class_color_channel.html#a482e9d3ff6185852783a7aa57d9d4a5b" title=" " alt="" coords="438,125,598,152"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="140,125,208,136,319,142,423,141,423,146,319,147,207,141,139,130"/>
+<area shape="rect" id="Node000006" href="$d6/d82/class_color_channel.html#a8d78b023fab6891a0e93780ff6483892" title=" " alt="" coords="208,201,384,228"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="107,125,154,152,209,180,239,193,237,198,207,185,151,157,105,130"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="324,97,431,48,463,35,465,40,433,53,326,102"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="374,98,424,89,425,94,375,103"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="375,120,423,125,422,130,374,125"/>
+<area shape="rect" id="Node000007" href="$d6/d82/class_color_channel.html#a60fd35fc7e982e4c407d299385fa1f40" title=" " alt="" coords="444,201,593,228"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="385,212,428,212,428,217,385,217"/>
+</map>

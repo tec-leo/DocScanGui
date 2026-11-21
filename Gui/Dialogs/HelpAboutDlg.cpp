@@ -4,12 +4,12 @@
  |
  |  Description :
  |
- |   This module implements  a dialog class which shows  the About dialog
+ |   This module implements a dialog class which shows the 'About' dialog
  |   of this program..
  |
  |
  |  Developer : Oskar Leirich                Creation date : 24.Jul.2023
- |  Modified  : Oskar Leirich                Last changes  : 21.Sep.2026
+ |  Modified  : Oskar Leirich                Last changes  : 14.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -28,10 +28,11 @@
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor initializes some variables, sets the dialog icon and
+ |   title.
  |
  |  Input parameters :
- |   parent          :  Pointer to the parent window
+ |   parent          :  Pointer to the parent widget
  |
  +-------------------------------------------------------------------------*/
 

@@ -13,7 +13,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 04.Mar.2024
- |  Modified  : Oskar Leirich                Last changes  : 26.May.2025
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -128,7 +128,7 @@ void LayersList::addButton ( QString name )
 
   createButton (name);
 
-  buttons.insert  ( curIndex, iconBtn );
+  buttons.insert ( curIndex, iconBtn );
 
   widgetVBox->insertWidget ( curIndex, iconBtn );
 
@@ -143,7 +143,8 @@ void LayersList::addButton ( QString name )
  |
  |  Description :
  |
- |   This function creates an icon button with the given name.
+ |   This  function  creates an  icon  button  with  the given  name  and
+ |   connects slots to it.
  |
  +-------------------------------------------------------------------------*/
 
@@ -207,7 +208,7 @@ void LayersList::delButton ( int index )
  |
  |  Description :
  |
- |   This function deletes the the last icon button.
+ |   This function deletes the the last icon button and updates the index.
  |
  +-------------------------------------------------------------------------*/
 
@@ -275,7 +276,9 @@ void LayersList::createLayout ()
  |  Description :
  |
  |   This function is the context menu  handler and displays a popup menu
- |   if the mouse was right-clicked inside this widget.
+ |   if the mouse was right-clicked inside this widget. It is planned the
+ |   the  context menu  is  filled  from the  user  of  this widget  (not
+ |   implemented yet).
  |
  |  Input parameters :
  |   event           :  context menu event
@@ -359,12 +362,14 @@ void LayersList::onBtnClicked ( bool checked )
  |
  |  Description :
  |
- |   This function is called when a button in the widget is  pressed.  It
- |   is checked if the sender is a QPushButton and if so  a  signal  sent
- |   out which informs about label and pressed state of this button.
+ |   This function is called when a  button in the widget is pressed.  It
+ |   is checked if  the sender is a QPushButton. It  toggles the 'active'
+ |   property  of this  button  and  changes the  icon  depending on  the
+ |   'active' state. Index and 'active' state are then sent by the signal
+ |   'btnIconToggled'.
  |
  |  Input parameters :
- |   index           : Checked state of the selected button
+ |   index           : 'Active' state (property) of the selected button
  |
  +-------------------------------------------------------------------------*/
 
@@ -396,9 +401,9 @@ void LayersList::onIconToggled ( int index )
  |
  |  Description :
  |
- |   This  function returns  a list  with booleans  which indicat  if the
+ |   This function  returns a  list with booleans  which indicate  if the
  |   button is  'active' or not. Active  is indicated with a  red icon, a
- |   grey icon for the not active state.
+ |   white icon for the not active state (default).
  |
  |  Output parameter :
  |   L_Bool          : The 'active' state of all buttons
@@ -489,7 +494,7 @@ void LayersList::setBtnActive ( int index, bool active )
  |
  |  Description :
  |
- |   This function sets the button with the given  index to 'active'.
+ |   This function sets the text of the button with the given index.
  |
  |  Input parameters :
  |   index           : Index of the button

@@ -31,6 +31,9 @@
  |
  |   The constructor initializes some variables.
  |
+ |  Input parameters :
+ |   parent          : parent widget
+ |
  +-------------------------------------------------------------------------*/
 
 DropCombo::DropCombo ( QWidget * parent ) : QComboBox (parent)
@@ -49,7 +52,7 @@ DropCombo::DropCombo ( QWidget * parent ) : QComboBox (parent)
  |
  |  Description :
  |
- |   The destructor deletes the Dialog-Info structures.
+ |   The destructor is empty and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 

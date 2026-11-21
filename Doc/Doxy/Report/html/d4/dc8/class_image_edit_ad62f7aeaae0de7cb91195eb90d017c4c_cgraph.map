@@ -1,0 +1,7 @@
+<map id="ImageEdit::onCrop" name="ImageEdit::onCrop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,134,32"/>
+<area shape="rect" id="Node000002" href="$d4/dc8/class_image_edit.html#a92d616dfbc0b217b97cdea8b8029fbc9" title=" " alt="" coords="182,5,335,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,16,166,16,166,21,134,21"/>
+<area shape="rect" id="Node000003" href="$d4/dc8/class_image_edit.html#a90aa990aad766f3aeb741cb6386204bb" title=" " alt="" coords="383,5,524,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="335,16,368,16,368,21,335,21"/>
+</map>

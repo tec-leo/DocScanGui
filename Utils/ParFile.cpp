@@ -4,12 +4,19 @@
  |
  |  Description :
  |
- |   This module  implements the class  ParFile which provides functions
- |   for accessing the parameters from a parameter file.
+ |   This module implements the  class 'ParFile' which provides functions
+ |   for accessing  the sections and  values of  a parameter file  in the
+ |   style  of a  config-ini. It  provides a  lot of  overdefinitions for
+ |   different data types to read and write the entries and sections.
+ |
+ |   The content  of a config file  is loaded into the  internal hash and
+ |   map structures. The  application works only on  this structures over
+ |   the provided functions and is only  written to a file when 'save' is
+ |   called.
  |
  |
  |  Developer : Oskar Leirich                Creation date : 03.Apr.2022
- |  Modified  : Oskar Leirich                Last changes  : 12.Jun.2026
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains the following member functions :
@@ -58,7 +65,8 @@ ParFile::ParFile ()
  |
  |  Description :
  |
- |   The destructor deletes the dynamically created objects.
+ |   The destructor call 'clear' to  delete the hash structures and lists
+ |   of the config file.
  |
  +-------------------------------------------------------------------------*/
 
@@ -76,7 +84,7 @@ ParFile::~ParFile ()
  |
  |  Description :
  |
- |   This function deletes hash structure to the parameter file.
+ |   This function deletes hash structures and lists of the config file.
  |
  +-------------------------------------------------------------------------*/
 
@@ -110,8 +118,11 @@ void ParFile::clear ()
  |   This  function retrieves  a complete  section  and returns  it in  a
  |   string list.
  |
- |   The entries in the list have key = value, like:
- |     DH EOL/Activate LL inhibition via IVV Dr=1,True,False
+ |   The entries in the list are key / value pairs:
+ |   [Tools]
+ |   useSharpen=false
+ |   useMorph=true
+ |   useBlur=false
  |
  +-------------------------------------------------------------------------*/
 
@@ -458,7 +469,7 @@ void ParFile::setFileName ( QString fileName )
  |
  |  Description :
  |
- |   This function return the name of the current parameter section.
+ |   This function returns the name of the current parameter section.
  |
  +-------------------------------------------------------------------------*/
 
@@ -507,8 +518,8 @@ void ParFile::setSection ( QString section )
  |
  |  Description :
  |
- |   This function  tries to read the  given entry in  'section' from the
- |   current parameter file and returns if the entry exists.
+ |   This  function checks  if  the  given key  in  'section' exists  and
+ |   returns the result.
  |
  |  Input parameters :
  |   entry           :  Entry in this section
@@ -540,8 +551,8 @@ bool ParFile::entryExists ( QString key )
  |
  |  Description :
  |
- |   This function  tries to read the  given section 'section' from the
- |   current parameter file and returns if the section exists.
+ |   This function  checks if  the given section  exists and  returns the
+ |   result.
  |
  |  Input parameters :
  |   section         :  section name

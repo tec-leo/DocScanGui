@@ -37,7 +37,7 @@ typedef  QList  < QPointF >  L_PointF;
  |
  |  Description :
  |
- |   This  class   provides  a  only   readable  copy  of   the  internal
+ |   This class provides  a (only) readable copy of some  of the internal
  |   variables. For member variables which  can be set from outside there
  |   are set functions defined.
  |
@@ -77,9 +77,10 @@ class ChannelInfo
  |
  |  Description :
  |
- |   This class provides  basic information about the  performance of the
- |   deploy or  nodeploy tests  and the  data set in  a formatted  way as
- |   string.
+ |   This class  implements functions for setting,  modifying and reading
+ |   curve points and  samples for a color or gray  channel.  It contains
+ |   functions for  the conversion  from points  to curves,  handling and
+ |   creating of lookup tables.
  |
  +-------------------------------------------------------------------------*/
 

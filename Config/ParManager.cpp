@@ -9,7 +9,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 20.Apr.2025
- |  Modified  : Oskar Leirich                Last changes  : 06.Nov.2026
+ |  Modified  : Oskar Leirich                Last changes  : 18.Nov.2026
  |
  |
  |  This unit contains the following global functions :
@@ -91,8 +91,8 @@ ParManager::~ParManager ()
  |  Description :
  |
  |   This function is  called from the main window after  the name of the
- |   parameter file is  read from the registry. It  creates all parameter
- |   classes and adds them to the list.
+ |   parameter file is read from the global configuration. It creates all
+ |   parameter classes and adds them to the list.
  |
  +-------------------------------------------------------------------------*/
 
@@ -160,8 +160,8 @@ ParFile * ParManager::getParFile ()
  |
  |  Description :
  |
- |   This function transforms a path relative to parameter file directory
- |   to an absolute one.
+ |   This function transforms a path which  is relative to the given file
+ |   name to an absolute path.
  |
  +-------------------------------------------------------------------------*/
 
@@ -189,7 +189,7 @@ QString ParManager::getAbsolutePath ( QString parName )
  |
  |  Description :
  |
- |   This function returns the path of a file relative to parameter dir.
+ |   This function returns the path of a file relative to given file name.
  |
  +-------------------------------------------------------------------------*/
 
@@ -264,11 +264,9 @@ void ParManager::setFileName ( QString name )
   QDir      cwd;
 
   fileName = QDir::fromNativeSeparators (name);
+  fileName = fileUtils.absFileName (fileName);
 
-  cwd.setPath ( QDir::currentPath () );
-
-  parPath = cwd.absoluteFilePath (fileName);
-  parPath = parPath.left ( parPath.lastIndexOf ( '/' ) );
+  parPath = fileUtils.absolutePath (fileName);
   parDir  = QDir (parPath);
 
   if (parFile)
@@ -292,7 +290,7 @@ void ParManager::setFileName ( QString name )
  |
  |  Description :
  |
- |   This function loads the parameter from the parameter file.
+ |   This function loads the parameter from all base parameter files.
  |
  +-------------------------------------------------------------------------*/
 
@@ -342,7 +340,10 @@ void ParManager::load ( QString name )
  |
  |  Description :
  |
- |   This function loads the parameter from the parameter file.
+ |   This function loads  the parameter entries from  the parameter file,
+ |   appends the name to mru list and loads all base parameter files. The
+ |   appCurves and  mainWnd are  handled separately  because they  are no
+ |   base parameter class.
  |
  +-------------------------------------------------------------------------*/
 
@@ -371,7 +372,9 @@ void ParManager::load ()
  |
  |  Description :
  |
- |   This function saves the parameter in the parameter file.
+ |   This  function  creates  a  backup  parameter  file  and  saves  all
+ |   parameters.   The  appCurves  and  mainWnd  are  handled  separately
+ |   because they are no base parameter class.
  |
  +-------------------------------------------------------------------------*/
 
@@ -433,7 +436,7 @@ bool ParManager::save ( bool createBackup )
  |
  |  Description :
  |
- |   This function is called from the main window frame if a new parameter
+ |   This function  is called from the  main window frame if  a parameter
  |   file should be loaded from the recent list.
  |
  |  Input parameters :
@@ -468,8 +471,8 @@ void ParManager::onLoadMRU ( QString parName )
  |
  |  Description :
  |
- |   This  function is  called  from  the main  toolbar  frame  if a  new
- |   parameter file should be selected from a dialog and loaded.
+ |   This function is  called from the main toolbar frame  if a parameter
+ |   file should be selected from a dialog and loaded.
  |
  +-------------------------------------------------------------------------*/
 
@@ -529,8 +532,8 @@ void ParManager::onSaveConfig ()
  |
  |  Description :
  |
- |   This function saves  the configuration options into a  file with the
- |   name of fileName'.
+ |   This function opens an save file dialog to select a new name for the
+ |   parameter file and saves the parameters into it.
  |
  +-------------------------------------------------------------------------*/
 

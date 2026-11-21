@@ -1,0 +1,9 @@
+<map id="ImageTools::cropImage" name="ImageTools::cropImage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,161,57"/>
+<area shape="rect" id="Node000002" href="$de/d65/class_image_tools.html#aaacd5964fae290596ca544b66ce53ad5" title=" " alt="" coords="209,5,388,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,32,193,28,193,34,161,38"/>
+<area shape="rect" id="Node000004" href="$de/d65/class_image_tools.html#ae178504e7722a128ff42c929d1e539f6" title=" " alt="" coords="217,56,380,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,50,201,55,201,61,161,56"/>
+<area shape="rect" id="Node000003" href="$de/d65/class_image_tools.html#a516646e5de50408949cb0611c72fc85f" title=" " alt="" coords="436,5,626,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,16,420,16,420,21,389,21"/>
+</map>

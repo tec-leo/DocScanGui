@@ -36,13 +36,15 @@ class RegFile : public QSettings
     QVariant value       ( QString key,
                            QVariant defaultValue = QVariant () );
 
-    QString  getPath     ();
-    void     setPath     ( QString path );
+    QString  getGroup    ();
+    void     setGroup    ( QString path );
 
     // static functions
     void     writeValue  ( QString path, QString key, QVariant value );
     QVariant readValue   ( QString path, QString key,
                            QVariant defaultValue = QVariant () );
+  public:    // static functions
+    static   QString getFilePath ();
 
   protected:
     QString  companyDomain;

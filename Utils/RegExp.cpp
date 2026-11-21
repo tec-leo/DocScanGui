@@ -11,7 +11,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 08.Dec.2023
- |  Modified  : Oskar Leirich                Last changes  : 12.Dec.2024
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -264,7 +264,7 @@ RegExpMatch RegExp::match ( const QString & subject,
  |
  |  Description :
  |
- |   This function  sets the  case sensitivity  depending on  ignore.  If
+ |   This function  sets the case  sensitivity depending on  ignore. When
  |   ignore is true then the case matching is insentive.
  |
  |  Input parameters :

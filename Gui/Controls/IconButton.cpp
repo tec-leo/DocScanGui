@@ -9,7 +9,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 16.Jul.2023
- |  Modified  : Oskar Leirich                Last changes  : 26.May.2025
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -37,7 +37,7 @@ const int cIconSize = 24;
  |   The constructor initializes some variables.
  |
  |  Input parameters :
- |   parent          :
+ |   parent          : parent widget
  |
  +-------------------------------------------------------------------------*/
 
@@ -59,7 +59,7 @@ IconButton::IconButton ( QWidget * parent ) : QPushButton (parent)
  |
  |  Description :
  |
- |   The destructor deletes some objects.
+ |   The destructor is empty and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -76,23 +76,24 @@ IconButton::~IconButton ()
  |
  |  Description :
  |
- |   This function returns true if the pos is inside the clickable button
- |   rectangle;  otherwise  returns false.   The  clickable  area is  the
- |   entire widget. An additional check is  done if the pos is within the
- |   icon, in this  case the signal 'iconToggled' is sent  with the index
- |   of this button.
+ |   This function returns true if the given point position is inside the
+ |   clickable button rectangle; otherwise  returns false.  The clickable
+ |   area is the entire widget. An  additional check is done if the point
+ |   is within  the icon, in this  case the signal 'iconToggled'  is sent
+ |   with the index of this button.
  |
  +-------------------------------------------------------------------------*/
 
 bool IconButton::hitButton ( const QPoint & pos ) const
 {
-  QPoint hit;
-  QPoint pnt;
-  QRect  rect;
-  int    index;
-  bool   ok;
+  QPoint    hit;
+  QPoint    pnt;
+  QRect     rect;
+  int       index;
+  bool      ok;
 
-  if ( not VarUtils::containsPoint ( (QWidget *) this, pos ) )
+  // no dynamic cast required because of using this pointer
+  if ( not GraphicUtils::containsPoint ( (QWidget *) this, pos ) )
     return false;
 
   ok   = false;
@@ -126,7 +127,8 @@ bool IconButton::hitButton ( const QPoint & pos ) const
  |
  |  Description :
  |
- |   This function is the event handler for painting widget.
+ |   This function is the event handler for painting widget. It draws the
+ |   icon and the text.
  |
  |  Input parameters :
  |   event           : paint event
@@ -164,13 +166,14 @@ void IconButton::paintEvent ( QPaintEvent * event )
  |   This function sets the new icon for this button.
  |
  |  Input parameters :
- |   icon           : new icon
+ |   icon            : new icon
  |
  +-------------------------------------------------------------------------*/
 
 void IconButton::setIcon ( const QIcon & icon )
 {
 
+  // no dynamic cast required because of given parameter
   this->icon = (QIcon *) & icon;
 
 }               /*-----  setIcon  -----*/
@@ -185,7 +188,7 @@ void IconButton::setIcon ( const QIcon & icon )
  |   This function sets the new text for this button.
  |
  |  Input parameters :
- |   text           : new text
+ |   text            : new text
  |
  +-------------------------------------------------------------------------*/
 
@@ -208,7 +211,7 @@ void IconButton::setText ( const QString & text )
  |   This function returns the text for this button.
  |
  |  Output parameter  :
- |   QString          : text of the led
+ |   QString          : text of the button icon
  |
  +-------------------------------------------------------------------------*/
 

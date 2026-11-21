@@ -1,0 +1,13 @@
+<map id="CurvesWidget::CurvesWidget" name="CurvesWidget::CurvesWidget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,195,83"/>
+<area shape="rect" id="Node000002" href="$d5/dcf/class_curves_widget.html#a42c1bde201904daa041b7fc833a85814" title=" " alt="" coords="243,56,369,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,67,227,67,227,72,195,72"/>
+<area shape="rect" id="Node000003" href="$d5/dcf/class_curves_widget.html#ac49a0892cd642ec7cd2e268b7743ea37" title=" " alt="" coords="421,5,600,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="362,53,438,34,440,39,364,58"/>
+<area shape="rect" id="Node000004" href="$d5/dcf/class_curves_widget.html#a63141316476282a745fd5fd9fbca9781" title=" " alt="" coords="423,56,599,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="369,67,407,67,407,72,369,72"/>
+<area shape="rect" id="Node000005" href="$d5/d71/class_tools_widget.html#afdc18b7e496bc3a01a07fb223376f441" title=" " alt="" coords="417,107,604,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="364,81,440,100,438,105,362,86"/>
+<area shape="rect" id="Node000006" href="$d5/d71/class_tools_widget.html#afb3e34bbf2a7d5a7f866f934883a125a" title=" " alt="" coords="652,107,843,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="605,117,637,117,637,123,605,123"/>
+</map>

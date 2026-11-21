@@ -10,7 +10,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 19.Feb.2023
- |  Modified  : Oskar Leirich                Last changes  : 20.Apr.2025
+ |  Modified  : Oskar Leirich                Last changes  : 09.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -29,7 +29,10 @@
  |
  |  Description :
  |
- |   The constructor initializes some variables.
+ |   The constructor accepts drops.
+ |
+ |  Input parameters :
+ |   parent          : parent widget
  |
  +-------------------------------------------------------------------------*/
 
@@ -47,7 +50,7 @@ DropLineEdit::DropLineEdit ( QWidget * parent ) : QLineEdit (parent)
  |
  |  Description :
  |
- |   The destructor deletes the Dialog-Info structures.
+ |   The destructor is empty and just placeholder for the future.
  |
  +-------------------------------------------------------------------------*/
 
@@ -63,11 +66,12 @@ DropLineEdit::~DropLineEdit ()
  |
  |  Description :
  |
- |   This function initiates the drag process.
+ |   This event  handler is  called when  a drag is  in progress  and the
+ |   mouse enters this widget.
  |
  +-------------------------------------------------------------------------*/
 
-void   DropLineEdit::dragEnterEvent ( QDragEnterEvent * event )
+void DropLineEdit::dragEnterEvent ( QDragEnterEvent * event )
 {
 
   event->setDropAction ( Qt::CopyAction );
@@ -86,9 +90,9 @@ void   DropLineEdit::dragEnterEvent ( QDragEnterEvent * event )
  |
  |  Description :
  |
- |   This function implements  the drop event. It will  move the selected
- |   items to the  index marked by the drop location  and will signal the
- |   moved indexes.
+ |   This  event handler  is  called when  the drag  is  dropped on  this
+ |   widget.  It  extracts a filename  from the mimeData and  signal this
+ |   name.
  |
  +-------------------------------------------------------------------------*/
 

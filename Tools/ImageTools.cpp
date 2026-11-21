@@ -10,7 +10,7 @@
  |
  |
  |  Developer : Oskar Leirich                Creation date : 24.Apr.2025
- |  Modified  : Oskar Leirich                Last changes  : 28.Oct.2026
+ |  Modified  : Oskar Leirich                Last changes  : 19.Nov.2026
  |
  |
  |  This unit contains following member functions :
@@ -34,8 +34,8 @@
  |
  |  Description :
  |
- |   The constructor  initializes some variables  like the lists  for the
- |   image formats.
+ |   The constructor initializes some  variables like the 'Scalar' values
+ |   for the black and white point.
  |
  +-------------------------------------------------------------------------*/
 
@@ -57,10 +57,13 @@ ImageTools::ImageTools ()
  |
  |   This function adds page margins to the given image with white color.
  |   The page  margins are interpreted  as percentage of the  input image
- |   size not  pixels.  The page  padding is done  with 'copyMakeBorder',
- |   the  border  type   is  set  to  isolated,  which   means  that  the
- |   extrapolation for the padding is  using only pixels inside the input
- |   image (no ROI - region of interest).
+ |   size not pixels. The margins order is top, bottom, left, right.
+ |
+ |   The page padding  is done with 'copyMakeBorder', the  border type is
+ |   set to isolated, which means  that the extrapolation for the padding
+ |   is using  only pixels  inside the  input image (no  ROI -  region of
+ |   interest).
+ |
  |
  |  Input parameters :
  |   input           : Input image
@@ -133,10 +136,11 @@ bool ImageTools::compareAngle ( double first, double second )
  |
  |  Description :
  |
- |   This function  crops the  given image to  the given  rectangle.  The
- |   crop values  are interpreted as  percentage of the input  image size
- |   not pixels.
- |   Crop margins have the following order : top, bottom, left, right
+ |   This  function crops  the given  image  to the  cropt margins.   The
+ |   margins are 'auto detected' or taken from the current configuration.
+ |   The crop  values are  interpreted as percentage  of the  input image
+ |   size  not pixels.   Crop margins  have  the following  order :  top,
+ |   bottom, left, right
  |
  |  Input parameters :
  |   input           : Input image
@@ -352,10 +356,7 @@ void ImageTools::detectContour ( Mat input, V_CvPoint & points )
  |   For this  it calls  'copyMakeBorder' which  copies the  source image
  |   into the middle of the destination image.  The areas to the left, to
  |   the right,  above and below the  copied source image will  be filled
- |   with extrapolated pixels. This is not what filtering functions based
- |   on it do (they extrapolate pixels on-fly), but at other more complex
- |   functions, including  your own,  may do  to simplify  image boundary
- |   handling.
+ |   with extrapolated pixels.
  |
  |  Input parameters :
  |   input           : Binary input image used for deskewing
@@ -416,7 +417,7 @@ Mat ImageTools::deskewAndCrop ( Mat input, const RotatedRect & box )
  |   ignored, also a width / height ratio below a minimum value like 2.
  |
  |  Input parameters :
- |   input           : Matrix to evaluate for reagions
+ |   input           : Matrix to evaluate for regions
  |   areas           : Reference to a list with all rotated rectangles
  |
  +-------------------------------------------------------------------------*/
@@ -1085,7 +1086,8 @@ Mat ImageTools::mergeImages ( Mat img1, Mat img2 )
  |
  |   This  function converts  the open  cv rotated  rectangle regions  to
  |   graphic rect  items collected  in a item  group. Every  rectangle is
- |   stored in an own rect item.
+ |   stored in  an own rect item.  The regions must be  calculated before
+ |   e.g. with 'findRegions'.
  |
  +-------------------------------------------------------------------------*/
 
@@ -1125,10 +1127,13 @@ void ImageTools::rectToGraph ( QGraphicsItemGroup * rootItem )
  |
  |  Description :
  |
- |   This function rotates the image by  multiplies of 90 degrees so that
- |   the remaining angle is between +/- 45 degrees. This allows an easier
- |   padding and cropping of image. The given angle assumes that positive
- |   values mean a clockwise rotation.
+ |   This function rotates the image by  simplifying the angle to a range
+ |   between +/- 45 degrees. For this it first evaluates the quadrant and
+ |   does a rotation of multiples of 90 degrees.
+ |
+ |   A final  angle between +/- 45  degrees allows an easier  padding and
+ |   cropping of image. The given angle assumes that positive values mean
+ |   a clockwise rotation.
  |
  |  Input parameters :
  |   input           : Input image for rotating
@@ -1190,11 +1195,14 @@ Mat ImageTools::rotateImage ( Mat input, float & angle )
  |
  |  Description :
  |
- |   This function searches  the bounding box around the  text content if
- |   'detect' is true uses the 'angle' of the box for the rotation of the
- |   image. If 'detect' is false then is uses the rotation value from the
- |   config for  the image rotation.  At the end  of the process  it adds
- |   some margin to the image to avoid a croping of text content.
+ |   This function searches the bounding box around the text content when
+ |   'detect' is true and uses the 'angle' of the box for the rotation of
+ |   the image.
+ |   When 'detect'  is false  then is  uses the  rotation value  from the
+ |   config for the image rotation.
+ |
+ |   At the end of the process it  adds some margin to the image to avoid
+ |   a croping of text content.
  |
  |  Input parameters :
  |   input           : Input image for rotating

@@ -1,0 +1,11 @@
+<map id="PathSelect::connectSlots" name="PathSelect::connectSlots">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,175,57"/>
+<area shape="rect" id="Node000002" href="$d2/d51/class_path_select.html#a110367d674f40afe1c1bf3bff2089aa5" title=" " alt="" coords="242,5,387,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,32,226,26,227,31,175,37"/>
+<area shape="rect" id="Node000004" href="$d2/d51/class_path_select.html#a1d2f237e7fe9d1bdb6a27ac748ba37f1" title=" " alt="" coords="223,56,406,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="175,51,207,55,207,60,175,56"/>
+<area shape="rect" id="Node000003" href="$d2/d51/class_path_select.html#a0a2d2b8ff96824b3b1faab974253e8e3" title=" " alt="" coords="468,5,606,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,16,452,16,452,21,387,21"/>
+<area shape="rect" id="Node000005" href="$d2/d51/class_path_select.html#a0829b96e5cba2b51aaef88a85941ca9a" title=" " alt="" coords="454,56,620,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="406,67,438,67,438,72,406,72"/>
+</map>
